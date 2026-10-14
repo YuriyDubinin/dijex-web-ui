@@ -1,0 +1,95 @@
+{
+  "brand": "Dijex",
+  "skipToContent": "Skip to main content",
+  "nav": {
+    "solutions": "Solutions",
+    "industries": "Industries",
+    "cases": "Cases",
+    "process": "Process",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "about": "About us"
+  },
+  "header": {
+    "homeLink": "Dijex — home page",
+    "mainNav": "Main navigation",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "cta": "Get in touch",
+    "solutionsMenu": "Our solutions"
+  },
+  "actions": {
+    "discussProject": "Discuss a project",
+    "learnMore": "Learn more",
+    "backHome": "Back to home"
+  },
+  "solutions": {
+    "aiOrchestrator": {
+      "title": "AI Orchestrator",
+      "description": "One control centre for models, agents, data and your systems."
+    },
+    "supportAgent": {
+      "title": "24/7 Support Agent",
+      "description": "Multilingual AI agent for social media, messengers, websites and apps."
+    },
+    "digitalProcesses": {
+      "title": "Digital Process Optimisation",
+      "description": "Internal systems, messaging platforms, client portals, websites and apps."
+    }
+  },
+  "footer": {
+    "tagline": "AI orchestration, 24/7 support and digital processes for mid-sized and large businesses.",
+    "solutionsTitle": "Solutions",
+    "companyTitle": "Company",
+    "contactsTitle": "Contacts",
+    "socialsTitle": "Social",
+    "copyright": "© {{year}} Dijex. All rights reserved.",
+    "privacy": "Privacy policy",
+    "backToTop": "Back to top"
+  },
+  "language": {
+    "label": "Language",
+    "panelTitle": "Choose a language",
+    "current": "Site language: {{name}}",
+    "changed": "Language changed: {{name}}",
+    "hint": "We chose {{name}} based on your region.",
+    "hintAction": "Change",
+    "hintDismiss": "Close"
+  },
+  "toast": {
+    "region": "Notifications",
+    "dismiss": "Dismiss notification"
+  },
+  "notFound": {
+    "eyebrow": "404",
+    "title": "This page doesn't exist",
+    "lead": "It may have moved. Here's where you can go instead:"
+  },
+  "breadcrumbs": {
+    "label": "Breadcrumbs",
+    "home": "Home",
+    "solutions": "Solutions"
+  },
+  "images": {
+    "pillarOrchestrator": "AI orchestrator hub connecting models, agents and business systems",
+    "pillarSupportAgent": "Support agent answering customers in several languages",
+    "pillarDigitalProcesses": "Dashboards, forms and app screens of a digital business system",
+    "supportAgent": "Dijex AI support agent core",
+    "processesInternalSystems": "Admin panel of an internal business system",
+    "processesMessagingPlatform": "Corporate messenger and unified operator inbox",
+    "processesClientPortal": "Client portal with order statuses and documents",
+    "processesWebApps": "Corporate website and mobile application",
+    "aboutGlobe": "Digital solutions for global business",
+    "caseNewsFeeder": "Illustration of the news feeder case",
+    "caseAiAssistant": "Illustration of the AI customer support assistant case",
+    "caseEnterpriseSuite": "Illustration of a corporate ecosystem with admin panels and internal services",
+    "solutionOrchestratorHero": "AI orchestrator architecture",
+    "solutionOrchestratorConsole": "Orchestrator console with decision log, quality and cost metrics",
+    "solutionSupportHero": "Support agent working across several channels at once",
+    "solutionSupportInbox": "Unified operator inbox with conversation summary",
+    "solutionDigitalHero": "Connected business systems and process map"
+  },
+  "imageSlot": {
+    "placeholder": "Image coming soon"
+  }
+}

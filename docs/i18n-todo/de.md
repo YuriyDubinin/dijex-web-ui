@@ -1,0 +1,23 @@
+# German (de) – review notes
+
+- `home:security.items.compliance.text` — „unter Berücksichtigung der DSGVO und lokaler Datenschutzgesetze“: legally cautious wording, does not claim certification; confirm with legal counsel.
+- `home:hero.stats[1]`, `home:support.stickers.languages`, `home:results.rows.languages.after`, `home:faq.items.languages.a`, `solutions:supportAgent.capabilities.items.languages.title` — „30+ Sprachen“ unverified claim; owner to confirm.
+- `home:support.stickers.response`, `home:results.metrics.reply`, `solutions:supportAgent.metrics.reply` — „< 5 s“ response time unverified; suffix kept as " s".
+- `home:results.metrics.automated.suffix`, `solutions:supportAgent.metrics.automated.suffix` — changed "%" to " %" (German typography); check the rendered metric looks right.
+- `home:cases.items.aiAssistant.result` — „60 %“ figure taken from en; confirm the claim.
+- `home:hero.stats[2]`, `home:industries.items.hospitality.tasks[0]`, `solutions:supportAgent.useCases.hotel.action` — „10+ Kanäle/Sprachen“ unverified.
+- `home:cases.items.newsFeeder.solution` — „20+ Sprachen“ unverified.
+- `common:nav.cases`, `home:cases.eyebrow` — "Cases" rendered as „Referenzen“; alternative „Projekte“.
+- `common:nav.process`, `home:process.eyebrow` — „Ablauf“ chosen for "Process"; alternative „Vorgehen“.
+- `common:header.cta` — "Get in touch" shortened to „Kontakt“ to fit the header; alternative „Kontakt aufnehmen“ if space allows.
+- `common:solutions.digitalProcesses.title`, `meta:digitalProcesses.title`, `form:subjects.digitalProcesses` — "Digital Process Optimisation" shortened to „Digitale Prozesse“; full form would be „Optimierung digitaler Prozesse“.
+- `home:processes.tabs.messaging.tab`, `home:processes.tabs.apps.tab` — tab labels shortened to „Messaging“ and „Web & Apps“ for layout.
+- `form:subjects.turnkey`, `home:engagement.items.turnkey.title` — „Schlüsselfertig“ used standalone (adjective); consider „Komplettlösung“.
+- `home:orchestrator.columns.agents.items.human`, chat handoff strings — "operator" rendered mostly as „Mitarbeitende“/„Ihr Team“; „Operator“ kept in compound nouns (Operator-Inbox); native check for consistency and gender-inclusive style preference.
+- `home:orchestrator.columns.systems.items.erp` — "ERP / 1C" kept; 1C is unknown in Germany, consider replacing with e.g. „ERP / SAP“ (owner decision).
+- `home:security.items.perimeter.title` — "Deployment in your perimeter" rendered as „Betrieb bei Ihnen“; check it reads well.
+- `home:security.deployment.options.onPrem.title` — „On-Premises“ (vs. „On-Premise“) – pick house style.
+- `common:footer.tagline`, `meta:home.description` — "mid-sized and large businesses" → „Mittelstand und Großunternehmen“; confirm positioning.
+- `legal:privacy.paragraphs` — placeholder text; the real German privacy policy (Datenschutzerklärung) must be drafted per DSGVO, not translated.
+- `form:privacyNotice` — consent wording; under DSGVO a consent checkbox or reference to Art. 6 lawful basis may be required – legal check.
+- `common:breadcrumbs.label` — „Brotkrumennavigation“ (screen-reader label); alternative „Navigationspfad“.

@@ -1,0 +1,30 @@
+{
+  "home": {
+    "title": "Dijex — AI orchestration, 24/7 support and digital processes",
+    "description": "Dijex builds AI orchestrators, multilingual 24/7 support agents and digital systems for mid-sized and large businesses."
+  },
+  "aiOrchestrator": {
+    "title": "AI Orchestrator — Dijex",
+    "description": "One control centre for AI: models, agents, data and your systems in a single managed process."
+  },
+  "supportAgent": {
+    "title": "24/7 Support Agent — Dijex",
+    "description": "A multilingual AI agent for social media, messengers, websites and apps. Replies instantly and hands complex cases to your team."
+  },
+  "digitalProcesses": {
+    "title": "Digital Process Optimisation — Dijex",
+    "description": "Internal business systems, messaging platforms, client portals, websites and apps that remove manual work."
+  },
+  "privacy": {
+    "title": "Privacy policy — Dijex",
+    "description": "How Dijex processes personal data submitted through this website."
+  },
+  "thanks": {
+    "title": "Thank you — Dijex",
+    "description": "Your request has been received."
+  },
+  "notFound": {
+    "title": "Page not found — Dijex",
+    "description": "This page doesn't exist."
+  }
+}

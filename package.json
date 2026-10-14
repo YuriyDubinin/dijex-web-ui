@@ -10,18 +10,26 @@
     "lint": "eslint . --ext .ts,.tsx --max-warnings 0",
     "format": "prettier --write .",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "images:check": "node scripts/check-images.mjs"
   },
   "dependencies": {
     "@fontsource/inter": "^5.1.0",
+    "@fontsource/noto-sans-jp": "^5.1.0",
+    "@fontsource/noto-sans-sc": "^5.1.0",
+    "@fontsource/noto-sans-thai": "^5.1.0",
     "@fontsource/sora": "^5.1.0",
     "@hookform/resolvers": "^3.9.0",
     "clsx": "^2.1.1",
+    "country-flag-icons": "^1.5.13",
     "framer-motion": "^11.11.0",
+    "i18next": "^23.16.8",
+    "i18next-resources-to-backend": "^1.2.1",
     "lucide-react": "^0.460.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.53.0",
+    "react-i18next": "^15.1.4",
     "react-router-dom": "^6.27.0",
     "tailwind-merge": "^2.5.4",
     "zod": "^3.23.8"

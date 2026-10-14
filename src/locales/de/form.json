@@ -1,0 +1,54 @@
+{
+  "section": {
+    "eyebrow": "Kontakt",
+    "title": "Erzählen Sie uns von Ihrem Projekt",
+    "lead": "Beschreiben Sie Ihre Aufgabe – wir antworten innerhalb eines Werktags und schlagen einen Pilotplan vor."
+  },
+  "interest": {
+    "label": "Wofür interessieren Sie sich?"
+  },
+  "subjects": {
+    "aiOrchestrator": "KI-Orchestrator",
+    "supportAgent": "24/7-Support-Agent",
+    "internalSystems": "Interne Systeme",
+    "messagingPlatform": "Messaging-Plattform",
+    "clientPortal": "Kundenportal",
+    "websiteOrApp": "Website oder App",
+    "notSure": "Noch unklar",
+    "digitalProcesses": "Digitale Prozesse",
+    "pilot": "Pilotprojekt",
+    "turnkey": "Schlüsselfertig",
+    "ongoingSupport": "Laufender Support"
+  },
+  "fields": {
+    "name": { "label": "Name", "placeholder": "Max Mustermann" },
+    "email": { "label": "E-Mail", "placeholder": "max@firma.de" },
+    "phone": { "label": "Telefon", "placeholder": "+49 151 23456789" },
+    "subject": { "label": "Betreff", "placeholder": "Support-Agent für unseren Onlineshop" },
+    "message": {
+      "label": "Nachricht",
+      "placeholder": "Erzählen Sie uns von Ihrem Projekt, Ihrer Aufgabe oder Frage …"
+    }
+  },
+  "required": "Pflichtfeld",
+  "submit": "Anfrage senden",
+  "submitting": "Wird gesendet …",
+  "privacyNotice": "Mit dem Absenden des Formulars stimmen Sie der Verarbeitung Ihrer personenbezogenen Daten zu.",
+  "privacyLink": "Datenschutzerklärung",
+  "success": {
+    "title": "Vielen Dank! Ihre Anfrage wurde gesendet.",
+    "body": "Wir haben Ihre Nachricht erhalten und melden uns innerhalb eines Werktags bei Ihnen.",
+    "reset": "Neue Anfrage"
+  },
+  "errors": {
+    "nameMin": "Mindestens 2 Zeichen",
+    "nameMax": "Höchstens 255 Zeichen",
+    "emailInvalid": "Ungültige E-Mail-Adresse",
+    "emailMax": "Höchstens 255 Zeichen",
+    "phoneMax": "Höchstens 50 Zeichen",
+    "subjectMax": "Höchstens 500 Zeichen",
+    "messageMin": "Mindestens 10 Zeichen",
+    "messageMax": "Höchstens 5000 Zeichen"
+  },
+  "toastError": "Etwas ist schiefgelaufen. Bitte versuchen Sie es später erneut."
+}

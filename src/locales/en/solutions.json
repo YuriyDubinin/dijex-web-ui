@@ -1,0 +1,472 @@
+{
+  "labels": {
+    "painsTitle": "Sound familiar?",
+    "painsBridge": "Here's how we solve it",
+    "situation": "Situation",
+    "action": "What we do",
+    "result": "Result",
+    "otherSolutions": "Other solutions",
+    "faqTitle": "Questions about this solution",
+    "metricsTitle": "In numbers",
+    "howItWorks": "How it works"
+  },
+  "aiOrchestrator": {
+    "hero": {
+      "eyebrow": "AI orchestrator",
+      "title": "One control centre for AI across your company",
+      "lead": "We connect models, agents, data and your systems into a managed process — with control over quality, cost and security.",
+      "primaryCta": "Discuss a project",
+      "secondaryCta": "How it works"
+    },
+    "pains": {
+      "scattered": "AI tools are scattered: every department has its own bot and subscription",
+      "hallucinations": "Models answer \"off the top of their head\" instead of using your data",
+      "opaque": "Nobody knows what the AI answered, why, or how much it cost",
+      "stops": "Automation ends with an answer — everything after that is still manual"
+    },
+    "howItWorks": {
+      "title": "From request to result in six steps",
+      "lead": "Every step is logged and can be reviewed.",
+      "steps": {
+        "request": { "title": "Request", "text": "From any channel or system." },
+        "understanding": {
+          "title": "Understanding",
+          "text": "Intent, language, customer context."
+        },
+        "routing": {
+          "title": "Routing",
+          "text": "Choosing an agent or model by rules, price and privacy."
+        },
+        "action": { "title": "Action", "text": "Calls to CRM, ERP, knowledge base, API." },
+        "control": {
+          "title": "Control",
+          "text": "Guardrails, checks and, when needed, a human."
+        },
+        "result": { "title": "Result", "text": "Answer, log entry, metrics." }
+      }
+    },
+    "capabilities": {
+      "title": "Capabilities",
+      "lead": "Everything needed to run AI in production — not just in a demo.",
+      "items": {
+        "routing": {
+          "title": "Multi-model routing",
+          "description": "Each task goes to the model that fits it best by quality, price and data requirements."
+        },
+        "multiAgent": {
+          "title": "Multi-agent scenarios",
+          "description": "Specialised agents work together and pass tasks to each other."
+        },
+        "rag": {
+          "title": "RAG over corporate data",
+          "description": "Answers are grounded in your documents, policies and catalogue — with sources."
+        },
+        "tools": {
+          "title": "Tool and API calls",
+          "description": "Agents read and write data in your systems, not just generate text."
+        },
+        "memory": {
+          "title": "Memory and customer context",
+          "description": "History, preferences and status of each customer are always at hand."
+        },
+        "human": {
+          "title": "Human-in-the-loop",
+          "description": "Sensitive decisions are confirmed by an employee in one click."
+        },
+        "guardrails": {
+          "title": "Guardrails and policies",
+          "description": "Forbidden topics, data rules and output checks are enforced automatically."
+        },
+        "observability": {
+          "title": "Observability and analytics",
+          "description": "Traces, logs and quality metrics for every request in one console."
+        },
+        "cost": {
+          "title": "Cost management",
+          "description": "Simple tasks go to cheaper models, frequent answers are cached."
+        }
+      }
+    },
+    "useCases": {
+      "title": "Use cases",
+      "items": {
+        "inbound": {
+          "title": "Inbound requests",
+          "situation": "Hundreds of requests from different channels are sorted manually.",
+          "action": "The orchestrator classifies them, enriches them with CRM data and assigns an owner.",
+          "result": "Each request reaches the right manager in seconds."
+        },
+        "assistant": {
+          "title": "Employee assistant",
+          "situation": "Employees waste time looking for policies and statuses.",
+          "action": "An assistant in the corporate chat answers from the knowledge base and system data.",
+          "result": "Answers in seconds and fewer questions to colleagues."
+        },
+        "documents": {
+          "title": "Documents",
+          "situation": "Data from contracts and invoices is re-typed by hand.",
+          "action": "Extraction, validation and entry into the accounting system.",
+          "result": "Less manual input and fewer errors."
+        },
+        "sales": {
+          "title": "Sales",
+          "situation": "Managers spend time on unqualified leads.",
+          "action": "The agent qualifies leads and drafts a commercial proposal.",
+          "result": "Managers focus on hot prospects."
+        },
+        "analytics": {
+          "title": "Natural-language analytics",
+          "situation": "A report takes several days to arrive.",
+          "action": "A manager asks a question in plain words — in any language — and the agent answers from BI data.",
+          "result": "Data-driven decisions right away."
+        }
+      }
+    },
+    "deployment": {
+      "title": "Architecture and deployment",
+      "lead": "Choose where the orchestrator runs and which models it uses — and change it later without rebuilding.",
+      "modelsTitle": "Models we work with",
+      "consoleCaption": "Console: decision log, quality and cost metrics"
+    },
+    "faq": {
+      "chatbot": {
+        "q": "How is it different from a chatbot?",
+        "a": "A chatbot follows a fixed script. The orchestrator understands the task, chooses a model or agent, calls your systems and performs actions — and logs every step."
+      },
+      "localOnly": {
+        "q": "Can we use only local models?",
+        "a": "Yes. The orchestrator works with open-source models deployed on your servers, without external APIs."
+      },
+      "cost": {
+        "q": "How is cost controlled?",
+        "a": "Routing sends simple tasks to cheaper models, frequent answers are cached, and the console shows the cost of every request and scenario."
+      },
+      "duration": {
+        "q": "How long does implementation take?",
+        "a": "A pilot on one scenario takes 2–4 weeks. Then we add scenarios and integrations step by step."
+      },
+      "mistakes": {
+        "q": "What if the model makes a mistake?",
+        "a": "Guardrails check answers before they are sent, sensitive actions require confirmation, and every decision can be traced and corrected."
+      }
+    },
+    "cta": {
+      "title": "Let us show the orchestrator on your process",
+      "lead": "We'll pick one scenario and launch a pilot."
+    }
+  },
+  "supportAgent": {
+    "hero": {
+      "eyebrow": "24/7 support agent",
+      "title": "Multilingual customer support — round the clock, in every channel",
+      "lead": "Replies on social media, messengers, your website and app — in the customer's language, instantly and in your brand's tone. Complex questions go to your team with full context.",
+      "primaryCta": "Discuss a project",
+      "secondaryCta": "How it works"
+    },
+    "pains": {
+      "night": "Customers write at night and at weekends — and leave without an answer",
+      "channels": "Many channels, different windows, requests get lost",
+      "languages": "Foreign customers need a team that speaks their languages",
+      "repetitive": "Operators spend all day answering the same questions"
+    },
+    "howItWorks": {
+      "title": "How a conversation flows",
+      "lead": "From the first message to analytics.",
+      "steps": {
+        "message": { "title": "Message", "text": "A customer writes in any channel." },
+        "detect": { "title": "Detection", "text": "The agent identifies language and intent." },
+        "find": {
+          "title": "Search",
+          "text": "Finds the answer in the knowledge base or system data."
+        },
+        "act": { "title": "Reply or action", "text": "Answers or performs the action." },
+        "handoff": {
+          "title": "Hand-off",
+          "text": "If needed, passes the case to an operator with a summary."
+        },
+        "analytics": { "title": "Analytics", "text": "Topics, quality, share resolved." }
+      }
+    },
+    "capabilities": {
+      "title": "Capabilities",
+      "lead": "An agent that actually resolves requests — not just answers FAQs.",
+      "items": {
+        "always": {
+          "title": "Works 24/7",
+          "description": "No queues, shifts, weekends or holidays."
+        },
+        "languages": {
+          "title": "30+ languages with auto-detection",
+          "description": "Replies in the customer's language without any settings."
+        },
+        "translation": {
+          "title": "Auto-translation for operators",
+          "description": "Operators write in their own language; customers receive theirs."
+        },
+        "inbox": {
+          "title": "Unified inbox",
+          "description": "All channels and conversations in one interface."
+        },
+        "handoff": {
+          "title": "Hand-off with a summary",
+          "description": "Operators get the history, a summary and customer data."
+        },
+        "actions": {
+          "title": "Actions",
+          "description": "Orders, bookings, payment links, status checks."
+        },
+        "brand": {
+          "title": "Brand voice and rules",
+          "description": "Tone, wording and forbidden topics configured for you."
+        },
+        "media": {
+          "title": "Voice messages and images",
+          "description": "Understands voice notes, screenshots and photos."
+        },
+        "proactive": {
+          "title": "Proactive messages",
+          "description": "Reminders, status updates and follow-ups."
+        }
+      }
+    },
+    "channels": {
+      "title": "One agent — every channel",
+      "lead": "Connect the channels your customers already use."
+    },
+    "languagesDemo": {
+      "title": "Languages of the agent",
+      "lead": "Pick a language — the agent greets you in it.",
+      "more": "and 20+ more"
+    },
+    "inboxCaption": "Unified operator inbox: all channels, conversation summary, customer data",
+    "timeline": {
+      "title": "Launch plan",
+      "steps": {
+        "week1": { "label": "Week 1", "text": "Knowledge base and scenarios" },
+        "week2": { "label": "Week 2", "text": "Channel connection and testing" },
+        "week3": { "label": "Week 3", "text": "Pilot on part of the traffic" },
+        "next": { "label": "Next", "text": "Scaling" }
+      }
+    },
+    "useCases": {
+      "title": "Use cases",
+      "items": {
+        "ecommerce": {
+          "title": "Online store",
+          "situation": "Customers keep asking where their order is and how to return it.",
+          "action": "The agent checks the order status and starts a return on its own.",
+          "result": "Operators handle only non-standard cases."
+        },
+        "clinic": {
+          "title": "Clinic",
+          "situation": "Administrators are overloaded with calls about appointments and test preparation.",
+          "action": "The agent books appointments, explains preparation and sends reminders.",
+          "result": "Fewer no-shows and calls."
+        },
+        "hotel": {
+          "title": "Hotel & travel",
+          "situation": "Guests write from all over the world at any time of day.",
+          "action": "The agent handles bookings and transfers in 10+ languages.",
+          "result": "Faster replies and more direct bookings."
+        },
+        "fintech": {
+          "title": "Fintech",
+          "situation": "Many questions about plans and fees, but personal data must be protected.",
+          "action": "The agent answers product questions without access to personal data.",
+          "result": "The first line is relieved without security risks."
+        },
+        "education": {
+          "title": "Education",
+          "situation": "During admissions, applicants ask the same questions in waves.",
+          "action": "The agent answers applicants and enrols them in courses.",
+          "result": "The admissions team focuses on enrolment."
+        },
+        "b2b": {
+          "title": "B2B",
+          "situation": "Technical requests come in through different channels and get lost.",
+          "action": "The agent accepts requests, provides first-line support and creates tickets.",
+          "result": "Every request is registered and routed."
+        }
+      }
+    },
+    "metrics": {
+      "automated": { "prefix": "", "suffix": "%", "label": "of requests without an operator" },
+      "always": { "prefix": "", "suffix": "/7", "label": "availability" },
+      "reply": { "prefix": "<", "suffix": " s", "label": "first response" }
+    },
+    "faq": {
+      "knowledge": {
+        "q": "How does the agent learn about our products and rules?",
+        "a": "We connect your knowledge base, catalogue and policies, and the agent answers from them. Updates are picked up automatically."
+      },
+      "unhappy": {
+        "q": "What if a customer is unhappy or asks for a human?",
+        "a": "The agent immediately hands the conversation to an operator with a summary and history, so the customer doesn't have to repeat anything."
+      },
+      "oneChannel": {
+        "q": "Can we start with just one channel?",
+        "a": "Yes — that's how we usually start: with the busiest channel. Others are added later without rework."
+      },
+      "brand": {
+        "q": "How does the agent speak in our brand voice?",
+        "a": "We describe tone, wording and forbidden topics, test them on real conversations and refine them during the pilot."
+      },
+      "effect": {
+        "q": "How do you measure the effect?",
+        "a": "By the share of requests resolved without an operator, response time, CSAT and conversion — compared with the period before launch."
+      }
+    },
+    "cta": {
+      "title": "We'll launch the agent on one channel in a couple of weeks",
+      "lead": "Let's start with your busiest channel."
+    }
+  },
+  "digitalProcesses": {
+    "hero": {
+      "eyebrow": "Digital processes",
+      "title": "Systems that remove manual work",
+      "lead": "We design and build internal systems, messaging platforms, client portals, websites and apps — connected to each other and to AI.",
+      "primaryCta": "Discuss a project",
+      "secondaryCta": "How we work"
+    },
+    "pains": {
+      "spreadsheets": "Data lives in Excel and chats",
+      "people": "Processes depend on specific people",
+      "calls": "Customers call to find out a status",
+      "disconnected": "Several services that aren't connected to each other"
+    },
+    "howItWorks": {
+      "title": "Our approach",
+      "lead": "Small steps with a visible result at each one.",
+      "steps": {
+        "audit": { "title": "Process audit", "text": "How work is really done today." },
+        "map": { "title": "Map and priorities", "text": "What to automate first." },
+        "mvp": { "title": "MVP in a few weeks", "text": "A working tool on real data." },
+        "integrations": {
+          "title": "Integrations",
+          "text": "Connecting with the systems you already have."
+        },
+        "growth": { "title": "Data-driven growth", "text": "New modules based on usage." }
+      }
+    },
+    "directions": {
+      "title": "Four directions",
+      "lead": "Each can start on its own and grow into a single ecosystem.",
+      "techLabel": "Technologies",
+      "extras": {
+        "internal": "We start with one module — for example, approvals or fleet management — and grow the system around it.",
+        "messaging": "Deployment inside your perimeter, end-to-end encryption and integration with your directory and access rights.",
+        "portals": "Portals connect to your CRM, ERP and billing, so customers always see up-to-date data.",
+        "apps": "Multilingual support and localisation: translations, fonts, date and currency formats, language detection by region — just like on this website."
+      }
+    },
+    "aiBoost": {
+      "title": "Where AI strengthens the system",
+      "lead": "Any system becomes smarter when connected to the orchestrator.",
+      "link": "More about the orchestrator",
+      "items": {
+        "search": {
+          "title": "AI search over data",
+          "text": "Find documents and records with a question in plain words."
+        },
+        "autofill": {
+          "title": "Form autofill from documents",
+          "text": "Data from scans and PDFs goes straight into the system."
+        },
+        "notifications": {
+          "title": "Smart notifications",
+          "text": "Only what matters, to the right person, at the right time."
+        },
+        "assistant": {
+          "title": "Assistant inside the portal",
+          "text": "Customers and employees get answers without leaving the system."
+        }
+      }
+    },
+    "capabilities": {
+      "title": "Why it works",
+      "lead": "Engineering practices that make systems last.",
+      "items": {
+        "process": {
+          "title": "Designed around the process",
+          "description": "The system adapts to how you work — not the other way round."
+        },
+        "integrations": {
+          "title": "Integrations with ERP, CRM and APIs",
+          "description": "Data flows between systems without re-typing."
+        },
+        "roles": {
+          "title": "Roles and access rights",
+          "description": "Everyone sees exactly what they need."
+        },
+        "analytics": {
+          "title": "Analytics and reports",
+          "description": "Dashboards and exports built into the system."
+        },
+        "architecture": {
+          "title": "Scalable architecture",
+          "description": "Ready for growth in users, data and modules."
+        },
+        "support": {
+          "title": "Support and development",
+          "description": "We stay with the product after launch."
+        }
+      }
+    },
+    "useCases": {
+      "title": "Use cases",
+      "items": {
+        "fleet": {
+          "title": "Fleet management",
+          "situation": "Vehicles, drivers and maintenance are tracked in spreadsheets.",
+          "action": "One system for vehicles, drivers, maintenance and trips with reminders.",
+          "result": "Transparent fleet status and no missed maintenance."
+        },
+        "approvals": {
+          "title": "Request approvals",
+          "situation": "Approvals get stuck in long email chains.",
+          "action": "Approval routes with deadlines, notifications and history.",
+          "result": "Faster decisions and a clear owner at every step."
+        },
+        "b2bPortal": {
+          "title": "B2B client portal",
+          "situation": "Clients call managers to check orders and request documents.",
+          "action": "A portal with orders, shipments and documents connected to ERP.",
+          "result": "Fewer calls and faster payments."
+        },
+        "corporateChat": {
+          "title": "Corporate chat",
+          "situation": "Work conversations live in public messengers.",
+          "action": "A secure messenger inside your perimeter with bots and integrations.",
+          "result": "Control over data and communication."
+        }
+      }
+    },
+    "faq": {
+      "oneModule": {
+        "q": "Can we start with one module?",
+        "a": "Yes, and we recommend it: one module delivers a result quickly and shows where to go next."
+      },
+      "existing": {
+        "q": "Do you work with our current system or build from scratch?",
+        "a": "Both. We often extend and integrate existing systems and replace only what really holds you back."
+      },
+      "code": {
+        "q": "Who owns the code?",
+        "a": "You do. The code, documentation and infrastructure are handed over to you."
+      },
+      "support": {
+        "q": "How do you support the system after launch?",
+        "a": "Under an SLA: monitoring, fixes, updates and development of new features."
+      },
+      "price": {
+        "q": "How much does it cost?",
+        "a": "It depends on the scope — after the audit we provide an estimate and a phased plan."
+      }
+    },
+    "cta": {
+      "title": "Let's find the process to automate first",
+      "lead": "A short audit will show where the effect is greatest."
+    }
+  }
+}

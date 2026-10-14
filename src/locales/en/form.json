@@ -1,0 +1,54 @@
+{
+  "section": {
+    "eyebrow": "Contact",
+    "title": "Tell us about your project",
+    "lead": "Describe your task — we'll reply within one business day and propose a pilot plan."
+  },
+  "interest": {
+    "label": "What are you interested in?"
+  },
+  "subjects": {
+    "aiOrchestrator": "AI orchestrator",
+    "supportAgent": "24/7 support agent",
+    "internalSystems": "Internal systems",
+    "messagingPlatform": "Messaging platform",
+    "clientPortal": "Client portal",
+    "websiteOrApp": "Website or app",
+    "notSure": "Not sure yet",
+    "digitalProcesses": "Digital process optimisation",
+    "pilot": "Pilot project",
+    "turnkey": "Turnkey implementation",
+    "ongoingSupport": "Ongoing support"
+  },
+  "fields": {
+    "name": { "label": "Name", "placeholder": "John Smith" },
+    "email": { "label": "Email", "placeholder": "john@company.com" },
+    "phone": { "label": "Phone", "placeholder": "+44 20 0000 0000" },
+    "subject": { "label": "Subject", "placeholder": "Support agent for our online store" },
+    "message": {
+      "label": "Message",
+      "placeholder": "Tell us about your project, task or question…"
+    }
+  },
+  "required": "required",
+  "submit": "Send request",
+  "submitting": "Sending…",
+  "privacyNotice": "By submitting the form, you agree to the processing of your personal data.",
+  "privacyLink": "Privacy policy",
+  "success": {
+    "title": "Thank you! Your request has been sent.",
+    "body": "We've received your message and will get back to you within one business day.",
+    "reset": "Send another"
+  },
+  "errors": {
+    "nameMin": "At least 2 characters",
+    "nameMax": "No more than 255 characters",
+    "emailInvalid": "Invalid email address",
+    "emailMax": "No more than 255 characters",
+    "phoneMax": "No more than 50 characters",
+    "subjectMax": "No more than 500 characters",
+    "messageMin": "At least 10 characters",
+    "messageMax": "No more than 5000 characters"
+  },
+  "toastError": "Something went wrong. Please try again later."
+}

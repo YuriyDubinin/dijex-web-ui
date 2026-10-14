@@ -1,0 +1,95 @@
+{
+  "brand": "Dijex",
+  "skipToContent": "Aller au contenu principal",
+  "nav": {
+    "solutions": "Solutions",
+    "industries": "Secteurs",
+    "cases": "Réalisations",
+    "process": "Méthode",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "about": "À propos"
+  },
+  "header": {
+    "homeLink": "Dijex — page d’accueil",
+    "mainNav": "Navigation principale",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "cta": "Nous contacter",
+    "solutionsMenu": "Nos solutions"
+  },
+  "actions": {
+    "discussProject": "Parlons de votre projet",
+    "learnMore": "En savoir plus",
+    "backHome": "Retour à l’accueil"
+  },
+  "solutions": {
+    "aiOrchestrator": {
+      "title": "Orchestrateur IA",
+      "description": "Un centre de pilotage unique pour vos modèles, agents, données et systèmes."
+    },
+    "supportAgent": {
+      "title": "Agent de support 24/7",
+      "description": "Agent IA multilingue pour les réseaux sociaux, messageries, sites et applications."
+    },
+    "digitalProcesses": {
+      "title": "Optimisation des processus",
+      "description": "Systèmes internes, plateformes de messagerie, portails clients, sites et applications."
+    }
+  },
+  "footer": {
+    "tagline": "Orchestration IA, support 24/7 et processus numériques pour les ETI et les grands comptes.",
+    "solutionsTitle": "Solutions",
+    "companyTitle": "Entreprise",
+    "contactsTitle": "Contacts",
+    "socialsTitle": "Réseaux sociaux",
+    "copyright": "© {{year}} Dijex. Tous droits réservés.",
+    "privacy": "Politique de confidentialité",
+    "backToTop": "Retour en haut"
+  },
+  "language": {
+    "label": "Langue",
+    "panelTitle": "Choisir une langue",
+    "current": "Langue du site : {{name}}",
+    "changed": "Langue modifiée : {{name}}",
+    "hint": "Nous avons choisi {{name}} en fonction de votre région.",
+    "hintAction": "Modifier",
+    "hintDismiss": "Fermer"
+  },
+  "toast": {
+    "region": "Notifications",
+    "dismiss": "Fermer la notification"
+  },
+  "notFound": {
+    "eyebrow": "404",
+    "title": "Cette page n’existe pas",
+    "lead": "Elle a peut-être été déplacée. Voici où aller à la place :"
+  },
+  "breadcrumbs": {
+    "label": "Fil d’Ariane",
+    "home": "Accueil",
+    "solutions": "Solutions"
+  },
+  "images": {
+    "pillarOrchestrator": "Hub d’orchestration IA reliant modèles, agents et systèmes métier",
+    "pillarSupportAgent": "Agent de support répondant aux clients dans plusieurs langues",
+    "pillarDigitalProcesses": "Tableaux de bord, formulaires et écrans d’application d’un système métier",
+    "supportAgent": "Cœur de l’agent IA de support Dijex",
+    "processesInternalSystems": "Interface d’administration d’un système métier interne",
+    "processesMessagingPlatform": "Messagerie d’entreprise et boîte de réception unifiée des opérateurs",
+    "processesClientPortal": "Portail client avec statuts de commande et documents",
+    "processesWebApps": "Site d’entreprise et application mobile",
+    "aboutGlobe": "Solutions numériques pour les entreprises internationales",
+    "caseNewsFeeder": "Illustration du projet d’agrégateur d’actualités",
+    "caseAiAssistant": "Illustration du projet d’assistant IA pour le support client",
+    "caseEnterpriseSuite": "Illustration d’un écosystème d’entreprise avec interfaces d’administration et services internes",
+    "solutionOrchestratorHero": "Architecture de l’orchestrateur IA",
+    "solutionOrchestratorConsole": "Console de l’orchestrateur avec journal des décisions, métriques de qualité et de coûts",
+    "solutionSupportHero": "Agent de support actif sur plusieurs canaux à la fois",
+    "solutionSupportInbox": "Boîte de réception unifiée des opérateurs avec résumé de la conversation",
+    "solutionDigitalHero": "Systèmes métier connectés et cartographie des processus"
+  },
+  "imageSlot": {
+    "placeholder": "Image à venir"
+  }
+}

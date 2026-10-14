@@ -485,3 +485,45 @@ VITE_API_BASE_URL=http://localhost:18080
 
 **Версия документа:** 1.0
 **Целевая аудитория:** AI-агент или разработчик, начинающий фронтенд Dijex с нуля.
+
+---
+
+## 14. Актуальная архитектура (после расширения контента и мультиязычности)
+
+> Разделы выше — исходный бриф. Этот раздел описывает, как проект устроен сейчас; при расхождении верен он.
+
+- **Языки:** en (fallback и эталон), ru, th, zh (упрощённый), ja, fr, de. Определение: выбор пользователя
+  (localStorage `dijex.locale`) → `?lang=` → языки браузера → регион по часовому поясу → en (`src/i18n/detectLocale.ts`).
+- **Тексты — только в JSON:** `src/locales/<lang>/{common,home,solutions,form,meta,legal}.json`. В компонентах и
+  `src/content/*` пользовательского текста нет. Поддерево секции читается через `useContent(ns, key)`, строки — через `t()`.
+- **Структура контента** (id, порядок, иконки, картинки, числа) — `src/content/**`. Иконки по ключу — `components/ui/iconMap.ts`.
+- **Новый текст** добавляется во все 7 локалей с одинаковыми ключами — это проверяет `src/locales/locales.test.ts`.
+- **Картинки** — только через `<ImageSlot image="…">` с ключом из `src/content/images.ts`; файлы — в `public/images/`.
+  Чек-лист: `npm run images:check`.
+- **Цвета** — RGB-каналы в CSS-переменных (`--accent-primary: 99 102 241`), поэтому работают `bg-accent-primary/10`.
+- **`cn()`** знает кастомную шкалу шрифтов (`text-small`, `text-body`, …) — не заменять на голый `twMerge`.
+- Шрифты Noto (th/zh/ja) грузятся динамически только для этих языков (`src/i18n/fonts.ts`).
+- Что нужно уточнить у владельца и вычитать носителям — `docs/i18n-todo/`.
+
+---
+
+## 15. Движение (анимации и эффекты)
+
+- **Токены** — `src/motion/tokens.ts`: `DURATION`, `EASE`, `SPRING`, `STAGGER`, `DISTANCE`, `gridWaveDelay` / `gridRadialDelay`.
+  Никаких «магических» длительностей и кривых в компонентах.
+- **Уровни** — `useMotionTier()`: `full` (всё), `lite` (без WebGL, параллакса, курсорных эффектов, sticky-сцен),
+  `off` (prefers-reduced-motion или `?motion=off` — контент сразу виден). Слабое устройство / экономия трафика /
+  тач < 768px → `lite`. Шейдер сам понижает уровень, если не держит FPS (`downgradeMotionTier`).
+  Для QA: `?motion=full|lite|off` (запоминается на сессию), в dev — бейдж уровня в углу.
+- **Примитивы** (`src/motion/`): `Reveal` (fade-up / blur-up / clip-up / scale-in), `SplitText` (слова из маски,
+  сегментация через `Intl.Segmenter` для th/ja/zh), `ScrambleText`, `Odometer`, `DrawCheck`, `Tilt`, `SpotlightGroup`
+  (карточкам — `data-spotlight` + класс `.spotlight`), `useMagnetic` (кнопки `size="lg"` — автоматически),
+  `BrandIntro` (интро, 1 раз за сессию).
+- **Правила**: анимировать только transform / opacity / clip-path / filter; бесконечные анимации — только пока элемент
+  в viewport (`useActiveInViewport`) и вкладка видима; курсорные эффекты — только `(pointer: fine)`;
+  заголовок hero не стартует с opacity 0 (маска), чтобы не ухудшать LCP; SVG-атрибуты (`width`, `y1`…) не анимировать —
+  только `scale` / `pathLength`.
+- **Переходы**: между страницами — View Transitions (data-роутер, `Link viewTransition`); общие элементы —
+  `view-transition-name: solution-icon-*` / `solution-visual-*`. Смена языка — View Transition с размытием
+  и сохранением позиции прокрутки (`useLocale`).
+- **Отладка**: `window.__motionDebug.activeLoops` (dev) — сколько бесконечных циклов сейчас крутится.

@@ -1,0 +1,54 @@
+{
+  "section": {
+    "eyebrow": "お問い合わせ",
+    "title": "プロジェクトについてお聞かせください",
+    "lead": "課題の内容をお知らせください。1営業日以内にご返信し、パイロットのプランをご提案します。"
+  },
+  "interest": {
+    "label": "ご興味のある内容"
+  },
+  "subjects": {
+    "aiOrchestrator": "AIオーケストレーター",
+    "supportAgent": "24時間365日対応サポートエージェント",
+    "internalSystems": "社内システム",
+    "messagingPlatform": "メッセージングプラットフォーム",
+    "clientPortal": "顧客ポータル",
+    "websiteOrApp": "Webサイト・アプリ",
+    "notSure": "まだ決まっていない",
+    "digitalProcesses": "業務プロセスのデジタル最適化",
+    "pilot": "パイロットプロジェクト",
+    "turnkey": "ターンキー導入",
+    "ongoingSupport": "継続サポート"
+  },
+  "fields": {
+    "name": { "label": "お名前", "placeholder": "山田 太郎" },
+    "email": { "label": "メールアドレス", "placeholder": "taro@company.co.jp" },
+    "phone": { "label": "電話番号", "placeholder": "+81 90 1234 5678" },
+    "subject": { "label": "件名", "placeholder": "ECサイト向けサポートエージェント" },
+    "message": {
+      "label": "メッセージ",
+      "placeholder": "プロジェクト、課題、ご質問の内容をご記入ください…"
+    }
+  },
+  "required": "必須",
+  "submit": "送信する",
+  "submitting": "送信中…",
+  "privacyNotice": "フォームを送信することで、個人情報の取り扱いに同意したものとみなされます。",
+  "privacyLink": "プライバシーポリシー",
+  "success": {
+    "title": "ありがとうございます。お問い合わせを送信しました。",
+    "body": "メッセージを受け付けました。1営業日以内にご連絡いたします。",
+    "reset": "もう一度送信する"
+  },
+  "errors": {
+    "nameMin": "2文字以上で入力してください",
+    "nameMax": "255文字以内で入力してください",
+    "emailInvalid": "メールアドレスの形式が正しくありません",
+    "emailMax": "255文字以内で入力してください",
+    "phoneMax": "50文字以内で入力してください",
+    "subjectMax": "500文字以内で入力してください",
+    "messageMin": "10文字以上で入力してください",
+    "messageMax": "5000文字以内で入力してください"
+  },
+  "toastError": "エラーが発生しました。しばらくしてから再度お試しください。"
+}

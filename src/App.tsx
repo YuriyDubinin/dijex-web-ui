@@ -1,24 +1,48 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { lazy } from 'react';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { RootLayout } from '@/components/layout/RootLayout';
+import { RouteError } from '@/components/layout/RouteError';
 import { HomePage } from '@/pages/HomePage';
-import { PrivacyPage } from '@/pages/PrivacyPage';
-import { ThanksPage } from '@/pages/ThanksPage';
+
+const SolutionPage = lazy(() =>
+  import('@/pages/SolutionPage').then((module) => ({ default: module.SolutionPage })),
+);
+const PrivacyPage = lazy(() =>
+  import('@/pages/PrivacyPage').then((module) => ({ default: module.PrivacyPage })),
+);
+const ThanksPage = lazy(() =>
+  import('@/pages/ThanksPage').then((module) => ({ default: module.ThanksPage })),
+);
+const NotFoundPage = lazy(() =>
+  import('@/pages/NotFoundPage').then((module) => ({ default: module.NotFoundPage })),
+);
+
+/** Data-роутер: нужен для нативных View Transitions между страницами (Link/navigate с viewTransition). */
+const router = createBrowserRouter(
+  [
+    {
+      element: <RootLayout />,
+      errorElement: <RouteError />,
+      children: [
+        { path: '/', element: <HomePage /> },
+        { path: '/solutions/:slug', element: <SolutionPage /> },
+        { path: '/privacy', element: <PrivacyPage /> },
+        { path: '/thanks', element: <ThanksPage /> },
+        { path: '*', element: <NotFoundPage /> },
+      ],
+    },
+  ],
+  {
+    future: {
+      v7_relativeSplatPath: true,
+      v7_fetcherPersist: true,
+      v7_normalizeFormMethod: true,
+      v7_partialHydration: true,
+      v7_skipActionErrorRevalidation: true,
+    },
+  },
+);
 
 export function App() {
-  return (
-    <BrowserRouter
-      future={{
-        v7_startTransition: true,
-        v7_relativeSplatPath: true,
-      }}
-    >
-      <Routes>
-        <Route element={<RootLayout />}>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/privacy" element={<PrivacyPage />} />
-          <Route path="/thanks" element={<ThanksPage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  );
+  return <RouterProvider router={router} future={{ v7_startTransition: true }} />;
 }

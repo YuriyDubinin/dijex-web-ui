@@ -1,0 +1,30 @@
+{
+  "home": {
+    "title": "Dijex — AI 编排、24/7 客服与数字化流程",
+    "description": "Dijex 为中大型企业打造 AI 编排器、多语言 24/7 客服智能体和数字化系统。"
+  },
+  "aiOrchestrator": {
+    "title": "AI 编排器 — Dijex",
+    "description": "AI 统一控制中心：模型、智能体、数据与业务系统融为一个可管控的流程。"
+  },
+  "supportAgent": {
+    "title": "24/7 客服智能体 — Dijex",
+    "description": "覆盖社交媒体、即时通讯、网站与 App 的多语言 AI 智能体。即时回复，复杂问题转交您的团队。"
+  },
+  "digitalProcesses": {
+    "title": "数字化流程优化 — Dijex",
+    "description": "内部业务系统、消息平台、客户门户、网站与 App，告别手工作业。"
+  },
+  "privacy": {
+    "title": "隐私政策 — Dijex",
+    "description": "Dijex 如何处理通过本网站提交的个人信息。"
+  },
+  "thanks": {
+    "title": "感谢您 — Dijex",
+    "description": "我们已收到您的需求。"
+  },
+  "notFound": {
+    "title": "页面未找到 — Dijex",
+    "description": "该页面不存在。"
+  }
+}

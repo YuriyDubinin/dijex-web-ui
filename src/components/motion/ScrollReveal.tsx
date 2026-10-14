@@ -1,6 +1,7 @@
 import { motion, type HTMLMotionProps, type Variants } from 'framer-motion';
 import type { ReactNode } from 'react';
-import { useReducedMotion } from '@/hooks/useReducedMotion';
+import { useMotionTier } from '@/motion/tier';
+import { STAGGER } from '@/motion/tokens';
 
 export type ScrollRevealProps = {
   children: ReactNode;
@@ -11,28 +12,21 @@ export type ScrollRevealProps = {
   className?: string;
 } & Omit<HTMLMotionProps<'div'>, 'initial' | 'whileInView' | 'variants' | 'viewport' | 'children'>;
 
-const containerVariants: Variants = {
-  hidden: {},
-  visible: {},
-};
-
 /**
- * Контейнер для stagger-появления. Дочерние motion-элементы должны использовать
- * variants из @/components/motion/variants (revealItemVariants) или собственные
- * с теми же ключами ('hidden' / 'visible').
- *
- * При prefers-reduced-motion рендерится без анимаций.
+ * Контейнер для stagger-появления. Дочерние motion-элементы используют
+ * revealItemVariants / waveItemVariants (ключи 'hidden' / 'visible').
+ * В режиме off рендерится без анимаций.
  */
 export function ScrollReveal({
   children,
-  staggerChildren = 0.08,
+  staggerChildren = STAGGER.cards,
   delayChildren = 0,
   className,
   ...rest
 }: ScrollRevealProps) {
-  const prefersReducedMotion = useReducedMotion();
+  const tier = useMotionTier();
 
-  if (prefersReducedMotion) {
+  if (tier === 'off') {
     return (
       <div className={className} {...(rest as React.HTMLAttributes<HTMLDivElement>)}>
         {children}
@@ -40,16 +34,18 @@ export function ScrollReveal({
     );
   }
 
+  const variants: Variants = {
+    hidden: {},
+    visible: { transition: { staggerChildren, delayChildren } },
+  };
+
   return (
     <motion.div
       className={className}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
-      variants={{
-        ...containerVariants,
-        visible: { transition: { staggerChildren, delayChildren } },
-      }}
+      viewport={{ once: true, amount: 0.15, margin: '0px 0px -10% 0px' }}
+      variants={variants}
       {...rest}
     >
       {children}

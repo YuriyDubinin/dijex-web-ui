@@ -47,21 +47,21 @@ describe('feedbackSchema', () => {
       const result = feedbackSchema.safeParse({ ...VALID_BASE, name: 'И' });
       expect(result.success).toBe(false);
       if (!result.success) {
-        expect(result.error.issues[0]?.message).toBe('Минимум 2 символа');
+        expect(result.error.issues[0]?.message).toBe('nameMin');
       }
     });
 
     it('rejects name longer than 255 chars', () => {
-      expect(
-        feedbackSchema.safeParse({ ...VALID_BASE, name: 'A'.repeat(256) }).success,
-      ).toBe(false);
+      expect(feedbackSchema.safeParse({ ...VALID_BASE, name: 'A'.repeat(256) }).success).toBe(
+        false,
+      );
     });
 
     it('rejects invalid email', () => {
       const result = feedbackSchema.safeParse({ ...VALID_BASE, email: 'not-an-email' });
       expect(result.success).toBe(false);
       if (!result.success) {
-        expect(result.error.issues[0]?.message).toBe('Невалидный email');
+        expect(result.error.issues[0]?.message).toBe('emailInvalid');
       }
     });
 
@@ -74,20 +74,20 @@ describe('feedbackSchema', () => {
       const result = feedbackSchema.safeParse({ ...VALID_BASE, message: 'Привет' });
       expect(result.success).toBe(false);
       if (!result.success) {
-        expect(result.error.issues[0]?.message).toBe('Минимум 10 символов');
+        expect(result.error.issues[0]?.message).toBe('messageMin');
       }
     });
 
     it('rejects message longer than 5000 chars', () => {
-      expect(
-        feedbackSchema.safeParse({ ...VALID_BASE, message: 'x'.repeat(5001) }).success,
-      ).toBe(false);
+      expect(feedbackSchema.safeParse({ ...VALID_BASE, message: 'x'.repeat(5001) }).success).toBe(
+        false,
+      );
     });
 
     it('rejects phone longer than 50 chars', () => {
-      expect(
-        feedbackSchema.safeParse({ ...VALID_BASE, phone: '7'.repeat(51) }).success,
-      ).toBe(false);
+      expect(feedbackSchema.safeParse({ ...VALID_BASE, phone: '7'.repeat(51) }).success).toBe(
+        false,
+      );
     });
   });
 });

@@ -10,27 +10,28 @@
 @tailwind utilities;
 
 @layer base {
+  /* Цвета — RGB-каналы, чтобы работали модификаторы прозрачности Tailwind (bg-bg-surface/60). */
   :root {
     /* Surfaces */
-    --bg-base: #0a0b14;
-    --bg-surface: #11131f;
-    --bg-elevated: #181b2c;
-    --border: #232742;
+    --bg-base: 10 11 20; /* #0A0B14 */
+    --bg-surface: 17 19 31; /* #11131F */
+    --bg-elevated: 24 27 44; /* #181B2C */
+    --border: 35 39 66; /* #232742 */
 
     /* Text */
-    --text-primary: #f5f6fb;
-    --text-secondary: #a7adc6;
-    --text-muted: #6b7290;
+    --text-primary: 245 246 251; /* #F5F6FB */
+    --text-secondary: 167 173 198; /* #A7ADC6 */
+    --text-muted: 107 114 144; /* #6B7290 */
 
     /* Accents */
-    --accent-primary: #6366f1;
-    --accent-secondary: #06b6d4;
-    --accent-glow: #8b5cf6;
+    --accent-primary: 99 102 241; /* #6366F1 */
+    --accent-secondary: 6 182 212; /* #06B6D4 */
+    --accent-glow: 139 92 246; /* #8B5CF6 */
 
     /* Semantic */
-    --success: #10b981;
-    --danger: #ef4444;
-    --warning: #f59e0b;
+    --success: 16 185 129; /* #10B981 */
+    --danger: 239 68 68; /* #EF4444 */
+    --warning: 245 158 11; /* #F59E0B */
 
     color-scheme: dark;
   }
@@ -39,11 +40,18 @@
   *::before,
   *::after {
     box-sizing: border-box;
+    border-color: rgb(var(--border));
   }
 
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+  }
+
+  /* Выезды анимаций за край не дают горизонтального скролла; clip (в отличие от hidden) не ломает sticky. */
+  html,
+  body {
+    overflow-x: clip;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -53,7 +61,7 @@
   }
 
   body {
-    @apply bg-bg-base text-text-primary font-sans antialiased;
+    @apply bg-bg-base font-sans text-text-primary antialiased;
     margin: 0;
     min-height: 100vh;
     text-rendering: optimizeLegibility;
@@ -61,14 +69,455 @@
   }
 
   :focus-visible {
-    outline: 2px solid var(--accent-primary);
+    outline: 2px solid rgb(var(--accent-primary));
     outline-offset: 2px;
     border-radius: 4px;
   }
 
   ::selection {
-    background: var(--accent-primary);
-    color: var(--text-primary);
+    background: rgb(var(--accent-primary));
+    color: rgb(var(--text-primary));
+  }
+
+  /* ---------- Локализация: гарнитуры и типографика ---------- */
+
+  /* У Sora нет кириллицы — заголовки на русском целиком набираем Inter, без смешения гарнитур. */
+  :lang(ru) .font-display {
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  }
+
+  :lang(th) {
+    font-family: 'Inter', 'Noto Sans Thai', ui-sans-serif, system-ui, sans-serif;
+  }
+  :lang(th) .font-display {
+    font-family: 'Noto Sans Thai', 'Inter', ui-sans-serif, system-ui, sans-serif;
+  }
+  :lang(zh-Hans),
+  :lang(zh-Hans) .font-display {
+    font-family: 'Inter', 'Noto Sans SC', ui-sans-serif, system-ui, sans-serif;
+  }
+  :lang(ja),
+  :lang(ja) .font-display {
+    font-family: 'Inter', 'Noto Sans JP', ui-sans-serif, system-ui, sans-serif;
+  }
+
+  /* Тайская письменность — надстрочные и подстрочные знаки: нужен больший интерлиньяж. */
+  :lang(th) body,
+  :lang(th) p,
+  :lang(th) li {
+    line-height: 1.8;
+  }
+  :lang(th) h1,
+  :lang(th) h2,
+  :lang(th) h3 {
+    line-height: 1.35;
+  }
+
+  /* CJK: без отрицательного трекинга, переносы — по правилам языка. */
+  :lang(zh-Hans) h1,
+  :lang(zh-Hans) h2,
+  :lang(zh-Hans) h3,
+  :lang(ja) h1,
+  :lang(ja) h2,
+  :lang(ja) h3 {
+    letter-spacing: 0;
+    line-height: 1.3;
+  }
+  :lang(zh-Hans),
+  :lang(ja) {
+    line-break: strict;
+    word-break: normal;
+    overflow-wrap: anywhere;
+  }
+  :lang(ja) h1,
+  :lang(ja) h2,
+  :lang(ja) h3 {
+    word-break: auto-phrase;
+  }
+
+  /* Длинные немецкие и французские слова — с переносами. */
+  :lang(de) h1,
+  :lang(de) h2,
+  :lang(de) h3,
+  :lang(de) p,
+  :lang(fr) h1,
+  :lang(fr) h2,
+  :lang(fr) h3 {
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+
+  /* Hero H1 на немецком ощутимо длиннее — чуть меньший кегль. */
+  :lang(de) .text-display {
+    font-size: clamp(2.25rem, 4.4vw, 4rem);
+  }
+}
+
+/* Анимируемые CSS-переменные (интерполяция через @property). */
+@property --btn-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+@property --press {
+  syntax: '<number>';
+  inherits: false;
+  initial-value: 1;
+}
+@property --spot {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 0;
+}
+
+@keyframes btn-angle-spin {
+  to {
+    --btn-angle: 360deg;
+  }
+}
+@keyframes btn-shine {
+  from {
+    transform: translateX(-120%) skewX(-20deg);
+  }
+  to {
+    transform: translateX(260%) skewX(-20deg);
+  }
+}
+
+/* ---------- View Transitions: переходы между страницами и смена языка ---------- */
+@keyframes vt-out {
+  to {
+    opacity: 0;
+    filter: blur(6px);
+    transform: scale(0.98);
+  }
+}
+@keyframes vt-in {
+  from {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateY(16px);
+  }
+}
+@keyframes vt-fade-out {
+  to {
+    opacity: 0;
+    filter: blur(8px);
+  }
+}
+@keyframes vt-fade-in {
+  from {
+    opacity: 0;
+    filter: blur(8px);
+  }
+}
+::view-transition-old(root) {
+  animation: vt-out 220ms cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+::view-transition-new(root) {
+  animation: vt-in 420ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+/* Общие элементы («перелёт» иконки и визуала карточки в hero страницы) */
+::view-transition-group(*) {
+  animation-duration: 500ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+/* Шапка не участвует в переходе — не мигает */
+::view-transition-group(site-header),
+::view-transition-old(site-header),
+::view-transition-new(site-header) {
+  animation: none;
+}
+/* Смена языка: только мягкое размытие-перетекание (класс ставится на время перехода) */
+html.vt-locale::view-transition-old(root) {
+  animation: vt-fade-out 250ms ease both;
+}
+html.vt-locale::view-transition-new(root) {
+  animation: vt-fade-in 350ms ease both;
+}
+/* Фолбэк смены языка без View Transitions: короткий кроссфейд контента */
+#main {
+  transition:
+    opacity 300ms ease,
+    filter 300ms ease;
+}
+html.locale-fade #main {
+  opacity: 0.35;
+  filter: blur(6px);
+  transition-duration: 120ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
+
+@layer components {
+  /* ---------- Кнопки ---------- */
+  .btn-press {
+    transform: translate3d(var(--mag-x, 0px), var(--mag-y, 0px), 0) scale(var(--press));
+    transition-property: background-color, border-color, box-shadow, color, --press;
+    transition-duration: 200ms;
+  }
+  .btn-press:active {
+    --press: 0.97;
+  }
+  .magnetic-label {
+    transform: translate3d(calc(var(--mag-x, 0px) * 0.35), calc(var(--mag-y, 0px) * 0.35), 0);
+  }
+  /* Вращающаяся аура по рамке primary — на hover и фокусе */
+  .btn-aura {
+    position: absolute;
+    inset: -1px;
+    z-index: -1;
+    border-radius: inherit;
+    padding: 1.5px;
+    background: conic-gradient(
+      from var(--btn-angle),
+      transparent 0deg,
+      rgb(var(--accent-secondary)) 70deg,
+      rgb(var(--accent-glow)) 140deg,
+      transparent 200deg
+    );
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 300ms;
+    animation: btn-angle-spin 3s linear infinite paused;
+  }
+  .group\/btn:hover .btn-aura,
+  .group\/btn:focus-visible .btn-aura {
+    opacity: 1;
+    animation-play-state: running;
+  }
+  .btn-shine-track {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    border-radius: inherit;
+    pointer-events: none;
+  }
+  .btn-shine {
+    position: absolute;
+    inset-block: 0;
+    left: 0;
+    width: 40%;
+    background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.28), transparent);
+    transform: translateX(-120%) skewX(-20deg);
+  }
+  .group\/btn:hover .btn-shine,
+  .group\/btn:focus-visible .btn-shine {
+    animation: btn-shine 700ms cubic-bezier(0.22, 1, 0.36, 1) 1;
+  }
+  /* Прорисовка обводки ghost-кнопки */
+  .btn-draw {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: visible;
+  }
+  .btn-draw rect {
+    fill: none;
+    stroke: rgb(var(--accent-primary));
+    stroke-width: 1.5;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    transition: stroke-dashoffset 600ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .group\/btn:hover .btn-draw rect,
+  .group\/btn:focus-visible .btn-draw rect {
+    stroke-dashoffset: 0;
+  }
+
+  /* ---------- Spotlight: свет за курсором на поверхности и рамке ---------- */
+  .spotlight {
+    position: relative;
+  }
+  .spotlight::before,
+  .spotlight::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: var(--spot);
+    transition: --spot 400ms ease;
+  }
+  .spotlight::before {
+    background: radial-gradient(
+      380px circle at var(--mx, 50%) var(--my, 50%),
+      rgb(var(--spot-color, var(--accent-primary)) / 0.1),
+      transparent 60%
+    );
+  }
+  .spotlight::after {
+    padding: 1px;
+    background: radial-gradient(
+      260px circle at var(--mx, 50%) var(--my, 50%),
+      rgb(var(--spot-color, var(--accent-primary)) / 0.7),
+      transparent 60%
+    );
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+  .spotlight-cyan {
+    --spot-color: var(--accent-secondary);
+  }
+
+  /* Вращающаяся градиентная рамка (featured-карточки). Пауза — класс .is-paused. */
+  .conic-border {
+    position: relative;
+    isolation: isolate;
+  }
+  .conic-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    padding: 1.5px;
+    background: conic-gradient(
+      from var(--btn-angle),
+      rgb(var(--accent-primary) / 0.25),
+      rgb(var(--accent-secondary)) 25%,
+      rgb(var(--accent-glow) / 0.6) 45%,
+      rgb(var(--accent-primary) / 0.25) 70%,
+      rgb(var(--accent-secondary)) 90%,
+      rgb(var(--accent-primary) / 0.25)
+    );
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: btn-angle-spin 8s linear infinite;
+  }
+  .conic-border.is-paused::before {
+    animation-play-state: paused;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .conic-border::before {
+      animation: none;
+    }
+  }
+
+  /* Поле ввода: при фокусе снизу растёт градиентный «луч» и появляется мягкое свечение */
+  .field-beam {
+    background-image: linear-gradient(
+      90deg,
+      rgb(var(--accent-primary)),
+      rgb(var(--accent-secondary))
+    );
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    background-size: 0% 2px;
+    transition:
+      background-size 450ms cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 150ms ease,
+      box-shadow 300ms ease;
+  }
+  .field-beam:focus {
+    outline: none;
+    background-size: 100% 2px;
+    box-shadow:
+      0 0 0 4px rgb(var(--accent-primary) / 0.1),
+      0 0 32px -12px rgb(var(--accent-primary) / 0.7);
+  }
+  .field-beam[aria-invalid='true'] {
+    background-image: linear-gradient(90deg, rgb(var(--danger)), rgb(var(--danger)));
+  }
+  .field-beam[aria-invalid='true']:focus {
+    box-shadow: 0 0 0 4px rgb(var(--danger) / 0.12);
+  }
+
+  /* «Фокус-режим» группы: при наведении на один элемент остальные отступают.
+     Свойство scale (а не transform) не конфликтует с анимациями framer-motion. */
+  .focus-group .focus-item {
+    transition:
+      opacity 400ms cubic-bezier(0.22, 1, 0.36, 1),
+      filter 400ms cubic-bezier(0.22, 1, 0.36, 1),
+      scale 400ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .focus-group:has(.focus-item:hover) .focus-item:not(:hover) {
+      opacity: 0.6;
+      filter: saturate(0.6);
+      scale: 0.98;
+    }
+  }
+
+  /* Подчёркивание ссылок: растёт слева, уходит вправо */
+  .link-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    transition: background-size 350ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .link-underline:hover,
+  .link-underline:focus-visible {
+    background-size: 100% 1px;
+    background-position: 0% 100%;
+  }
+
+  /* Надзаголовок секции. Капс и разрядка не применимы к тайскому и CJK. */
+  .eyebrow {
+    @apply text-small font-semibold uppercase tracking-[0.2em];
+  }
+  :lang(th) .eyebrow,
+  :lang(zh-Hans) .eyebrow,
+  :lang(ja) .eyebrow {
+    @apply normal-case tracking-normal;
+  }
+
+  /* Мелкая подпись-метка капсом (Задача / Решение / Результат и т.п.). */
+  .caps-label {
+    @apply text-xs font-semibold uppercase tracking-[0.14em];
+  }
+  :lang(th) .caps-label,
+  :lang(zh-Hans) .caps-label,
+  :lang(ja) .caps-label {
+    @apply text-small normal-case tracking-normal;
+  }
+
+  /* Рамка-градиент: элемент + псевдоэлемент с маской. */
+  .gradient-border {
+    position: relative;
+  }
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    background: linear-gradient(
+      135deg,
+      rgb(var(--accent-primary) / 0.9),
+      rgb(var(--accent-glow) / 0.5),
+      rgb(var(--accent-secondary) / 0.9)
+    );
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-br from-accent-primary via-accent-glow to-accent-secondary bg-clip-text text-transparent;
   }
 }
 
@@ -91,8 +540,34 @@
     animation-play-state: paused;
   }
 
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
   @media (prefers-reduced-motion: reduce) {
-    .animate-marquee {
+    [class*='animate-micro-'],
+    .animate-glitch-a,
+    .animate-glitch-b,
+    .animate-scan-y,
+    .animate-dash,
+    .animate-scan,
+    .btn-aura,
+    .btn-shine,
+    .animate-orbit,
+    .animate-breathe,
+    .animate-glow-breathe,
+    .animate-spin-slow,
+    .animate-spin-slower,
+    .animate-shimmer,
+    .animate-gradient-pan,
+    .animate-marquee,
+    .animate-flow-x,
+    .animate-flow-y,
+    .animate-float,
+    .animate-typing-dot {
       animation: none;
     }
   }

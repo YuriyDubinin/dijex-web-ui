@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 export type UseScrollSpyOptions = {
   /** Высота фиксированного хедера, чтобы корректно посчитать активную секцию. */
@@ -9,16 +10,18 @@ export type UseScrollSpyOptions = {
 
 /**
  * Возвращает id секции, которая сейчас наиболее заметна в viewport.
- * Использует IntersectionObserver — без слушателей scroll.
+ * Использует IntersectionObserver — без слушателей scroll. Пересобирается при смене страницы.
  */
 export function useScrollSpy(
   ids: readonly string[],
   options: UseScrollSpyOptions = {},
 ): string | null {
   const { offset = 80, threshold = 0 } = options;
+  const { pathname } = useLocation();
   const [activeId, setActiveId] = useState<string | null>(null);
 
   useEffect(() => {
+    setActiveId(null);
     if (ids.length === 0) return undefined;
 
     const elements = ids
@@ -54,7 +57,7 @@ export function useScrollSpy(
 
     for (const el of elements) observer.observe(el);
     return () => observer.disconnect();
-  }, [ids, offset, threshold]);
+  }, [ids, offset, threshold, pathname]);
 
   return activeId;
 }

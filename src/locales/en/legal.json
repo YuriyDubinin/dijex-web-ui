@@ -1,0 +1,13 @@
+{
+  "privacy": {
+    "title": "Privacy policy",
+    "paragraphs": [
+      "This section will contain the full privacy policy and consent to personal data processing. For now, it is a placeholder.",
+      "By submitting the feedback form, the user agrees to the processing of the provided data for the purpose of communication about the project."
+    ]
+  },
+  "thanks": {
+    "title": "Thank you!",
+    "body": "We've received your request and will get back to you within one business day."
+  }
+}

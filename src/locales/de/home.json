@@ -1,0 +1,741 @@
+{
+  "hero": {
+    "badge": "AI Orchestration · Support 24/7 · Digital Processes",
+    "title": "KI, die rund um die Uhr für Ihr Unternehmen arbeitet",
+    "titleAlt": "Von der ersten Kundennachricht bis in Ihre internen Systeme – mit KI",
+    "subtitle": "Dijex entwickelt KI-Orchestratoren, mehrsprachige Support-Agenten und digitale Systeme, die Kanäle, Daten und Teams zu einem gesteuerten Prozess verbinden.",
+    "primaryCta": "Projekt besprechen",
+    "secondaryCta": "Lösungen ansehen",
+    "pillarsLabel": "Unsere Lösungen",
+    "pillars": {
+      "orchestrator": "KI-Orchestrator",
+      "support": "24/7-Support",
+      "processes": "Digitale Prozesse"
+    },
+    "stats": ["24/7, ohne Ruhetage", "30+ Sprachen", "10+ Kanäle"]
+  },
+  "solutions": {
+    "eyebrow": "Lösungen",
+    "title": "Drei Bereiche – ein Ökosystem",
+    "lead": "Jede Lösung funktioniert für sich, zusammen decken sie die gesamte Customer Journey ab: von der ersten Nachricht bis zur Umsetzung in Ihren internen Systemen.",
+    "more": "Mehr erfahren",
+    "cards": {
+      "aiOrchestrator": {
+        "description": "Eine Steuerzentrale für KI: Modelle, Agenten, Daten und Ihre Systeme arbeiten als ein Prozess.",
+        "bullets": [
+          "Aufgabenverteilung zwischen Modellen und Agenten",
+          "Anbindung an CRM, ERP und Wissensdatenbanken",
+          "Kontrolle über Qualität, Kosten und Sicherheit"
+        ]
+      },
+      "supportAgent": {
+        "description": "Antwortet Kunden in ihrer Sprache – auf Social Media, in Messengern, auf Ihrer Website und in Ihrer App, Tag und Nacht.",
+        "bullets": [
+          "Omnichannel: ein Agent für alle Kanäle",
+          "30+ Sprachen mit automatischer Erkennung",
+          "Übergabe an Mitarbeitende mit vollem Kontext"
+        ]
+      },
+      "digitalProcesses": {
+        "description": "Systeme, die manuelle Arbeit abschaffen: von internen Tools bis zu Kundenportalen.",
+        "bullets": [
+          "Interne Geschäftssysteme",
+          "Individuelle Messaging-Plattformen",
+          "Kundenportale, Websites und Apps"
+        ]
+      }
+    }
+  },
+  "orchestrator": {
+    "eyebrow": "KI-Orchestrator",
+    "title": "Eine Steuerzentrale für alle KI-Prozesse",
+    "lead": "Der Orchestrator nimmt eine Anfrage entgegen, erkennt die Absicht, wählt das passende Modell oder den passenden Agenten, ruft Ihre Systeme auf und liefert das Ergebnis – mit Kontrolle bei jedem Schritt.",
+    "diagramLabel": "Wie der KI-Orchestrator Eingänge, Agenten und Geschäftssysteme verbindet",
+    "columns": {
+      "inputs": {
+        "title": "Eingänge",
+        "items": {
+          "messengers": "Messenger & Social Media",
+          "web": "Website & App",
+          "email": "E-Mail & Formulare",
+          "employees": "Mitarbeiteranfragen",
+          "events": "Events & API"
+        }
+      },
+      "core": {
+        "title": "Orchestrator",
+        "items": {
+          "intent": "Intent-Erkennung",
+          "routing": "Routing",
+          "memory": "Gedächtnis & Kontext",
+          "tools": "Tools",
+          "guardrails": "Richtlinien & Guardrails"
+        }
+      },
+      "agents": {
+        "title": "Ausführende",
+        "items": {
+          "support": "Support-Agent",
+          "sales": "Vertriebsagent",
+          "documents": "Dokumentenagent",
+          "analytics": "Analyseagent",
+          "human": "Mitarbeitende"
+        }
+      },
+      "systems": {
+        "title": "Systeme",
+        "items": {
+          "crm": "CRM",
+          "erp": "ERP",
+          "helpdesk": "Helpdesk",
+          "knowledge": "Wissensdatenbank",
+          "bi": "BI"
+        }
+      }
+    },
+    "features": {
+      "multiModel": {
+        "title": "Multi-Modell",
+        "description": "GPT, Claude, Qwen, Grok und lokale Modelle: ausgewählt nach Aufgabe, Preis und Datenanforderungen."
+      },
+      "yourData": {
+        "title": "Antworten aus Ihren Daten",
+        "description": "RAG über Ihre Dokumente, Richtlinien und Kataloge – mit Quellenangabe."
+      },
+      "actions": {
+        "title": "Handeln statt nur antworten",
+        "description": "Ticket anlegen, Bestellstatus prüfen, Termin buchen, Rechnung stellen."
+      },
+      "humanInLoop": {
+        "title": "Human-in-the-Loop",
+        "description": "Heikle und unklare Fälle gehen mit vollem Kontext und Antwortentwurf an Ihre Mitarbeitenden."
+      },
+      "transparency": {
+        "title": "Transparenz",
+        "description": "Entscheidungsprotokoll, Schritt-Tracing, Qualitäts- und Kostenmetriken in einer Konsole."
+      },
+      "security": {
+        "title": "Sicherheit",
+        "description": "Maskierung personenbezogener Daten, rollenbasierte Zugriffe, Betrieb in Ihrer eigenen Infrastruktur."
+      }
+    },
+    "examplesTitle": "Beispiele",
+    "examples": {
+      "inbound": {
+        "title": "Bearbeitung eingehender Anfragen",
+        "description": "Klassifiziert Anfragen, reichert sie mit CRM-Daten an und weist sie in Sekunden zu."
+      },
+      "assistant": {
+        "title": "Assistent für Mitarbeitende",
+        "description": "Beantwortet Fragen zu Richtlinien, Lagerbeständen und Status direkt im Unternehmenschat."
+      },
+      "documents": {
+        "title": "Dokumente ohne Abtippen",
+        "description": "Extrahiert Daten aus Verträgen und Rechnungen und überträgt sie in Ihre Buchhaltung."
+      }
+    },
+    "cta": "Mehr zum Orchestrator",
+    "routes": {
+      "inputs": "Anfragen aus diesem Kanal gehen an den Orchestrator.",
+      "core": "Der Orchestrator führt diesen Schritt für jede Anfrage aus.",
+      "agents": "Der Orchestrator weist diesen Ausführenden zu; er arbeitet mit den angebundenen Systemen.",
+      "systems": "Ausführende lesen und schreiben Daten in diesem System.",
+      "hint": "Element berühren oder auswählen, um seinen Weg zu sehen."
+    }
+  },
+  "support": {
+    "eyebrow": "24/7-Support",
+    "title": "Spricht die Sprache Ihrer Kunden – in jedem Kanal",
+    "lead": "Ein mehrsprachiger KI-Agent antwortet sofort auf Social Media, in Messengern, auf Ihrer Website und in Ihrer App, führt Aktionen in Ihren Systemen aus und übergibt komplexe Fragen an Ihr Team.",
+    "chat": {
+      "agentName": "Dijex AI",
+      "status": "online",
+      "typing": "KI-Agent schreibt …",
+      "handoff": "Gespräch an Mitarbeitende übergeben · Zusammenfassung und Verlauf angehängt",
+      "languageBadge": "Sprache",
+      "scenario": "Szenario {{n}}",
+      "demoLabel": "Demo-Gespräch mit dem Support-Agenten"
+    },
+    "stickers": {
+      "response": "Antwort in < 5 s",
+      "always": "24/7",
+      "languages": "30+ Sprachen"
+    },
+    "channels": {
+      "title": "Kanäle",
+      "groups": {
+        "messengers": "Messenger",
+        "social": "Social Media",
+        "apps": "Website & Apps"
+      },
+      "items": {
+        "webWidget": "Website-Widget",
+        "sdk": "iOS- & Android-SDK",
+        "email": "E-Mail",
+        "api": "REST API"
+      },
+      "omni": "Ein Kunde beginnt auf Instagram und schreibt auf Ihrer Website weiter – der Gesprächsverlauf bleibt erhalten."
+    },
+    "featuresTitle": "Was der Agent kann",
+    "features": {
+      "instant": {
+        "title": "Sofort und 24/7",
+        "description": "Keine Warteschlangen, Wochenenden oder Feiertage."
+      },
+      "language": {
+        "title": "Automatische Spracherkennung",
+        "description": "Antwortet in der Sprache des Kunden; Ihr Team sieht eine Übersetzung."
+      },
+      "inbox": {
+        "title": "Zentrale Inbox",
+        "description": "Alle Kanäle in einem Fenster für Ihr Team."
+      },
+      "handoff": {
+        "title": "Übergabe an Mitarbeitende",
+        "description": "Mit Gesprächszusammenfassung und Kundendaten."
+      },
+      "actions": {
+        "title": "Aktionen in Ihren Systemen",
+        "description": "Bestellstatus, Buchungen, Zahlungslinks."
+      },
+      "brandVoice": {
+        "title": "Markenstimme",
+        "description": "Tonalität, Regeln und Tabuthemen passend zu Ihrem Stil."
+      },
+      "proactive": {
+        "title": "Proaktive Nachrichten",
+        "description": "Erinnerungen, Status-Updates, Follow-ups."
+      },
+      "analytics": {
+        "title": "Analytics",
+        "description": "Anfragethemen, CSAT, Anteil ohne menschliches Eingreifen gelöster Anfragen."
+      }
+    },
+    "scenariosTitle": "Typische Szenarien",
+    "scenarios": [
+      "FAQ & Beratung",
+      "Bestellstatus",
+      "Buchungen & Termine",
+      "Lead-Qualifizierung",
+      "Retouren & Reklamationen",
+      "Feedback einholen",
+      "Wiederkäufe"
+    ],
+    "cta": "Mehr zum Agenten"
+  },
+  "processes": {
+    "eyebrow": "Digitale Prozesse",
+    "title": "Wir nehmen die Handarbeit aus Ihren Prozessen",
+    "lead": "Wir konzipieren und entwickeln Systeme, die Tabellen, manuelle Freigaben und verstreute Dienste ersetzen.",
+    "tabsLabel": "Bereiche der digitalen Prozessoptimierung",
+    "labels": {
+      "whatWeDo": "Was wir tun",
+      "examples": "Beispiele",
+      "result": "Ergebnis"
+    },
+    "tabs": {
+      "internal": {
+        "tab": "Interne Systeme",
+        "description": "Die Tools, auf denen Ihr Betrieb läuft: Buchhaltung, Freigaben, Ressourcen- und Personalmanagement.",
+        "whatWeDo": [
+          "CRM- und ERP-Module für Ihre Prozesse",
+          "Admin-Panels und Backoffice",
+          "Personal-, Schicht- und Aufgabenplanung",
+          "Lager- und Ressourcenverwaltung",
+          "Dashboards und Reports für die Führung"
+        ],
+        "examples": [
+          {
+            "title": "Fuhrparkmanagement",
+            "description": "Fahrzeuge, Fahrer, Wartung und Fahrten in einem System."
+          },
+          {
+            "title": "Freigabeprozesse",
+            "description": "Freigabe-Workflows statt endloser E-Mail-Ketten."
+          },
+          {
+            "title": "BI-Dashboard",
+            "description": "KPIs in Echtzeit statt manueller Reports."
+          }
+        ],
+        "result": "Weniger manuelle Arbeit und Fehler, volle Transparenz für das Management."
+      },
+      "messaging": {
+        "tab": "Messaging",
+        "description": "Eigene Kommunikationsplattformen – gebaut nach Ihren Sicherheitsregeln und Integrationen.",
+        "whatWeDo": [
+          "Unternehmens-Messenger in Ihrer Infrastruktur",
+          "Kundenchat direkt im Produkt",
+          "Zentrale Inbox für alle Kanäle",
+          "Benachrichtigungs- und Versandsysteme",
+          "Bots und KI-Assistenten in Chats"
+        ],
+        "examples": [
+          {
+            "title": "Sicherer Unternehmenschat",
+            "description": "Gespräche verlassen nie Ihre Systeme in Richtung externer Dienste."
+          },
+          {
+            "title": "Zentrales Operator-Fenster",
+            "description": "WhatsApp, Telegram, Website und E-Mail in einer Oberfläche."
+          },
+          {
+            "title": "Benachrichtigungsdienst",
+            "description": "Push, SMS, E-Mail und Messenger nach einheitlichen Regeln."
+          }
+        ],
+        "result": "Kontrolle über Daten und Kommunikation – unabhängig von Drittplattformen."
+      },
+      "portals": {
+        "tab": "Kundenportale",
+        "description": "Kundenkonten, in denen Kunden Antworten, Dokumente und Status selbst finden – ohne Anruf beim Ansprechpartner.",
+        "whatWeDo": [
+          "Kundenkonto und Profil",
+          "Bestell- und Anfragestatus",
+          "Dokumente, Rechnungen und Kontoauszüge",
+          "Tickets und Wissensdatenbank",
+          "B2B-Bestellungen und Preislisten"
+        ],
+        "examples": [
+          {
+            "title": "B2B-Kundenkonto",
+            "description": "Bestellungen, Lieferungen und Dokumente online."
+          },
+          {
+            "title": "Patientenportal",
+            "description": "Termine, Befunde und Behandlungshistorie."
+          },
+          {
+            "title": "Mieterportal",
+            "description": "Abrechnungen, Reparaturanfragen, Benachrichtigungen."
+          }
+        ],
+        "result": "Weniger Anrufe, schnellere Zahlungen, höhere Kundenbindung."
+      },
+      "apps": {
+        "tab": "Web & Apps",
+        "description": "Unternehmenswebsites, SaaS-Plattformen und mobile Apps – mit modernem Frontend und zuverlässigem Backend.",
+        "whatWeDo": [
+          "Unternehmens- und mehrsprachige Websites",
+          "SaaS- und Webplattformen",
+          "Mobile Apps für iOS und Android",
+          "E-Commerce und Kataloge",
+          "PWA und Offline-Modus"
+        ],
+        "examples": [
+          {
+            "title": "Unternehmenswebsite",
+            "description": "Schnell, responsiv und in mehreren Sprachen verfügbar."
+          },
+          {
+            "title": "SaaS-Plattform",
+            "description": "Vom MVP bis zum Hochlastbetrieb."
+          },
+          {
+            "title": "Mobile App",
+            "description": "Nativ oder plattformübergreifend, mit Push-Benachrichtigungen."
+          }
+        ],
+        "result": "Ein digitales Produkt, das mit Ihrem Unternehmen wächst."
+      }
+    },
+    "cta": "Mehr zu digitalen Prozessen"
+  },
+  "ecosystem": {
+    "eyebrow": "Ökosystem",
+    "title": "So greift alles ineinander",
+    "lead": "Ein Szenario aus der Praxis – drei Lösungen im Einsatz.",
+    "note": "Das Szenario dient der Veranschaulichung: Die Schritte werden für Ihr Unternehmen konfiguriert.",
+    "steps": {
+      "message": {
+        "title": "Ein Kunde schreibt auf WhatsApp",
+        "text": "Auf Spanisch, nachts, mit einer Frage zur Bestellung."
+      },
+      "reply": {
+        "title": "Der Agent versteht und antwortet",
+        "text": "Erkennt Sprache und Anliegen, antwortet in Sekunden."
+      },
+      "systems": {
+        "title": "Der Orchestrator verbindet die Systeme",
+        "text": "Prüft die Bestellung im CRM und den Bestand im Lager."
+      },
+      "ticket": {
+        "title": "Eine Anfrage wird angelegt",
+        "text": "Im internen System; der Kunde erhält einen Link zum Portal."
+      },
+      "summary": {
+        "title": "Morgens sieht der Manager eine Übersicht",
+        "text": "Alle Anfragen der Nacht – mit Zusammenfassungen und Status."
+      }
+    }
+  },
+  "industries": {
+    "eyebrow": "Branchen",
+    "title": "Wo wir das einsetzen",
+    "lead": "Typische Aufgaben, die wir in verschiedenen Branchen lösen.",
+    "items": {
+      "ecommerce": {
+        "title": "E-Commerce & Handel",
+        "tasks": [
+          "Bestellstatus und Retouren 24/7",
+          "Produktberatung in vielen Sprachen",
+          "Portal für den B2B-Einkauf"
+        ]
+      },
+      "finance": {
+        "title": "Finanzen & Fintech",
+        "tasks": [
+          "First-Level-Support ohne Zugriff auf personenbezogene Daten",
+          "Bearbeitung von Anträgen und Dokumenten",
+          "Interne Assistenten für Richtlinien"
+        ]
+      },
+      "logistics": {
+        "title": "Logistik & Transport",
+        "tasks": [
+          "Sendungsverfolgung im Messenger",
+          "Fuhrparkmanagement",
+          "Portal für Kunden und Frachtführer"
+        ]
+      },
+      "healthcare": {
+        "title": "Gesundheit & Kliniken",
+        "tasks": ["Terminbuchung und Erinnerungen", "Vorbereitung auf Termine", "Patientenportal"]
+      },
+      "realEstate": {
+        "title": "Immobilien",
+        "tasks": ["Lead-Qualifizierung 24/7", "Buchung von Besichtigungen", "Mieterportal"]
+      },
+      "hospitality": {
+        "title": "Reisen & Hotellerie",
+        "tasks": [
+          "Buchungen in 10+ Sprachen",
+          "Transfers und Zusatzleistungen",
+          "Bewertungen und Wiederbuchungen"
+        ]
+      },
+      "education": {
+        "title": "Bildung",
+        "tasks": ["Antworten für Bewerber und Studierende", "Kursanmeldung", "Studierendenportal"]
+      },
+      "manufacturing": {
+        "title": "Industrie & B2B",
+        "tasks": [
+          "Annahme und Weiterleitung von Anfragen",
+          "KI-gestützter Dokumentenfluss",
+          "ERP-Module und Dashboards"
+        ]
+      }
+    }
+  },
+  "about": {
+    "eyebrow": "Über uns",
+    "title": "Technologie, die Ergebnisse liefert",
+    "lead": "Dijex unterstützt Mittelstand und Großunternehmen dabei, KI und digitale Systeme einzuführen, die konkrete Probleme lösen – statt nur Trends zu folgen.",
+    "body": "Wir arbeiten an der Schnittstelle von Produktstrategie, Engineering und Design: vom Pilotprojekt in wenigen Wochen bis zu Hochlastplattformen. Jedes Projekt beginnt mit einem messbaren Ziel und endet mit einem messbaren Ergebnis.",
+    "principles": {
+      "goal": "Ziel und Kennzahl vor dem Start",
+      "progress": "Transparenter Fortschritt jede Woche",
+      "data": "Ihre Daten bleiben unter Ihrer Kontrolle"
+    },
+    "metrics": {
+      "years": "Jahre am Markt",
+      "projects": "umgesetzte Projekte",
+      "clients": "Kunden im Portfolio",
+      "technologies": "Technologien im Stack"
+    }
+  },
+  "results": {
+    "eyebrow": "Ergebnisse",
+    "title": "Was sich nach der Einführung ändert",
+    "lead": "Typische Veränderungen bei unseren Kunden.",
+    "before": "Vorher",
+    "after": "Nachher",
+    "rows": {
+      "firstReply": {
+        "label": "Erste Antwort an Kunden",
+        "before": "Stunden",
+        "after": "Sekunden"
+      },
+      "availability": {
+        "label": "Erreichbarkeit des Supports",
+        "before": "Geschäftszeiten",
+        "after": "24/7"
+      },
+      "languages": {
+        "label": "Service-Sprachen",
+        "before": "1–2",
+        "after": "30+"
+      },
+      "requests": {
+        "label": "Bearbeitung von Anfragen",
+        "before": "Manuell, per E-Mail",
+        "after": "Automatisches Routing"
+      },
+      "customerData": {
+        "label": "Kundendaten",
+        "before": "In Tabellen und Chats",
+        "after": "In einem System"
+      }
+    },
+    "metrics": {
+      "automated": {
+        "prefix": "",
+        "suffix": " %",
+        "label": "der Anfragen ohne menschliches Eingreifen gelöst"
+      },
+      "always": {
+        "prefix": "",
+        "suffix": "/7",
+        "label": "Erreichbarkeit des Supports"
+      },
+      "reply": {
+        "prefix": "<",
+        "suffix": " s",
+        "label": "Zeit bis zur ersten Antwort"
+      }
+    }
+  },
+  "cases": {
+    "eyebrow": "Referenzen",
+    "title": "Ausgewählte Projekte",
+    "lead": "Projekte, die sich unter realer Last bewährt haben, rund um die Uhr laufen und echte Probleme lösen.",
+    "labels": {
+      "challenge": "Herausforderung",
+      "solution": "Lösung",
+      "result": "Ergebnis",
+      "related": "Passende Lösungen"
+    },
+    "items": {
+      "newsFeeder": {
+        "client": "News-Feeder",
+        "title": "KI-News-Feeder",
+        "summary": "KI-gestützte Verarbeitung von Nachrichtenströmen aus zahlreichen Quellen für Handelsentscheidungen.",
+        "challenge": "Nachrichtenströme aus vielen Quellen verarbeiten und schnell in Handelssignale umwandeln.",
+        "solution": "Eine KI-Pipeline: Erfassung, Analyse und Kennzahlenberechnung, Signalgenerierung, Übersetzung in 20+ Sprachen und Volltextsuche.",
+        "result": "Nachrichten sind in 20+ Sprachen verfügbar und in Sekunden auffindbar.",
+        "metrics": {
+          "languages": "Übersetzungssprachen"
+        }
+      },
+      "aiAssistant": {
+        "client": "B2B SaaS",
+        "title": "KI-Assistent für den Kundensupport",
+        "summary": "RAG über die Wissensdatenbank des Kunden, integriert in den Produktchat.",
+        "challenge": "Der First-Level-Support war mit wiederkehrenden Fragen überlastet.",
+        "solution": "RAG über die Wissensdatenbank des Kunden und Integration in den Produktchat.",
+        "result": "60 % der First-Level-Anfragen werden automatisch bearbeitet.",
+        "metrics": {
+          "automated": "der First-Level-Anfragen automatisiert"
+        }
+      },
+      "enterpriseSuite": {
+        "client": "Unternehmensplattform",
+        "title": "Einführung interner Systeme und Business-Anwendungen",
+        "summary": "Aufbau und Einführung eines Unternehmens-Ökosystems aus Admin-Panels, internen Apps und Analytics.",
+        "challenge": "Verstreute Tools und manuelle Prozesse in der gesamten Unternehmensinfrastruktur.",
+        "solution": "Ein Ökosystem aus Admin-Panels, internen Anwendungen, Personalverwaltung, Analytics, Prozessautomatisierung und zentralisierter Infrastruktur.",
+        "result": "Ein Ökosystem statt verstreuter Tools: Prozesse sind transparent und automatisiert.",
+        "metrics": {}
+      }
+    }
+  },
+  "process": {
+    "eyebrow": "Ablauf",
+    "title": "So arbeiten wir",
+    "lead": "Wir starten klein, messen und skalieren, was funktioniert.",
+    "outputLabel": "Ergebnis",
+    "steps": {
+      "audit": {
+        "title": "Audit",
+        "duration": "1–2 Wochen",
+        "description": "Wir analysieren Prozesse, Kanäle und Daten und finden die Stellen mit der größten Wirkung.",
+        "output": "Prozesslandkarte und Prioritäten"
+      },
+      "pilot": {
+        "title": "Pilot",
+        "duration": "2–4 Wochen",
+        "description": "Wir starten eine Lösung in einem realen Szenario und messen das Ergebnis.",
+        "output": "Funktionierender Pilot und Kennzahlen"
+      },
+      "integration": {
+        "title": "Integration",
+        "duration": "ab 1 Monat",
+        "description": "Wir binden CRM, ERP, Kanäle und Wissensdatenbanken an und konfigurieren die Sicherheit.",
+        "output": "Lösung im Produktivbetrieb"
+      },
+      "scaling": {
+        "title": "Skalierung",
+        "duration": "nach Bedarf",
+        "description": "Wir ergänzen Kanäle, Sprachen, Szenarien und neue Agenten.",
+        "output": "Mehr Abdeckung und Wirkung"
+      },
+      "support": {
+        "title": "Betreuung",
+        "duration": "laufend",
+        "description": "Monitoring, bessere Antwortqualität, datenbasierte Weiterentwicklung.",
+        "output": "SLA und regelmäßige Reports"
+      }
+    }
+  },
+  "engagement": {
+    "eyebrow": "Zusammenarbeit",
+    "title": "Starten Sie so, wie es zu Ihnen passt",
+    "lead": "Keine langen Bindungen: Jedes Format endet mit einem messbaren Ergebnis.",
+    "popular": "Am beliebtesten",
+    "items": {
+      "pilot": {
+        "title": "Pilot",
+        "description": "Ein Szenario, ein messbares Ziel, ein schnelles Ergebnis.",
+        "points": [
+          "2–4 Wochen",
+          "1 Kanal oder Prozess",
+          "Report mit Kennzahlen",
+          "Datenbasierte Entscheidung zur Skalierung"
+        ],
+        "cta": "Pilot besprechen"
+      },
+      "turnkey": {
+        "title": "Schlüsselfertig",
+        "description": "Vom Audit bis zum Produktivbetrieb und zur Teamschulung.",
+        "points": [
+          "Audit und Architektur",
+          "Entwicklung und Integrationen",
+          "Sicherheits- und Lasttests",
+          "Schulung Ihres Teams"
+        ],
+        "cta": "Projekt besprechen"
+      },
+      "support": {
+        "title": "Laufende Betreuung",
+        "description": "Wir entwickeln und betreuen die Lösung nach dem Launch weiter.",
+        "points": [
+          "Monitoring rund um die Uhr",
+          "Bessere Antwortqualität",
+          "Neue Szenarien und Kanäle",
+          "Monatliche Reports"
+        ],
+        "cta": "Betreuung besprechen"
+      }
+    }
+  },
+  "integrations": {
+    "eyebrow": "Integrationen",
+    "title": "Wir binden an, was Sie bereits nutzen",
+    "lead": "Wir wählen den Stack passend zur Aufgabe – nicht umgekehrt.",
+    "marqueeLabel": "Technologien, mit denen wir arbeiten",
+    "groups": {
+      "channels": "Kanäle",
+      "crm": "CRM & Helpdesk",
+      "erp": "Buchhaltung & ERP",
+      "ai": "KI-Modelle",
+      "infra": "Infrastruktur"
+    },
+    "items": {
+      "webWidget": "Web-Widget",
+      "customApi": "Ihre eigenen APIs"
+    },
+    "footer": "Ihr System ist nicht dabei? Wir binden es per API oder Webhooks an."
+  },
+  "security": {
+    "eyebrow": "Sicherheit",
+    "title": "Ihre Daten bleiben unter Ihrer Kontrolle",
+    "lead": "Sicherheit ist von Anfang an eingeplant – nicht nachträglich ergänzt.",
+    "items": {
+      "encryption": {
+        "title": "Verschlüsselung",
+        "text": "Daten werden bei der Übertragung und im Ruhezustand verschlüsselt."
+      },
+      "masking": {
+        "title": "Datenmaskierung",
+        "text": "Personenbezogene Daten werden verborgen, bevor sie das Modell erreichen."
+      },
+      "perimeter": {
+        "title": "Betrieb bei Ihnen",
+        "text": "Auch mit lokalen Modellen ohne externe APIs."
+      },
+      "compliance": {
+        "title": "Compliance",
+        "text": "Konzipiert unter Berücksichtigung der DSGVO und lokaler Datenschutzgesetze."
+      },
+      "access": {
+        "title": "Rollen und Audit",
+        "text": "Wer hat was wann gesehen und geändert."
+      },
+      "guardrails": {
+        "title": "Antwortkontrolle",
+        "text": "Guardrails, Tabuthemen, Prüfung vor dem Versand."
+      }
+    },
+    "deployment": {
+      "title": "Betriebsmodelle",
+      "label": "Betriebsmodell wählen",
+      "options": {
+        "cloud": {
+          "title": "Cloud",
+          "text": "Der schnellste Start: verwaltete Infrastruktur, Skalierung nach Bedarf, Modelle per API."
+        },
+        "private": {
+          "title": "Private Cloud",
+          "text": "Eine dedizierte Umgebung in Ihrem Cloud-Konto mit Netzwerkisolation und eigenen Schlüsseln."
+        },
+        "onPrem": {
+          "title": "On-Premises",
+          "text": "Alles läuft auf Ihren Servern, auch Open-Source-Modelle – Daten verlassen nie Ihre Infrastruktur."
+        }
+      }
+    }
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Häufige Fragen",
+    "notFound": "Keine passende Antwort gefunden?",
+    "ask": "Frage stellen",
+    "items": {
+      "difference": {
+        "q": "Worin unterscheidet sich ein KI-Orchestrator von einem gewöhnlichen Chatbot?",
+        "a": "Ein Chatbot folgt einem Skript. Ein Orchestrator versteht die Aufgabe, wählt das passende Modell oder den passenden Agenten, ruft Ihre Systeme auf und führt Aktionen aus – kontrolliert und mit Protokoll jedes Schritts."
+      },
+      "launch": {
+        "q": "Wie lange dauert der Start?",
+        "a": "Ein Pilot für ein Szenario dauert in der Regel 2–4 Wochen. Die vollständige Einführung hängt von der Anzahl der Kanäle und Integrationen ab."
+      },
+      "channels": {
+        "q": "Welche Kanäle lassen sich anbinden?",
+        "a": "Telegram, WhatsApp, LINE, WeChat, Instagram, VK, Viber, Facebook Messenger, E-Mail, ein Website-Widget und ein SDK für mobile Apps. Weitere per API."
+      },
+      "languages": {
+        "q": "Welche Sprachen spricht der Agent?",
+        "a": "Mehr als 30 Sprachen mit automatischer Erkennung. Ihr Team kann in der eigenen Sprache antworten – die Übersetzung erfolgt automatisch."
+      },
+      "unknown": {
+        "q": "Was passiert, wenn der Agent die Antwort nicht kennt?",
+        "a": "Er erfindet nichts: Er sagt es dem Kunden offen und übergibt das Gespräch mit Zusammenfassung und Verlauf an Ihr Team."
+      },
+      "data": {
+        "q": "Wo werden die Daten gespeichert? Geht es ohne externe Clouds?",
+        "a": "Ja. Ein Betrieb in Ihrer eigenen Infrastruktur mit lokalen Modellen ist möglich – die Daten verlassen nie Ihre Systeme."
+      },
+      "models": {
+        "q": "Welche KI-Modelle setzen Sie ein?",
+        "a": "Wir wählen sie passend zur Aufgabe: OpenAI, Anthropic, Qwen, Grok oder Open-Source-Modelle. Mit dem Orchestrator lassen sie sich kombinieren und wechseln, ohne das System neu aufzubauen."
+      },
+      "crm": {
+        "q": "Integrieren Sie sich in unser CRM oder ERP?",
+        "a": "Ja – mit gängigen Systemen direkt, mit allen anderen per API."
+      },
+      "measure": {
+        "q": "Wie messen Sie die Ergebnisse?",
+        "a": "Vor dem Start vereinbaren wir Kennzahlen – Antwortzeit, Anteil ohne menschliches Eingreifen gelöster Anfragen, Conversion, Bearbeitungszeit – und berichten regelmäßig darüber."
+      },
+      "start": {
+        "q": "Was brauchen Sie von uns für den Start?",
+        "a": "Eine Beschreibung der Aufgabe, Zugang zu einer Wissensdatenbank oder Beispielanfragen und eine Ansprechperson. Um den Rest kümmern wir uns."
+      },
+      "teamLanguages": {
+        "q": "In welchen Sprachen arbeiten Sie mit Kunden?",
+        "a": "Website und Kommunikation sind auf Englisch, Russisch, Französisch, Deutsch, Japanisch, Chinesisch und Thai verfügbar."
+      }
+    }
+  }
+}

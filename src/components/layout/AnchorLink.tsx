@@ -8,15 +8,18 @@ export type AnchorLinkProps = {
   children: ReactNode;
   /** Колбэк после клика — например, чтобы закрыть мобильное меню. */
   onNavigate?: () => void;
+  /** State для react-router (например, тема заявки для формы). */
+  state?: unknown;
 } & Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'href' | 'onClick'>;
 
 /**
  * Якорная ссылка с плавным скроллом.
- * - На главной (`/`) перехватывает клик, делает scrollIntoView и обновляет hash без скачка.
- * - С других страниц (например, `/privacy`) делает SPA-навигацию на `/` + hash.
+ * - На той же странице перехватывает клик, делает scrollIntoView и обновляет hash без скачка.
+ * - С других страниц (например, `/privacy`) делает SPA-навигацию на нужный путь + hash.
+ * - Если передан state — всегда навигация через роутер (скролл делает RootLayout).
  */
 export const AnchorLink = forwardRef<HTMLAnchorElement, AnchorLinkProps>(function AnchorLink(
-  { href, children, onNavigate, className, ...rest },
+  { href, children, onNavigate, state, className, ...rest },
   ref,
 ) {
   const location = useLocation();
@@ -30,12 +33,16 @@ export const AnchorLink = forwardRef<HTMLAnchorElement, AnchorLinkProps>(functio
     const hashIndex = href.indexOf('#');
     if (hashIndex === -1) return;
 
-    const targetPath = href.slice(0, hashIndex) || '/';
+    const targetPath = href.slice(0, hashIndex) || location.pathname;
     const targetId = href.slice(hashIndex + 1);
 
-    if (location.pathname !== targetPath) {
+    if (location.pathname !== targetPath || state !== undefined) {
       event.preventDefault();
-      navigate(`${targetPath}#${targetId}`);
+      // Переход между страницами — с View Transition (если браузер поддерживает)
+      navigate(`${targetPath}#${targetId}`, {
+        state,
+        viewTransition: location.pathname !== targetPath,
+      });
       onNavigate?.();
       return;
     }
@@ -45,7 +52,7 @@ export const AnchorLink = forwardRef<HTMLAnchorElement, AnchorLinkProps>(functio
 
     event.preventDefault();
     element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    window.history.replaceState(null, '', `#${targetId}`);
+    window.history.replaceState(window.history.state, '', `#${targetId}`);
     onNavigate?.();
   };
 

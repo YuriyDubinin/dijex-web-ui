@@ -1,0 +1,30 @@
+{
+  "home": {
+    "title": "Dijex — Orchestration IA, support 24/7 et processus numériques",
+    "description": "Dijex conçoit des orchestrateurs IA, des agents de support multilingues 24/7 et des systèmes numériques pour les ETI et les grands comptes."
+  },
+  "aiOrchestrator": {
+    "title": "Orchestrateur IA — Dijex",
+    "description": "Un centre de pilotage unique pour l’IA : modèles, agents, données et systèmes réunis dans un processus maîtrisé."
+  },
+  "supportAgent": {
+    "title": "Agent de support 24/7 — Dijex",
+    "description": "Un agent IA multilingue pour les réseaux sociaux, messageries, sites et applications. Il répond instantanément et transmet les cas complexes à votre équipe."
+  },
+  "digitalProcesses": {
+    "title": "Optimisation des processus — Dijex",
+    "description": "Systèmes métier internes, plateformes de messagerie, portails clients, sites et applications qui suppriment les tâches manuelles."
+  },
+  "privacy": {
+    "title": "Politique de confidentialité — Dijex",
+    "description": "Comment Dijex traite les données personnelles transmises via ce site."
+  },
+  "thanks": {
+    "title": "Merci — Dijex",
+    "description": "Votre demande a bien été reçue."
+  },
+  "notFound": {
+    "title": "Page introuvable — Dijex",
+    "description": "Cette page n’existe pas."
+  }
+}

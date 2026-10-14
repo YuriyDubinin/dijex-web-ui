@@ -1,0 +1,95 @@
+{
+  "brand": "Dijex",
+  "skipToContent": "跳到主要内容",
+  "nav": {
+    "solutions": "解决方案",
+    "industries": "行业",
+    "cases": "案例",
+    "process": "合作流程",
+    "faq": "常见问题",
+    "contact": "联系我们",
+    "about": "关于我们"
+  },
+  "header": {
+    "homeLink": "Dijex — 首页",
+    "mainNav": "主导航",
+    "openMenu": "打开菜单",
+    "closeMenu": "关闭菜单",
+    "cta": "联系我们",
+    "solutionsMenu": "我们的解决方案"
+  },
+  "actions": {
+    "discussProject": "洽谈项目",
+    "learnMore": "了解更多",
+    "backHome": "返回首页"
+  },
+  "solutions": {
+    "aiOrchestrator": {
+      "title": "AI 编排器",
+      "description": "统一管控模型、智能体、数据与业务系统的控制中心。"
+    },
+    "supportAgent": {
+      "title": "24/7 客服智能体",
+      "description": "覆盖社交媒体、即时通讯、网站与 App 的多语言 AI 智能体。"
+    },
+    "digitalProcesses": {
+      "title": "数字化流程优化",
+      "description": "内部系统、消息平台、客户门户、网站与 App。"
+    }
+  },
+  "footer": {
+    "tagline": "为中大型企业提供 AI 编排、24/7 客服与数字化流程解决方案。",
+    "solutionsTitle": "解决方案",
+    "companyTitle": "公司",
+    "contactsTitle": "联系方式",
+    "socialsTitle": "社交媒体",
+    "copyright": "© {{year}} Dijex。保留所有权利。",
+    "privacy": "隐私政策",
+    "backToTop": "返回顶部"
+  },
+  "language": {
+    "label": "语言",
+    "panelTitle": "选择语言",
+    "current": "网站语言：{{name}}",
+    "changed": "语言已切换：{{name}}",
+    "hint": "根据您所在的地区，我们为您选择了{{name}}。",
+    "hintAction": "更改",
+    "hintDismiss": "关闭"
+  },
+  "toast": {
+    "region": "通知",
+    "dismiss": "关闭通知"
+  },
+  "notFound": {
+    "eyebrow": "404",
+    "title": "页面不存在",
+    "lead": "该页面可能已被移动。您可以前往以下页面："
+  },
+  "breadcrumbs": {
+    "label": "面包屑导航",
+    "home": "首页",
+    "solutions": "解决方案"
+  },
+  "images": {
+    "pillarOrchestrator": "连接模型、智能体与业务系统的 AI 编排中枢",
+    "pillarSupportAgent": "用多种语言回复客户的客服智能体",
+    "pillarDigitalProcesses": "数字化业务系统的仪表盘、表单与 App 界面",
+    "supportAgent": "Dijex AI 客服智能体核心",
+    "processesInternalSystems": "内部业务系统的管理后台",
+    "processesMessagingPlatform": "企业即时通讯与统一坐席收件箱",
+    "processesClientPortal": "展示订单状态与文件的客户门户",
+    "processesWebApps": "企业官网与移动应用",
+    "aboutGlobe": "面向全球业务的数字化解决方案",
+    "caseNewsFeeder": "新闻聚合案例示意图",
+    "caseAiAssistant": "AI 客服助手案例示意图",
+    "caseEnterpriseSuite": "包含管理后台与内部服务的企业生态示意图",
+    "solutionOrchestratorHero": "AI 编排器架构",
+    "solutionOrchestratorConsole": "编排器控制台：决策日志、质量与成本指标",
+    "solutionSupportHero": "同时在多个渠道工作的客服智能体",
+    "solutionSupportInbox": "带对话摘要的统一坐席收件箱",
+    "solutionDigitalHero": "互联的业务系统与流程图"
+  },
+  "imageSlot": {
+    "placeholder": "图片即将上线"
+  }
+}

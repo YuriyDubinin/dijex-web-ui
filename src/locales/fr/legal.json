@@ -1,0 +1,13 @@
+{
+  "privacy": {
+    "title": "Politique de confidentialité",
+    "paragraphs": [
+      "Cette section contiendra la politique de confidentialité complète ainsi que le consentement au traitement des données personnelles. Il s’agit pour l’instant d’un texte provisoire.",
+      "En envoyant le formulaire de contact, l’utilisateur accepte le traitement des données fournies afin d’être recontacté au sujet de son projet."
+    ]
+  },
+  "thanks": {
+    "title": "Merci !",
+    "body": "Nous avons bien reçu votre demande et vous répondrons sous un jour ouvré."
+  }
+}

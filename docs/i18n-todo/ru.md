@@ -1,0 +1,24 @@
+# ru — что проверить
+
+- `home:hero.stats[1]`, `home:support.stickers.languages`, `home:solutions.cards.supportAgent.bullets[1]`, `home:results.rows.languages.after`, `home:faq.items.languages.a`, `solutions:supportAgent.capabilities.items.languages.title` — «30+ языков» не подтверждено.
+- `home:hero.stats[2]` — «10+ каналов» не подтверждено.
+- `home:support.stickers.response`, `home:results.metrics.reply`, `solutions:supportAgent.metrics.reply` — «< 5 сек / с» не подтверждено; в стикере оставлено «сек» (как в исходнике P9), в метриках суффикс « с» — проверить единообразие.
+- `home:security.items.compliance.text` — «Проектируем с учётом 152-ФЗ и GDPR.» — юристу подтвердить, что формулировка корректна (в en упомянуты GDPR и «local data protection laws»).
+- `home:orchestrator.columns.systems.items.erp`, `home:faq.items.crm.q` — в ru вместо «ERP» используется «1С» (по исходнику P17, en: «CRM or ERP»); «1С» с кириллической «С».
+- `home:process.steps.*.duration`, `home:engagement.items.pilot.points[0]`, `home:faq.items.launch.a`, `solutions:aiOrchestrator.faq.duration.a` — сроки «1–2 недели», «2–4 недели», «от 1 месяца» не подтверждены.
+- `home:process.steps.scaling.duration` — «по мере роста» (en «as needed») — проверить, подходит ли формулировка.
+- `home:engagement.popular` — «Чаще всего выбирают» — утверждение не подтверждено.
+- `home:engagement.items.support.points[0]` — «Мониторинг 24/7» не подтверждено.
+- `home:results.lead`, `home:results.metrics.automated` — «60% обращений без оператора» взято из одного кейса; подтвердить правомерность обобщения.
+- `home:cases.items.newsFeeder.*` — «20+ языков» не подтверждено.
+- `home:cases.items.enterpriseSuite.result` — результат кейса сформулирован без цифр (в исходнике P14 был TODO).
+- `home:faq.items.teamLanguages.a` — подтвердить, что команда реально общается с клиентами на всех 7 языках.
+- `home:industries.items.hospitality.tasks[0]`, `solutions:supportAgent.useCases.items.hotel.action` — «10+ языков» не подтверждено.
+- `home:integrations.items.webWidget` — «Web-виджет» (по исходнику P16); возможно, лучше «Виджет на сайте» для единообразия с `home:support.channels.items.webWidget`.
+- `solutions:supportAgent.languagesDemo.more` — «и ещё 20+» не подтверждено.
+- `solutions:supportAgent.timeline.steps.*` — план запуска по неделям не подтверждён.
+- `solutions:supportAgent.capabilities.items.media` — поддержка голосовых и изображений не подтверждена.
+- `solutions:supportAgent.cta.title` — «за пару недель» не подтверждено.
+- `solutions:digitalProcesses.directions.extras.messaging` — «каталог пользователей» = directory (AD/LDAP); носителю проверить, понятен ли термин.
+- `common:breadcrumbs.label` — «Хлебные крошки» (aria-label); альтернатива — «Навигационная цепочка».
+- Термины, оставленные латиницей: inbox, guardrails, Human-in-the-loop, On-premise, Helpdesk — подтвердить, что это приемлемо для аудитории.

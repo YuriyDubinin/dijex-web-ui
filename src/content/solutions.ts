@@ -1,0 +1,57 @@
+import type { IconKey } from '@/components/ui/iconMap';
+import type { ImageKey } from './images';
+import type { SubjectKey } from './contact';
+
+export type SolutionKey = 'aiOrchestrator' | 'supportAgent' | 'digitalProcesses';
+
+export type SolutionSlug = 'ai-orchestrator' | 'support-agent' | 'digital-processes';
+
+export type SolutionDef = {
+  key: SolutionKey;
+  slug: SolutionSlug;
+  path: `/solutions/${SolutionSlug}`;
+  icon: IconKey;
+  /** Якорь секции на главной. */
+  anchor: string;
+  cardImage: ImageKey;
+  heroImage: ImageKey;
+  /** Тема заявки, которую предзаполняет CTA страницы. */
+  subjectKey: SubjectKey;
+};
+
+export const SOLUTIONS: readonly SolutionDef[] = [
+  {
+    key: 'aiOrchestrator',
+    slug: 'ai-orchestrator',
+    path: '/solutions/ai-orchestrator',
+    icon: 'network',
+    anchor: '#orchestrator',
+    cardImage: 'pillarOrchestrator',
+    heroImage: 'solutionOrchestratorHero',
+    subjectKey: 'aiOrchestrator',
+  },
+  {
+    key: 'supportAgent',
+    slug: 'support-agent',
+    path: '/solutions/support-agent',
+    icon: 'headset',
+    anchor: '#support',
+    cardImage: 'pillarSupportAgent',
+    heroImage: 'solutionSupportHero',
+    subjectKey: 'supportAgent',
+  },
+  {
+    key: 'digitalProcesses',
+    slug: 'digital-processes',
+    path: '/solutions/digital-processes',
+    icon: 'layoutDashboard',
+    anchor: '#processes',
+    cardImage: 'pillarDigitalProcesses',
+    heroImage: 'solutionDigitalHero',
+    subjectKey: 'digitalProcesses',
+  },
+];
+
+export function getSolutionBySlug(slug: string | undefined): SolutionDef | undefined {
+  return SOLUTIONS.find((solution) => solution.slug === slug);
+}

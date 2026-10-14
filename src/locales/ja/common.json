@@ -1,0 +1,95 @@
+{
+  "brand": "Dijex",
+  "skipToContent": "メインコンテンツへスキップ",
+  "nav": {
+    "solutions": "ソリューション",
+    "industries": "業界",
+    "cases": "導入事例",
+    "process": "進め方",
+    "faq": "よくある質問",
+    "contact": "お問い合わせ",
+    "about": "会社概要"
+  },
+  "header": {
+    "homeLink": "Dijex — ホームページ",
+    "mainNav": "メインナビゲーション",
+    "openMenu": "メニューを開く",
+    "closeMenu": "メニューを閉じる",
+    "cta": "お問い合わせ",
+    "solutionsMenu": "ソリューション一覧"
+  },
+  "actions": {
+    "discussProject": "プロジェクトを相談する",
+    "learnMore": "詳しく見る",
+    "backHome": "ホームに戻る"
+  },
+  "solutions": {
+    "aiOrchestrator": {
+      "title": "AIオーケストレーター",
+      "description": "モデル、エージェント、データ、社内システムを一元管理するコントロールセンター。"
+    },
+    "supportAgent": {
+      "title": "24時間365日対応サポートエージェント",
+      "description": "SNS、メッセンジャー、Webサイト、アプリに対応する多言語AIエージェント。"
+    },
+    "digitalProcesses": {
+      "title": "業務プロセスのデジタル最適化",
+      "description": "社内システム、メッセージングプラットフォーム、顧客ポータル、Webサイト・アプリ。"
+    }
+  },
+  "footer": {
+    "tagline": "中堅・大企業のためのAIオーケストレーション、24時間365日サポート、業務プロセスのデジタル化。",
+    "solutionsTitle": "ソリューション",
+    "companyTitle": "会社情報",
+    "contactsTitle": "連絡先",
+    "socialsTitle": "SNS",
+    "copyright": "© {{year}} Dijex. All rights reserved.",
+    "privacy": "プライバシーポリシー",
+    "backToTop": "ページの先頭へ"
+  },
+  "language": {
+    "label": "言語",
+    "panelTitle": "言語を選択",
+    "current": "サイトの言語：{{name}}",
+    "changed": "言語を変更しました：{{name}}",
+    "hint": "お住まいの地域に合わせて{{name}}を表示しています。",
+    "hintAction": "変更する",
+    "hintDismiss": "閉じる"
+  },
+  "toast": {
+    "region": "通知",
+    "dismiss": "通知を閉じる"
+  },
+  "notFound": {
+    "eyebrow": "404",
+    "title": "ページが見つかりません",
+    "lead": "移動または削除された可能性があります。以下のページをご利用ください。"
+  },
+  "breadcrumbs": {
+    "label": "パンくずリスト",
+    "home": "ホーム",
+    "solutions": "ソリューション"
+  },
+  "images": {
+    "pillarOrchestrator": "モデル、エージェント、業務システムをつなぐAIオーケストレーターのハブ",
+    "pillarSupportAgent": "複数の言語で顧客に対応するサポートエージェント",
+    "pillarDigitalProcesses": "デジタル業務システムのダッシュボード、フォーム、アプリ画面",
+    "supportAgent": "DijexのAIサポートエージェントのコア",
+    "processesInternalSystems": "社内業務システムの管理画面",
+    "processesMessagingPlatform": "社内メッセンジャーと統合オペレーター受信箱",
+    "processesClientPortal": "注文状況や書類を確認できる顧客ポータル",
+    "processesWebApps": "コーポレートサイトとモバイルアプリ",
+    "aboutGlobe": "グローバルビジネスのためのデジタルソリューション",
+    "caseNewsFeeder": "ニュースフィーダー事例のイラスト",
+    "caseAiAssistant": "AIカスタマーサポートアシスタント事例のイラスト",
+    "caseEnterpriseSuite": "管理画面と社内サービスで構成される企業エコシステムのイラスト",
+    "solutionOrchestratorHero": "AIオーケストレーターのアーキテクチャ",
+    "solutionOrchestratorConsole": "判断ログ、品質・コスト指標を表示するオーケストレーターのコンソール",
+    "solutionSupportHero": "複数のチャネルで同時に対応するサポートエージェント",
+    "solutionSupportInbox": "会話の要約を表示する統合オペレーター受信箱",
+    "solutionDigitalHero": "連携した業務システムとプロセスマップ"
+  },
+  "imageSlot": {
+    "placeholder": "画像は準備中です"
+  }
+}

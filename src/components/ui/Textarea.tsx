@@ -41,12 +41,11 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(function 
       className={cn(
         'w-full resize-none rounded-lg border bg-bg-surface/60 px-4 py-3',
         'text-body text-text-primary placeholder:text-text-muted',
-        'backdrop-blur-sm transition-colors duration-150',
-        'focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-offset-bg-base',
+        'field-beam backdrop-blur-sm',
         'disabled:cursor-not-allowed disabled:opacity-50',
         hasError
-          ? 'border-danger focus:border-danger focus:ring-danger/30'
-          : 'border-border focus:border-accent-primary focus:ring-accent-primary/20',
+          ? 'border-danger focus:border-danger'
+          : 'border-border focus:border-accent-primary/60',
         className,
       )}
       aria-invalid={hasError ? true : undefined}

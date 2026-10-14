@@ -1,6 +1,7 @@
-import { motion, type HTMLMotionProps, type Transition } from 'framer-motion';
+import type { HTMLMotionProps } from 'framer-motion';
 import type { ReactNode } from 'react';
-import { useReducedMotion } from '@/hooks/useReducedMotion';
+import { Reveal, type RevealVariant } from '@/motion/Reveal';
+import { DURATION } from '@/motion/tokens';
 
 export type FadeInProps = {
   children: ReactNode;
@@ -8,61 +9,35 @@ export type FadeInProps = {
   delay?: number;
   /** Длительность анимации, в секундах. */
   duration?: number;
-  /** Сдвиг по Y в пикселях для эффекта «всплытия». */
-  y?: number;
   /** Если true — анимация запускается на mount, иначе при появлении в viewport. */
   immediate?: boolean;
+  variant?: RevealVariant;
   className?: string;
-} & Omit<HTMLMotionProps<'div'>, 'initial' | 'animate' | 'whileInView' | 'transition' | 'children'>;
+} & Omit<
+  HTMLMotionProps<'div'>,
+  'initial' | 'animate' | 'whileInView' | 'transition' | 'children' | 'variants'
+>;
 
+/** Совместимая обёртка над Reveal (fade-up). */
 export function FadeIn({
   children,
   delay = 0,
-  duration = 0.5,
-  y = 16,
+  duration = DURATION.slow,
   immediate = false,
+  variant = 'fade-up',
   className,
   ...rest
 }: FadeInProps) {
-  const prefersReducedMotion = useReducedMotion();
-
-  if (prefersReducedMotion) {
-    return (
-      <div className={className} {...(rest as React.HTMLAttributes<HTMLDivElement>)}>
-        {children}
-      </div>
-    );
-  }
-
-  const transition: Transition = { duration, delay, ease: 'easeOut' };
-
-  const hidden = { opacity: 0, y };
-  const visible = { opacity: 1, y: 0 };
-
-  if (immediate) {
-    return (
-      <motion.div
-        className={className}
-        initial={hidden}
-        animate={visible}
-        transition={transition}
-        {...rest}
-      >
-        {children}
-      </motion.div>
-    );
-  }
-
   return (
-    <motion.div
+    <Reveal
+      variant={variant}
+      delay={delay}
+      duration={duration}
+      immediate={immediate}
       className={className}
-      initial={hidden}
-      whileInView={visible}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={transition}
       {...rest}
     >
       {children}
-    </motion.div>
+    </Reveal>
   );
 }

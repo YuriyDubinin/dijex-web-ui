@@ -1,0 +1,30 @@
+{
+  "home": {
+    "title": "Dijex — KI-Orchestrierung, 24/7-Support und digitale Prozesse",
+    "description": "Dijex entwickelt KI-Orchestratoren, mehrsprachige 24/7-Support-Agenten und digitale Systeme für Mittelstand und Großunternehmen."
+  },
+  "aiOrchestrator": {
+    "title": "KI-Orchestrator — Dijex",
+    "description": "Eine Steuerzentrale für KI: Modelle, Agenten, Daten und Ihre Systeme in einem gesteuerten Prozess."
+  },
+  "supportAgent": {
+    "title": "24/7-Support-Agent — Dijex",
+    "description": "Ein mehrsprachiger KI-Agent für Social Media, Messenger, Websites und Apps. Antwortet sofort und übergibt komplexe Fälle an Ihr Team."
+  },
+  "digitalProcesses": {
+    "title": "Digitale Prozesse — Dijex",
+    "description": "Interne Geschäftssysteme, Messaging-Plattformen, Kundenportale, Websites und Apps, die manuelle Arbeit überflüssig machen."
+  },
+  "privacy": {
+    "title": "Datenschutzerklärung — Dijex",
+    "description": "Wie Dijex personenbezogene Daten verarbeitet, die über diese Website übermittelt werden."
+  },
+  "thanks": {
+    "title": "Vielen Dank — Dijex",
+    "description": "Ihre Anfrage ist bei uns eingegangen."
+  },
+  "notFound": {
+    "title": "Seite nicht gefunden — Dijex",
+    "description": "Diese Seite existiert nicht."
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "home": {
+    "title": "Dijex — AIオーケストレーション、24時間365日サポート、デジタルプロセス",
+    "description": "Dijexは、中堅・大企業向けにAIオーケストレーター、24時間365日対応の多言語サポートエージェント、デジタルシステムを開発しています。"
+  },
+  "aiOrchestrator": {
+    "title": "AIオーケストレーター — Dijex",
+    "description": "AIのためのコントロールセンター。モデル、エージェント、データ、社内システムをひとつの管理されたプロセスに統合します。"
+  },
+  "supportAgent": {
+    "title": "24時間365日対応サポートエージェント — Dijex",
+    "description": "SNS、メッセンジャー、Webサイト、アプリに対応する多言語AIエージェント。即座に返信し、複雑な案件はチームに引き継ぎます。"
+  },
+  "digitalProcesses": {
+    "title": "業務プロセスのデジタル最適化 — Dijex",
+    "description": "手作業をなくす社内業務システム、メッセージングプラットフォーム、顧客ポータル、Webサイト・アプリ。"
+  },
+  "privacy": {
+    "title": "プライバシーポリシー — Dijex",
+    "description": "本Webサイトを通じて提供された個人情報のDijexにおける取り扱いについて。"
+  },
+  "thanks": {
+    "title": "送信完了 — Dijex",
+    "description": "お問い合わせを受け付けました。"
+  },
+  "notFound": {
+    "title": "ページが見つかりません — Dijex",
+    "description": "お探しのページは存在しません。"
+  }
+}

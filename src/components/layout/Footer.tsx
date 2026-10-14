@@ -1,88 +1,106 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Container } from './Container';
 import { AnchorLink } from './AnchorLink';
-import { landing } from '@/content/landing';
+import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
+import { Reveal } from '@/motion/Reveal';
+import { BackToTop } from './BackToTop';
+import { FooterWordmark } from './FooterWordmark';
+import { CONTACTS, FOOTER_COMPANY_LINKS, SOCIALS } from '@/content/nav';
+import { SOLUTIONS } from '@/content/solutions';
+
+const linkClass =
+  'link-underline text-small text-text-secondary transition-colors hover:text-text-primary';
+
+function FooterColumn({
+  title,
+  children,
+  index,
+}: {
+  title: string;
+  children: React.ReactNode;
+  index: number;
+}) {
+  return (
+    <Reveal delay={0.1 + index * 0.08}>
+      <h2 className="caps-label text-text-muted">{title}</h2>
+      <ul className="mt-4 space-y-3">{children}</ul>
+    </Reveal>
+  );
+}
 
 export function Footer() {
-  const { footer, nav } = landing;
+  const { t } = useTranslation();
+  const year = new Date().getFullYear();
 
   return (
-    <footer className="mt-24 border-t border-border bg-bg-base">
+    <footer className="border-t border-border bg-bg-base">
       <Container className="py-16">
-        <div className="grid gap-12 md:grid-cols-4">
-          <div className="md:col-span-1">
+        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr_1fr]">
+          <div className="sm:col-span-2 lg:col-span-1">
             <div className="font-display text-2xl font-bold tracking-tight text-text-primary">
-              Dijex
+              {t('brand')}
             </div>
-            <p className="mt-4 max-w-xs text-small text-text-secondary">{footer.tagline}</p>
+            <p className="mt-4 max-w-xs text-small text-text-secondary">{t('footer.tagline')}</p>
           </div>
 
-          <div>
-            <h2 className="text-small font-semibold uppercase tracking-wider text-text-muted">
-              {footer.navTitle}
-            </h2>
-            <ul className="mt-4 space-y-3">
-              {nav.map((item) => (
-                <li key={item.id}>
-                  <AnchorLink
-                    href={`/${item.href}`}
-                    className="text-small text-text-secondary transition-colors hover:text-text-primary"
-                  >
-                    {item.label}
-                  </AnchorLink>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <FooterColumn index={0} title={t('footer.solutionsTitle')}>
+            {SOLUTIONS.map((solution) => (
+              <li key={solution.key}>
+                <Link viewTransition to={solution.path} className={linkClass}>
+                  {t(`solutions.${solution.key}.title`)}
+                </Link>
+              </li>
+            ))}
+          </FooterColumn>
 
-          <div>
-            <h2 className="text-small font-semibold uppercase tracking-wider text-text-muted">
-              {footer.contactsTitle}
-            </h2>
-            <ul className="mt-4 space-y-3">
-              {footer.contacts.map((contact) => (
-                <li key={contact.href}>
-                  <a
-                    href={contact.href}
-                    className="text-small text-text-secondary transition-colors hover:text-text-primary"
-                  >
-                    {contact.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <FooterColumn index={1} title={t('footer.companyTitle')}>
+            {FOOTER_COMPANY_LINKS.map((item) => (
+              <li key={item.id}>
+                <AnchorLink href={item.href} className={linkClass}>
+                  {t(`nav.${item.labelKey}`)}
+                </AnchorLink>
+              </li>
+            ))}
+          </FooterColumn>
 
-          <div>
-            <h2 className="text-small font-semibold uppercase tracking-wider text-text-muted">
-              {footer.socialsTitle}
-            </h2>
-            <ul className="mt-4 space-y-3">
-              {footer.socials.map((social) => (
-                <li key={social.href}>
-                  <a
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-small text-text-secondary transition-colors hover:text-text-primary"
-                  >
-                    {social.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <FooterColumn index={2} title={t('footer.contactsTitle')}>
+            {CONTACTS.map((contact) => (
+              <li key={contact.href}>
+                <a href={contact.href} className={linkClass}>
+                  {contact.label}
+                </a>
+              </li>
+            ))}
+          </FooterColumn>
+
+          <FooterColumn index={3} title={t('footer.socialsTitle')}>
+            {SOCIALS.map((social) => (
+              <li key={social.href}>
+                <a
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={linkClass}
+                >
+                  {social.label}
+                </a>
+              </li>
+            ))}
+          </FooterColumn>
         </div>
 
         <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-border pt-8 sm:flex-row sm:items-center">
-          <p className="text-small text-text-muted">{footer.copyright}</p>
-          <Link
-            to={footer.privacyLink.href}
-            className="text-small text-text-secondary transition-colors hover:text-text-primary"
-          >
-            {footer.privacyLink.label}
-          </Link>
+          <p className="text-small text-text-muted">{t('footer.copyright', { year })}</p>
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+            <Link viewTransition to="/privacy" className={linkClass}>
+              {t('footer.privacy')}
+            </Link>
+            <LanguageSwitcher variant="inline" />
+            <BackToTop />
+          </div>
         </div>
+        <FooterWordmark />
       </Container>
     </footer>
   );

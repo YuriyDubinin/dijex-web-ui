@@ -1,0 +1,54 @@
+{
+  "section": {
+    "eyebrow": "联系我们",
+    "title": "聊聊您的项目",
+    "lead": "描述您的需求，我们将在 1 个工作日内回复，并提出试点方案。"
+  },
+  "interest": {
+    "label": "您对哪方面感兴趣？"
+  },
+  "subjects": {
+    "aiOrchestrator": "AI 编排器",
+    "supportAgent": "24/7 客服智能体",
+    "internalSystems": "内部系统",
+    "messagingPlatform": "消息平台",
+    "clientPortal": "客户门户",
+    "websiteOrApp": "网站或 App",
+    "notSure": "暂不确定",
+    "digitalProcesses": "数字化流程优化",
+    "pilot": "试点项目",
+    "turnkey": "交钥匙实施",
+    "ongoingSupport": "持续支持"
+  },
+  "fields": {
+    "name": { "label": "姓名", "placeholder": "王伟" },
+    "email": { "label": "邮箱", "placeholder": "wangwei@company.cn" },
+    "phone": { "label": "电话", "placeholder": "+86 138 0000 0000" },
+    "subject": { "label": "主题", "placeholder": "为我们的网店部署客服智能体" },
+    "message": {
+      "label": "留言",
+      "placeholder": "请介绍您的项目、需求或问题……"
+    }
+  },
+  "required": "必填",
+  "submit": "提交需求",
+  "submitting": "正在提交……",
+  "privacyNotice": "提交表单即表示您同意我们处理您的个人信息。",
+  "privacyLink": "隐私政策",
+  "success": {
+    "title": "谢谢！您的需求已提交。",
+    "body": "我们已收到您的留言，将在 1 个工作日内与您联系。",
+    "reset": "再提交一条"
+  },
+  "errors": {
+    "nameMin": "至少 2 个字符",
+    "nameMax": "不超过 255 个字符",
+    "emailInvalid": "邮箱地址无效",
+    "emailMax": "不超过 255 个字符",
+    "phoneMax": "不超过 50 个字符",
+    "subjectMax": "不超过 500 个字符",
+    "messageMin": "至少 10 个字符",
+    "messageMax": "不超过 5000 个字符"
+  },
+  "toastError": "出了点问题，请稍后再试。"
+}

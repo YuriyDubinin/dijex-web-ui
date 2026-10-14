@@ -1,0 +1,95 @@
+{
+  "brand": "Dijex",
+  "skipToContent": "ข้ามไปยังเนื้อหาหลัก",
+  "nav": {
+    "solutions": "โซลูชัน",
+    "industries": "อุตสาหกรรม",
+    "cases": "ผลงาน",
+    "process": "ขั้นตอนการทำงาน",
+    "faq": "คำถามที่พบบ่อย",
+    "contact": "ติดต่อเรา",
+    "about": "เกี่ยวกับเรา"
+  },
+  "header": {
+    "homeLink": "Dijex — หน้าแรก",
+    "mainNav": "เมนูหลัก",
+    "openMenu": "เปิดเมนู",
+    "closeMenu": "ปิดเมนู",
+    "cta": "ติดต่อเรา",
+    "solutionsMenu": "โซลูชันของเรา"
+  },
+  "actions": {
+    "discussProject": "ปรึกษาโปรเจกต์",
+    "learnMore": "ดูรายละเอียด",
+    "backHome": "กลับสู่หน้าแรก"
+  },
+  "solutions": {
+    "aiOrchestrator": {
+      "title": "AI Orchestrator",
+      "description": "ศูนย์ควบคุมเดียวสำหรับโมเดล เอเจนต์ ข้อมูล และระบบของคุณ"
+    },
+    "supportAgent": {
+      "title": "เอเจนต์ซัพพอร์ต 24/7",
+      "description": "เอเจนต์ AI หลายภาษาสำหรับโซเชียลมีเดีย แอปแชท เว็บไซต์ และแอป"
+    },
+    "digitalProcesses": {
+      "title": "ยกระดับกระบวนการดิจิทัล",
+      "description": "ระบบภายในองค์กร แพลตฟอร์มแชท พอร์ทัลลูกค้า เว็บไซต์ และแอป"
+    }
+  },
+  "footer": {
+    "tagline": "AI orchestration ซัพพอร์ต 24/7 และกระบวนการดิจิทัลสำหรับธุรกิจขนาดกลางและขนาดใหญ่",
+    "solutionsTitle": "โซลูชัน",
+    "companyTitle": "บริษัท",
+    "contactsTitle": "ช่องทางติดต่อ",
+    "socialsTitle": "โซเชียล",
+    "copyright": "© {{year}} Dijex สงวนลิขสิทธิ์",
+    "privacy": "นโยบายความเป็นส่วนตัว",
+    "backToTop": "กลับขึ้นด้านบน"
+  },
+  "language": {
+    "label": "ภาษา",
+    "panelTitle": "เลือกภาษา",
+    "current": "ภาษาของเว็บไซต์: {{name}}",
+    "changed": "เปลี่ยนภาษาแล้ว: {{name}}",
+    "hint": "เราตั้งค่าภาษาเป็น {{name}} ตามภูมิภาคของคุณ",
+    "hintAction": "เปลี่ยน",
+    "hintDismiss": "ปิด"
+  },
+  "toast": {
+    "region": "การแจ้งเตือน",
+    "dismiss": "ปิดการแจ้งเตือน"
+  },
+  "notFound": {
+    "eyebrow": "404",
+    "title": "ไม่พบหน้านี้",
+    "lead": "หน้านี้อาจถูกย้ายไปแล้ว ลองไปที่หน้าเหล่านี้แทน:"
+  },
+  "breadcrumbs": {
+    "label": "เบรดครัมบ์",
+    "home": "หน้าแรก",
+    "solutions": "โซลูชัน"
+  },
+  "images": {
+    "pillarOrchestrator": "ศูนย์กลาง AI orchestrator ที่เชื่อมโมเดล เอเจนต์ และระบบธุรกิจเข้าด้วยกัน",
+    "pillarSupportAgent": "เอเจนต์ซัพพอร์ตกำลังตอบลูกค้าในหลายภาษา",
+    "pillarDigitalProcesses": "แดชบอร์ด แบบฟอร์ม และหน้าจอแอปของระบบธุรกิจดิจิทัล",
+    "supportAgent": "แกนหลักของ AI เอเจนต์ซัพพอร์ตของ Dijex",
+    "processesInternalSystems": "แผงผู้ดูแลระบบของระบบภายในองค์กร",
+    "processesMessagingPlatform": "แชทองค์กรและกล่องข้อความรวมสำหรับโอเปอเรเตอร์",
+    "processesClientPortal": "พอร์ทัลลูกค้าพร้อมสถานะคำสั่งซื้อและเอกสาร",
+    "processesWebApps": "เว็บไซต์องค์กรและแอปพลิเคชันมือถือ",
+    "aboutGlobe": "โซลูชันดิจิทัลสำหรับธุรกิจระดับโลก",
+    "caseNewsFeeder": "ภาพประกอบผลงานระบบฟีดข่าว",
+    "caseAiAssistant": "ภาพประกอบผลงานผู้ช่วย AI สำหรับฝ่ายบริการลูกค้า",
+    "caseEnterpriseSuite": "ภาพประกอบอีโคซิสเต็มขององค์กรที่มีแผงผู้ดูแลระบบและบริการภายใน",
+    "solutionOrchestratorHero": "สถาปัตยกรรมของ AI orchestrator",
+    "solutionOrchestratorConsole": "คอนโซล orchestrator พร้อมบันทึกการตัดสินใจ ตัวชี้วัดคุณภาพ และต้นทุน",
+    "solutionSupportHero": "เอเจนต์ซัพพอร์ตทำงานพร้อมกันในหลายช่องทาง",
+    "solutionSupportInbox": "กล่องข้อความรวมสำหรับโอเปอเรเตอร์พร้อมสรุปบทสนทนา",
+    "solutionDigitalHero": "ระบบธุรกิจที่เชื่อมต่อกันและแผนผังกระบวนการ"
+  },
+  "imageSlot": {
+    "placeholder": "รูปภาพจะมาเร็ว ๆ นี้"
+  }
+}

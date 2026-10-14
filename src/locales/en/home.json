@@ -1,0 +1,741 @@
+{
+  "hero": {
+    "badge": "AI Orchestration · Support 24/7 · Digital Processes",
+    "title": "AI that works for your business 24/7",
+    "titleAlt": "From a customer's first message to your internal systems — powered by AI",
+    "subtitle": "Dijex builds AI orchestrators, multilingual support agents and digital systems that connect channels, data and teams into one managed process.",
+    "primaryCta": "Discuss a project",
+    "secondaryCta": "Explore solutions",
+    "pillarsLabel": "Our solutions",
+    "pillars": {
+      "orchestrator": "AI orchestrator",
+      "support": "24/7 support",
+      "processes": "Digital processes"
+    },
+    "stats": ["24/7, no days off", "30+ languages", "10+ channels"]
+  },
+  "solutions": {
+    "eyebrow": "Solutions",
+    "title": "Three directions — one ecosystem",
+    "lead": "Each solution works on its own, and together they cover the entire customer journey: from the first message to execution in your internal systems.",
+    "more": "Learn more",
+    "cards": {
+      "aiOrchestrator": {
+        "description": "One control centre for AI: models, agents, data and your systems work as a single process.",
+        "bullets": [
+          "Task routing between models and agents",
+          "Connection to CRM, ERP and knowledge bases",
+          "Control over quality, cost and security"
+        ]
+      },
+      "supportAgent": {
+        "description": "Answers customers in their language on social media, messengers, your website and app — day and night.",
+        "bullets": [
+          "Multichannel: one agent for every channel",
+          "30+ languages with auto-detection",
+          "Hand-off to an operator with full context"
+        ]
+      },
+      "digitalProcesses": {
+        "description": "Systems that remove manual work: from internal tools to client portals.",
+        "bullets": [
+          "Internal business systems",
+          "Custom messaging platforms",
+          "Client portals, websites and apps"
+        ]
+      }
+    }
+  },
+  "orchestrator": {
+    "eyebrow": "AI orchestrator",
+    "title": "One control centre for every AI process",
+    "lead": "The orchestrator receives a request, understands the intent, picks the right model or agent, calls your systems and returns the result — with control at every step.",
+    "diagramLabel": "How the AI orchestrator connects inputs, agents and business systems",
+    "columns": {
+      "inputs": {
+        "title": "Inputs",
+        "items": {
+          "messengers": "Messengers & social media",
+          "web": "Website & app",
+          "email": "Email & forms",
+          "employees": "Employee requests",
+          "events": "Events & API"
+        }
+      },
+      "core": {
+        "title": "Orchestrator",
+        "items": {
+          "intent": "Intent understanding",
+          "routing": "Routing",
+          "memory": "Memory & context",
+          "tools": "Tools",
+          "guardrails": "Policies & guardrails"
+        }
+      },
+      "agents": {
+        "title": "Executors",
+        "items": {
+          "support": "Support agent",
+          "sales": "Sales agent",
+          "documents": "Document agent",
+          "analytics": "Analytics agent",
+          "human": "Human operator"
+        }
+      },
+      "systems": {
+        "title": "Systems",
+        "items": {
+          "crm": "CRM",
+          "erp": "ERP",
+          "helpdesk": "Helpdesk",
+          "knowledge": "Knowledge base",
+          "bi": "BI"
+        }
+      }
+    },
+    "features": {
+      "multiModel": {
+        "title": "Multi-model",
+        "description": "GPT, Claude, Qwen, Grok and local models: chosen by task, price and data requirements."
+      },
+      "yourData": {
+        "title": "Answers from your data",
+        "description": "RAG over your documents, policies and catalogue — with a link to the source."
+      },
+      "actions": {
+        "title": "Actions, not just answers",
+        "description": "Create a ticket, check an order status, book a customer, issue an invoice."
+      },
+      "humanInLoop": {
+        "title": "Human-in-the-loop",
+        "description": "Sensitive and ambiguous cases go to an employee with full context and a draft reply."
+      },
+      "transparency": {
+        "title": "Transparency",
+        "description": "Decision log, step tracing, quality and cost metrics in one console."
+      },
+      "security": {
+        "title": "Security",
+        "description": "Personal data masking, role-based access, deployment inside your perimeter."
+      }
+    },
+    "examplesTitle": "Examples",
+    "examples": {
+      "inbound": {
+        "title": "Inbound request handling",
+        "description": "Classifies requests, enriches them with CRM data and assigns an owner in seconds."
+      },
+      "assistant": {
+        "title": "Employee assistant",
+        "description": "Answers questions about policies, stock and statuses right in the corporate chat."
+      },
+      "documents": {
+        "title": "Documents without manual entry",
+        "description": "Extracts data from contracts and invoices and enters it into your accounting system."
+      }
+    },
+    "cta": "More about the orchestrator",
+    "routes": {
+      "inputs": "Requests from this channel go to the orchestrator.",
+      "core": "The orchestrator processes every request at this step.",
+      "agents": "The orchestrator assigns this executor; it works with the connected systems.",
+      "systems": "Executors read and write data in this system.",
+      "hint": "Hover or select an element to see its route."
+    }
+  },
+  "support": {
+    "eyebrow": "24/7 support",
+    "title": "Speaks to customers in their language — in any channel",
+    "lead": "A multilingual AI agent replies instantly on social media, messengers, your website and app, takes actions in your systems and hands complex questions to your team.",
+    "chat": {
+      "agentName": "Dijex AI",
+      "status": "online",
+      "typing": "Dijex AI is typing…",
+      "handoff": "Conversation handed to an operator · summary and history attached",
+      "languageBadge": "Language",
+      "scenario": "Scenario {{n}}",
+      "demoLabel": "Demo conversation with the support agent"
+    },
+    "stickers": {
+      "response": "Reply in < 5 s",
+      "always": "24/7",
+      "languages": "30+ languages"
+    },
+    "channels": {
+      "title": "Channels",
+      "groups": {
+        "messengers": "Messengers",
+        "social": "Social media",
+        "apps": "Website & apps"
+      },
+      "items": {
+        "webWidget": "Website widget",
+        "sdk": "iOS & Android SDK",
+        "email": "Email",
+        "api": "REST API"
+      },
+      "omni": "A customer starts on Instagram and continues on your website — the conversation history is kept."
+    },
+    "featuresTitle": "What the agent can do",
+    "features": {
+      "instant": {
+        "title": "Instant and 24/7",
+        "description": "No queues, weekends or holidays."
+      },
+      "language": {
+        "title": "Language auto-detection",
+        "description": "Replies in the customer's language; operators see a translation."
+      },
+      "inbox": {
+        "title": "Unified inbox",
+        "description": "Every channel in one window for your team."
+      },
+      "handoff": {
+        "title": "Operator hand-off",
+        "description": "With a conversation summary and customer data."
+      },
+      "actions": {
+        "title": "Actions in your systems",
+        "description": "Order status, bookings, payment links."
+      },
+      "brandVoice": {
+        "title": "Brand voice",
+        "description": "Tone, rules and forbidden topics tuned to your style."
+      },
+      "proactive": {
+        "title": "Proactive messages",
+        "description": "Reminders, status updates, follow-ups."
+      },
+      "analytics": {
+        "title": "Analytics",
+        "description": "Request topics, CSAT, share resolved without an operator."
+      }
+    },
+    "scenariosTitle": "Typical scenarios",
+    "scenarios": [
+      "FAQ & consultations",
+      "Order status",
+      "Bookings & appointments",
+      "Lead qualification",
+      "Returns & complaints",
+      "Feedback collection",
+      "Repeat sales"
+    ],
+    "cta": "More about the agent"
+  },
+  "processes": {
+    "eyebrow": "Digital processes",
+    "title": "We take manual work out of your processes",
+    "lead": "We design and build systems that replace spreadsheets, manual approvals and scattered services.",
+    "tabsLabel": "Directions of digital process optimisation",
+    "labels": {
+      "whatWeDo": "What we do",
+      "examples": "Examples",
+      "result": "Result"
+    },
+    "tabs": {
+      "internal": {
+        "tab": "Internal systems",
+        "description": "The tools your operations run on: accounting, approvals, resource and people management.",
+        "whatWeDo": [
+          "CRM and ERP modules tailored to your processes",
+          "Admin panels and back office",
+          "Staff, shift and task management",
+          "Warehouse and resource accounting",
+          "Executive dashboards and reports"
+        ],
+        "examples": [
+          {
+            "title": "Fleet management",
+            "description": "Vehicles, drivers, maintenance and trips in one system."
+          },
+          {
+            "title": "Request approvals",
+            "description": "Approval routes instead of endless email chains."
+          },
+          {
+            "title": "BI dashboard",
+            "description": "Real-time KPIs instead of manual reports."
+          }
+        ],
+        "result": "Fewer manual operations and errors, full transparency for management."
+      },
+      "messaging": {
+        "tab": "Messaging platforms",
+        "description": "Your own communication platforms — built around your security rules and integrations.",
+        "whatWeDo": [
+          "Corporate messenger inside your perimeter",
+          "In-product customer chat",
+          "Unified inbox for every channel",
+          "Notification and mailing systems",
+          "Bots and AI assistants inside chats"
+        ],
+        "examples": [
+          {
+            "title": "Secure corporate chat",
+            "description": "Conversations never leave for external services."
+          },
+          {
+            "title": "Unified operator window",
+            "description": "WhatsApp, Telegram, website and email in one interface."
+          },
+          {
+            "title": "Notification service",
+            "description": "Push, SMS, email and messengers under one set of rules."
+          }
+        ],
+        "result": "Control over data and communication without depending on third-party platforms."
+      },
+      "portals": {
+        "tab": "Client portals",
+        "description": "Personal accounts where customers find answers, documents and statuses themselves — without calling a manager.",
+        "whatWeDo": [
+          "Personal account and profile",
+          "Order and request statuses",
+          "Documents, invoices and statements",
+          "Tickets and knowledge base",
+          "B2B orders and price lists"
+        ],
+        "examples": [
+          {
+            "title": "B2B client account",
+            "description": "Orders, shipments and documents online."
+          },
+          {
+            "title": "Patient portal",
+            "description": "Appointments, results and visit history."
+          },
+          {
+            "title": "Tenant account",
+            "description": "Invoices, maintenance requests, notifications."
+          }
+        ],
+        "result": "Fewer incoming calls, faster payments, higher loyalty."
+      },
+      "apps": {
+        "tab": "Websites & apps",
+        "description": "Corporate websites, SaaS platforms and mobile apps — with a modern front end and a reliable back end.",
+        "whatWeDo": [
+          "Corporate and multilingual websites",
+          "SaaS and web platforms",
+          "iOS and Android mobile apps",
+          "E-commerce and catalogues",
+          "PWA and offline modes"
+        ],
+        "examples": [
+          {
+            "title": "Corporate website",
+            "description": "Fast, responsive and available in several languages."
+          },
+          {
+            "title": "SaaS platform",
+            "description": "From MVP to high-load production."
+          },
+          {
+            "title": "Mobile app",
+            "description": "Native or cross-platform, with push notifications."
+          }
+        ],
+        "result": "A digital product that scales with your business."
+      }
+    },
+    "cta": "More about digital processes"
+  },
+  "ecosystem": {
+    "eyebrow": "Ecosystem",
+    "title": "How it all works together",
+    "lead": "One real-life scenario — three solutions at work.",
+    "note": "This scenario is illustrative: the steps are configured for your business.",
+    "steps": {
+      "message": {
+        "title": "A customer writes on WhatsApp",
+        "text": "In Spanish, at night, asking about an order."
+      },
+      "reply": {
+        "title": "The agent understands and replies",
+        "text": "Detects the language and intent, answers in seconds."
+      },
+      "systems": {
+        "title": "The orchestrator connects systems",
+        "text": "Checks the order in the CRM and stock in the warehouse."
+      },
+      "ticket": {
+        "title": "A request is created",
+        "text": "In the internal system; the customer gets a link to the portal."
+      },
+      "summary": {
+        "title": "In the morning the manager sees a summary",
+        "text": "Every overnight request — with summaries and statuses."
+      }
+    }
+  },
+  "industries": {
+    "eyebrow": "Industries",
+    "title": "Where we apply it",
+    "lead": "Typical tasks we solve in different sectors.",
+    "items": {
+      "ecommerce": {
+        "title": "E-commerce & retail",
+        "tasks": [
+          "Order statuses and returns 24/7",
+          "Product advice in many languages",
+          "Portal for B2B purchasing"
+        ]
+      },
+      "finance": {
+        "title": "Finance & fintech",
+        "tasks": [
+          "First-line support without access to personal data",
+          "Processing of applications and documents",
+          "Internal assistants for policies"
+        ]
+      },
+      "logistics": {
+        "title": "Logistics & transport",
+        "tasks": [
+          "Shipment tracking in messengers",
+          "Fleet management",
+          "Portal for clients and carriers"
+        ]
+      },
+      "healthcare": {
+        "title": "Healthcare & clinics",
+        "tasks": ["Appointments and reminders", "Visit preparation", "Patient portal"]
+      },
+      "realEstate": {
+        "title": "Real estate",
+        "tasks": ["Lead qualification 24/7", "Viewing bookings", "Tenant account"]
+      },
+      "hospitality": {
+        "title": "Travel & hospitality",
+        "tasks": [
+          "Bookings in 10+ languages",
+          "Transfers and extra services",
+          "Reviews and repeat sales"
+        ]
+      },
+      "education": {
+        "title": "Education",
+        "tasks": ["Answers for applicants and students", "Course enrolment", "Student account"]
+      },
+      "manufacturing": {
+        "title": "Manufacturing & B2B",
+        "tasks": [
+          "Request intake and routing",
+          "AI-assisted document flow",
+          "ERP modules and dashboards"
+        ]
+      }
+    }
+  },
+  "about": {
+    "eyebrow": "About us",
+    "title": "Technology that delivers results",
+    "lead": "Dijex helps mid-sized and large businesses adopt AI and digital systems that solve specific problems — rather than simply following trends.",
+    "body": "We work at the intersection of product strategy, engineering and design: from a pilot in a few weeks to high-load platforms. Every project starts with a measurable goal and ends with a measurable result.",
+    "principles": {
+      "goal": "Goal and metric before we start",
+      "progress": "Transparent progress every week",
+      "data": "Your data stays under your control"
+    },
+    "metrics": {
+      "years": "years on the market",
+      "projects": "projects delivered",
+      "clients": "clients in the portfolio",
+      "technologies": "technologies in the stack"
+    }
+  },
+  "results": {
+    "eyebrow": "Results",
+    "title": "What changes after implementation",
+    "lead": "Typical changes our clients see.",
+    "before": "Before",
+    "after": "After",
+    "rows": {
+      "firstReply": {
+        "label": "First reply to a customer",
+        "before": "Hours",
+        "after": "Seconds"
+      },
+      "availability": {
+        "label": "Support availability",
+        "before": "Business hours",
+        "after": "24/7"
+      },
+      "languages": {
+        "label": "Service languages",
+        "before": "1–2",
+        "after": "30+"
+      },
+      "requests": {
+        "label": "Request handling",
+        "before": "Manually, by email",
+        "after": "Automatic routing"
+      },
+      "customerData": {
+        "label": "Customer data",
+        "before": "In spreadsheets and chats",
+        "after": "In one system"
+      }
+    },
+    "metrics": {
+      "automated": {
+        "prefix": "",
+        "suffix": "%",
+        "label": "of requests resolved without an operator"
+      },
+      "always": {
+        "prefix": "",
+        "suffix": "/7",
+        "label": "support availability"
+      },
+      "reply": {
+        "prefix": "<",
+        "suffix": " s",
+        "label": "first response time"
+      }
+    }
+  },
+  "cases": {
+    "eyebrow": "Cases",
+    "title": "Selected projects",
+    "lead": "Projects that have proven themselves under real load, run 24/7 and solve real problems.",
+    "labels": {
+      "challenge": "Challenge",
+      "solution": "Solution",
+      "result": "Result",
+      "related": "Related solutions"
+    },
+    "items": {
+      "newsFeeder": {
+        "client": "News feeder",
+        "title": "AI news feeder",
+        "summary": "AI-powered processing of news streams from multiple sources for trading decisions.",
+        "challenge": "Process news streams from many sources and quickly turn them into trading signals.",
+        "solution": "An AI pipeline: collection, analysis and metric calculation, signal generation, translation into 20+ languages and full-text search.",
+        "result": "News is available in 20+ languages and can be found in seconds.",
+        "metrics": {
+          "languages": "translation languages"
+        }
+      },
+      "aiAssistant": {
+        "client": "B2B SaaS",
+        "title": "AI assistant for customer support",
+        "summary": "RAG over the client's knowledge base, integrated into the product chat.",
+        "challenge": "First-line support was overloaded with repetitive questions.",
+        "solution": "RAG over the client's knowledge base and integration into the product chat.",
+        "result": "60% of first-line requests are handled automatically.",
+        "metrics": {
+          "automated": "of first-line requests automated"
+        }
+      },
+      "enterpriseSuite": {
+        "client": "Corporate platform",
+        "title": "Rolling out internal systems and business applications",
+        "summary": "Building and implementing a corporate ecosystem of admin panels, internal apps and analytics.",
+        "challenge": "Scattered tools and manual processes across the corporate infrastructure.",
+        "solution": "An ecosystem of admin panels, internal applications, staff management, analytics, process automation and centralised infrastructure.",
+        "result": "One ecosystem instead of scattered tools: processes are transparent and automated.",
+        "metrics": {}
+      }
+    }
+  },
+  "process": {
+    "eyebrow": "Process",
+    "title": "How we work",
+    "lead": "We start small, measure, and scale what works.",
+    "outputLabel": "Deliverable",
+    "steps": {
+      "audit": {
+        "title": "Audit",
+        "duration": "1–2 weeks",
+        "description": "We analyse processes, channels and data and find the points with the greatest impact.",
+        "output": "Process map and priorities"
+      },
+      "pilot": {
+        "title": "Pilot",
+        "duration": "2–4 weeks",
+        "description": "We launch one solution on a real scenario and measure the result.",
+        "output": "Working pilot and metrics"
+      },
+      "integration": {
+        "title": "Integration",
+        "duration": "from 1 month",
+        "description": "We connect CRM, ERP, channels and knowledge bases and configure security.",
+        "output": "Solution in production"
+      },
+      "scaling": {
+        "title": "Scaling",
+        "duration": "as needed",
+        "description": "We add channels, languages, scenarios and new agents.",
+        "output": "Growing coverage and impact"
+      },
+      "support": {
+        "title": "Support",
+        "duration": "ongoing",
+        "description": "Monitoring, improving answer quality, data-driven development.",
+        "output": "SLA and regular reports"
+      }
+    }
+  },
+  "engagement": {
+    "eyebrow": "Engagement models",
+    "title": "Start with what suits you best",
+    "lead": "No long commitments: every format ends with a measurable result.",
+    "popular": "Most popular",
+    "items": {
+      "pilot": {
+        "title": "Pilot",
+        "description": "One scenario, a measurable goal, a fast result.",
+        "points": [
+          "2–4 weeks",
+          "1 channel or process",
+          "Report with metrics",
+          "Data-driven decision on scaling"
+        ],
+        "cta": "Discuss a pilot"
+      },
+      "turnkey": {
+        "title": "Turnkey implementation",
+        "description": "From audit to production and team training.",
+        "points": [
+          "Audit and architecture",
+          "Development and integrations",
+          "Security and load testing",
+          "Team training"
+        ],
+        "cta": "Discuss a project"
+      },
+      "support": {
+        "title": "Ongoing support",
+        "description": "We develop and maintain the solution after launch.",
+        "points": [
+          "24/7 monitoring",
+          "Improving answer quality",
+          "New scenarios and channels",
+          "Monthly reports"
+        ],
+        "cta": "Discuss support"
+      }
+    }
+  },
+  "integrations": {
+    "eyebrow": "Integrations",
+    "title": "We connect to what you already have",
+    "lead": "We choose the stack for the task, not the other way round.",
+    "marqueeLabel": "Technologies we work with",
+    "groups": {
+      "channels": "Channels",
+      "crm": "CRM & Helpdesk",
+      "erp": "Accounting & ERP",
+      "ai": "AI models",
+      "infra": "Infrastructure"
+    },
+    "items": {
+      "webWidget": "Web widget",
+      "customApi": "Your own APIs"
+    },
+    "footer": "Don't see your system? We'll connect it via API or webhooks."
+  },
+  "security": {
+    "eyebrow": "Security",
+    "title": "Your data stays under your control",
+    "lead": "Security is designed in from day one — not added at the end.",
+    "items": {
+      "encryption": {
+        "title": "Encryption",
+        "text": "Data is encrypted in transit and at rest."
+      },
+      "masking": {
+        "title": "Personal data masking",
+        "text": "Personal data is hidden before it reaches the model."
+      },
+      "perimeter": {
+        "title": "Deployment in your perimeter",
+        "text": "Including local models without external APIs."
+      },
+      "compliance": {
+        "title": "Regulatory compliance",
+        "text": "Designed with GDPR and local data protection laws in mind."
+      },
+      "access": {
+        "title": "Role-based access and audit",
+        "text": "Who saw and changed what, and when."
+      },
+      "guardrails": {
+        "title": "Answer control",
+        "text": "Guardrails, forbidden topics, checks before sending."
+      }
+    },
+    "deployment": {
+      "title": "Deployment options",
+      "label": "Choose a deployment option",
+      "options": {
+        "cloud": {
+          "title": "Cloud",
+          "text": "The fastest start: managed infrastructure, scaling on demand, models via API."
+        },
+        "private": {
+          "title": "Private cloud",
+          "text": "A dedicated environment in your cloud account with network isolation and your own keys."
+        },
+        "onPrem": {
+          "title": "On-premise",
+          "text": "Everything runs on your servers, including open-source models — data never leaves your infrastructure."
+        }
+      }
+    }
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Frequently asked questions",
+    "notFound": "Didn't find your answer?",
+    "ask": "Ask us a question",
+    "items": {
+      "difference": {
+        "q": "How is an AI orchestrator different from an ordinary chatbot?",
+        "a": "A chatbot follows a script. An orchestrator understands the task, picks the right model or agent, calls your systems and takes actions — with control and a log of every step."
+      },
+      "launch": {
+        "q": "How long does a launch take?",
+        "a": "A pilot on one scenario usually takes 2–4 weeks. A full rollout depends on the number of channels and integrations."
+      },
+      "channels": {
+        "q": "Which channels can be connected?",
+        "a": "Telegram, WhatsApp, LINE, WeChat, Instagram, VK, Viber, Facebook Messenger, email, a website widget and an SDK for mobile apps. Others — via API."
+      },
+      "languages": {
+        "q": "Which languages does the agent speak?",
+        "a": "More than 30 languages with auto-detection. Operators can reply in their own language — translation is automatic."
+      },
+      "unknown": {
+        "q": "What if the agent doesn't know the answer?",
+        "a": "It doesn't make things up: it tells the customer honestly and hands the conversation to an operator with a summary and history."
+      },
+      "data": {
+        "q": "Where is the data stored? Can we avoid external clouds?",
+        "a": "Yes. Deployment inside your perimeter with local models is possible — data never leaves your infrastructure."
+      },
+      "models": {
+        "q": "Which AI models do you use?",
+        "a": "We choose them for the task: OpenAI, Anthropic, Qwen, Grok or open-source models. The orchestrator lets you combine and switch them without rebuilding the system."
+      },
+      "crm": {
+        "q": "Do you integrate with our CRM or ERP?",
+        "a": "Yes — with popular systems out of the box, and with the rest via API."
+      },
+      "measure": {
+        "q": "How do you measure results?",
+        "a": "Before we start, we agree on metrics — response time, share of requests resolved without an operator, conversion, request handling time — and report on them regularly."
+      },
+      "start": {
+        "q": "What do you need from us to get started?",
+        "a": "A description of the task, access to a knowledge base or sample requests, and a contact person. We take care of the rest."
+      },
+      "teamLanguages": {
+        "q": "Which languages do you work with clients in?",
+        "a": "The website and communication are available in English, Russian, French, German, Japanese, Chinese and Thai."
+      }
+    }
+  }
+}

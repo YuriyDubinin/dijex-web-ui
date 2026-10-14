@@ -1,0 +1,95 @@
+{
+  "brand": "Dijex",
+  "skipToContent": "Zum Hauptinhalt springen",
+  "nav": {
+    "solutions": "Lösungen",
+    "industries": "Branchen",
+    "cases": "Referenzen",
+    "process": "Ablauf",
+    "faq": "FAQ",
+    "contact": "Kontakt",
+    "about": "Über uns"
+  },
+  "header": {
+    "homeLink": "Dijex – Startseite",
+    "mainNav": "Hauptnavigation",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen",
+    "cta": "Kontakt",
+    "solutionsMenu": "Unsere Lösungen"
+  },
+  "actions": {
+    "discussProject": "Projekt besprechen",
+    "learnMore": "Mehr erfahren",
+    "backHome": "Zur Startseite"
+  },
+  "solutions": {
+    "aiOrchestrator": {
+      "title": "KI-Orchestrator",
+      "description": "Eine Steuerzentrale für Modelle, Agenten, Daten und Ihre Systeme."
+    },
+    "supportAgent": {
+      "title": "24/7-Support-Agent",
+      "description": "Mehrsprachiger KI-Agent für Social Media, Messenger, Websites und Apps."
+    },
+    "digitalProcesses": {
+      "title": "Digitale Prozesse",
+      "description": "Interne Systeme, Messaging-Plattformen, Kundenportale, Websites und Apps."
+    }
+  },
+  "footer": {
+    "tagline": "KI-Orchestrierung, 24/7-Support und digitale Prozesse für Mittelstand und Großunternehmen.",
+    "solutionsTitle": "Lösungen",
+    "companyTitle": "Unternehmen",
+    "contactsTitle": "Kontakt",
+    "socialsTitle": "Social Media",
+    "copyright": "© {{year}} Dijex. Alle Rechte vorbehalten.",
+    "privacy": "Datenschutzerklärung",
+    "backToTop": "Nach oben"
+  },
+  "language": {
+    "label": "Sprache",
+    "panelTitle": "Sprache wählen",
+    "current": "Sprache der Website: {{name}}",
+    "changed": "Sprache geändert: {{name}}",
+    "hint": "Wir haben {{name}} anhand Ihrer Region ausgewählt.",
+    "hintAction": "Ändern",
+    "hintDismiss": "Schließen"
+  },
+  "toast": {
+    "region": "Benachrichtigungen",
+    "dismiss": "Benachrichtigung schließen"
+  },
+  "notFound": {
+    "eyebrow": "404",
+    "title": "Diese Seite existiert nicht",
+    "lead": "Vielleicht wurde sie verschoben. Hier geht es weiter:"
+  },
+  "breadcrumbs": {
+    "label": "Brotkrumennavigation",
+    "home": "Start",
+    "solutions": "Lösungen"
+  },
+  "images": {
+    "pillarOrchestrator": "KI-Orchestrator als Knotenpunkt zwischen Modellen, Agenten und Geschäftssystemen",
+    "pillarSupportAgent": "Support-Agent beantwortet Kundenanfragen in mehreren Sprachen",
+    "pillarDigitalProcesses": "Dashboards, Formulare und App-Screens eines digitalen Geschäftssystems",
+    "supportAgent": "Kern des KI-Support-Agenten von Dijex",
+    "processesInternalSystems": "Admin-Panel eines internen Geschäftssystems",
+    "processesMessagingPlatform": "Unternehmens-Messenger und zentrale Inbox für Operatoren",
+    "processesClientPortal": "Kundenportal mit Bestellstatus und Dokumenten",
+    "processesWebApps": "Unternehmenswebsite und mobile App",
+    "aboutGlobe": "Digitale Lösungen für globale Unternehmen",
+    "caseNewsFeeder": "Illustration zum Projekt News-Feeder",
+    "caseAiAssistant": "Illustration zum Projekt KI-Assistent für den Kundensupport",
+    "caseEnterpriseSuite": "Illustration eines Unternehmens-Ökosystems mit Admin-Panels und internen Diensten",
+    "solutionOrchestratorHero": "Architektur des KI-Orchestrators",
+    "solutionOrchestratorConsole": "Orchestrator-Konsole mit Entscheidungsprotokoll, Qualitäts- und Kostenmetriken",
+    "solutionSupportHero": "Support-Agent arbeitet gleichzeitig in mehreren Kanälen",
+    "solutionSupportInbox": "Zentrale Operator-Inbox mit Gesprächszusammenfassung",
+    "solutionDigitalHero": "Vernetzte Geschäftssysteme und Prozesslandkarte"
+  },
+  "imageSlot": {
+    "placeholder": "Bild folgt in Kürze"
+  }
+}
