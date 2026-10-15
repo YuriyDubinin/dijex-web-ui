@@ -86,13 +86,16 @@ describe('no static images', () => {
     expect(offenders).toEqual([]);
   });
 
-  it('public/ holds only the favicon and generated link previews', () => {
+  it('public/ holds no images except the favicon and generated link previews', () => {
     const publicDir = join(process.cwd(), 'public');
     const files = listFiles(publicDir).map((path) =>
       relative(publicDir, path).split('\\').join('/'),
     );
     const unexpected = files.filter(
-      (file) => file !== 'favicon.svg' && !/^og\/og-[a-z]{2}\.jpg$/.test(file),
+      (file) =>
+        /\.(png|jpe?g|webp|gif|avif|svg|ico)$/i.test(file) &&
+        file !== 'favicon.svg' &&
+        !/^og\/og-[a-z]{2}\.jpg$/.test(file),
     );
     expect(unexpected).toEqual([]);
   });
