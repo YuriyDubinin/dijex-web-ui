@@ -11,7 +11,7 @@ import { ProgressConnector, StepTimeline } from './StepTimeline';
 import { ECOSYSTEM_STEPS } from '@/content/home/ecosystem';
 import type { SolutionKey } from '@/content/solutions';
 import { useContent } from '@/i18n/useContent';
-import { useMediaQuery } from '@/motion/hooks';
+import { STICKY_SCENE_QUERY, useMediaQuery } from '@/motion/hooks';
 import { Odometer } from '@/motion/Odometer';
 import { useMotionTier } from '@/motion/tier';
 import { DURATION, EASE, SPRING_VALUE } from '@/motion/tokens';
@@ -216,6 +216,6 @@ function EcosystemFlow() {
 
 export function Ecosystem() {
   const tier = useMotionTier();
-  const desktop = useMediaQuery('(min-width: 1024px)');
+  const desktop = useMediaQuery(STICKY_SCENE_QUERY);
   return tier === 'full' && desktop ? <EcosystemSticky /> : <EcosystemFlow />;
 }

@@ -102,3 +102,6 @@ coverage/
 # Editor caches
 .eslintcache
 *.tsbuildinfo
+# Layout audit (npm run audit:layout)
+test-results/
+playwright-report/

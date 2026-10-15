@@ -1,0 +1,104 @@
+{
+  "orchestratorHub": {
+    "core": "オーケストレーター",
+    "requests": ["注文状況", "請求書の発行", "月次レポート", "契約書の翻訳"],
+    "done": "完了"
+  },
+  "multilingualChat": {
+    "resolved": "AIで自己解決",
+    "reply": "応答時間"
+  },
+  "processFlow": {
+    "before": "手作業",
+    "after": "自動化",
+    "columns": ["申請", "承認", "完了"],
+    "tasks": ["購買発注", "休暇申請", "契約レビュー", "請求書 #208"],
+    "kpi": "処理時間",
+    "owner": "担当者"
+  },
+  "internalSystems": {
+    "nav": ["概要", "申請", "車両", "倉庫", "レポート"],
+    "kpis": ["本日の申請", "平均処理", "車両稼働率"],
+    "chart": "週間の申請数",
+    "request": "申請",
+    "status": "ステータス",
+    "inProgress": "対応中",
+    "approved": "承認済み"
+  },
+  "messagingPlatform": {
+    "all": "すべて",
+    "search": "検索",
+    "previews": [
+      "住所を変更できますか？",
+      "受け取りました！",
+      "発送はいつですか？",
+      "請求書をお願いします",
+      "注文の準備はできた？"
+    ],
+    "messages": [
+      "こんにちは。配送先を変更できますか？",
+      "もちろんです。新しい住所を教えてください。",
+      "パークレーン12、4号室"
+    ],
+    "aiSuggestion": "AI提案",
+    "draft": "変更しました！明日の正午までにパークレーン12へお届けします。",
+    "online": "オンライン"
+  },
+  "clientPortal": {
+    "greeting": "こんにちは、{{name}}",
+    "name": "佐藤様",
+    "order": "注文",
+    "stages": ["受付", "梱包", "配送中", "配達済み"],
+    "documents": "書類",
+    "docs": ["契約書", "請求書", "納品書"],
+    "toast": "請求書の支払い完了",
+    "balance": "残高",
+    "support": "お問い合わせ"
+  },
+  "webApps": {
+    "cta": "はじめる",
+    "sync": "同期済み",
+    "nav": ["製品", "料金", "お問い合わせ"]
+  },
+  "orchestratorPipeline": {
+    "stages": ["リクエスト", "意図", "ルート", "アクション"],
+    "requests": [
+      "注文 #4821 はどこですか？",
+      "二重請求されました。返金してください",
+      "Acme向けの供給契約書を作成して"
+    ],
+    "intents": ["注文状況", "支払い", "法務"],
+    "branches": ["高速モデル", "高精度モデル", "オペレーター"],
+    "guardrails": ["個人情報マスク", "許可トピック", "確認済み"],
+    "results": ["状況を送信", "返金完了", "下書き完成"],
+    "confidence": "確信度"
+  },
+  "observabilityConsole": {
+    "trace": "トレース",
+    "metrics": ["品質", "1件あたりコスト", "レイテンシー"],
+    "logs": "ライブログ"
+  },
+  "omnichannel": {
+    "agent": "AIエージェント",
+    "live": "現在の対話数",
+    "languages": "あらゆる言語"
+  },
+  "operatorInbox": {
+    "conversations": "会話",
+    "original": "原文",
+    "translation": "翻訳",
+    "customerMessage": "こんにちは。配達を金曜日に変更できますか？",
+    "summary": "AI要約",
+    "summaryItems": ["金曜日の配達を希望", "注文 #4821、支払い済み", "スペイン語で連絡"],
+    "reply": "承知しました。配達を金曜日に変更しました。",
+    "sendsAs": "スペイン語で送信されます",
+    "ai": "AI",
+    "operator": "オペレーター",
+    "customer": "お客様"
+  },
+  "systemsMap": {
+    "modules": ["顧客ポータル", "ERP", "CRM", "メッセンジャー", "モバイルアプリ"],
+    "event": "新規注文",
+    "spreadsheet": "スプレッドシート"
+  }
+}

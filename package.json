@@ -11,7 +11,9 @@
     "format": "prettier --write .",
     "test": "vitest run",
     "test:watch": "vitest",
-    "images:check": "node scripts/check-images.mjs"
+    "images:check": "node scripts/check-images.mjs",
+    "audit:layout": "npm run build && rm -rf test-results/layout && (playwright test; node scripts/layout-summary.mjs)",
+    "audit:summary": "node scripts/layout-summary.mjs"
   },
   "dependencies": {
     "@fontsource/inter": "^5.1.0",
@@ -35,6 +37,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@playwright/test": "^1.56.1",
     "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/react": "^16.0.1",
     "@testing-library/user-event": "^14.5.2",

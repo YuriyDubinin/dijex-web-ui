@@ -10,7 +10,7 @@ import { SectionHeader } from '@/components/ui/SectionHeader';
 import { CASES, type CaseDef } from '@/content/home/cases';
 import { SOLUTIONS } from '@/content/solutions';
 import { useContent } from '@/i18n/useContent';
-import { useMediaQuery } from '@/motion/hooks';
+import { STICKY_SCENE_QUERY, useMediaQuery } from '@/motion/hooks';
 import { useMotionTier } from '@/motion/tier';
 import { DISTANCE, DURATION, EASE, STAGGER } from '@/motion/tokens';
 import { cn } from '@/lib/cn';
@@ -233,7 +233,7 @@ function CasesFlow() {
 export function Cases() {
   const content = useContent('home', 'cases');
   const tier = useMotionTier();
-  const desktop = useMediaQuery('(min-width: 1024px)');
+  const desktop = useMediaQuery(STICKY_SCENE_QUERY);
 
   return (
     <Section id="cases" labelledBy="cases-title" divider>

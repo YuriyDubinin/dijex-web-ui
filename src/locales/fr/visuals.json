@@ -1,0 +1,104 @@
+{
+  "orchestratorHub": {
+    "core": "Orchestrateur",
+    "requests": ["Statut commande", "Facturer un client", "Rapport mensuel", "Traduire un contrat"],
+    "done": "Terminé"
+  },
+  "multilingualChat": {
+    "resolved": "Résolu sans opérateur",
+    "reply": "Réponse en"
+  },
+  "processFlow": {
+    "before": "À la main",
+    "after": "Automatisé",
+    "columns": ["Demande", "Validation", "Terminé"],
+    "tasks": ["Bon de commande", "Demande de congé", "Revue de contrat", "Facture n° 208"],
+    "kpi": "Délai de traitement",
+    "owner": "Responsable"
+  },
+  "internalSystems": {
+    "nav": ["Aperçu", "Demandes", "Flotte", "Entrepôt", "Rapports"],
+    "kpis": ["Demandes du jour", "Traitement moy.", "Charge flotte"],
+    "chart": "Demandes par semaine",
+    "request": "Demande",
+    "status": "Statut",
+    "inProgress": "En cours",
+    "approved": "Validée"
+  },
+  "messagingPlatform": {
+    "all": "Tous",
+    "search": "Rechercher",
+    "previews": [
+      "Changer l’adresse ?",
+      "Merci, bien reçu !",
+      "Quand part l’envoi ?",
+      "Envoyez la facture svp",
+      "La commande est prête ?"
+    ],
+    "messages": [
+      "Bonjour ! Puis-je changer l’adresse de livraison ?",
+      "Bien sûr. Quelle adresse indiquer ?",
+      "12 rue du Parc, bureau 4"
+    ],
+    "aiSuggestion": "Suggestion IA",
+    "draft": "C’est fait ! Le coursier livrera au 12 rue du Parc demain avant midi.",
+    "online": "en ligne"
+  },
+  "clientPortal": {
+    "greeting": "Bonjour, {{name}}",
+    "name": "Camille",
+    "order": "Commande",
+    "stages": ["Acceptée", "Emballée", "Expédiée", "Livrée"],
+    "documents": "Documents",
+    "docs": ["Contrat", "Facture", "Bon de livraison"],
+    "toast": "Facture payée",
+    "balance": "Solde",
+    "support": "Nous écrire"
+  },
+  "webApps": {
+    "cta": "Commencer",
+    "sync": "Synchronisé",
+    "nav": ["Produit", "Tarifs", "Contact"]
+  },
+  "orchestratorPipeline": {
+    "stages": ["Requête", "Intention", "Routage", "Action"],
+    "requests": [
+      "Où est ma commande n° 4821 ?",
+      "Débité deux fois, remboursez-moi",
+      "Rédige un contrat de fourniture Acme"
+    ],
+    "intents": ["Statut commande", "Paiement", "Juridique"],
+    "branches": ["Modèle rapide", "Modèle avancé", "Opérateur"],
+    "guardrails": ["Données masquées", "Sujet autorisé", "Vérifié"],
+    "results": ["Statut envoyé", "Remboursé", "Brouillon prêt"],
+    "confidence": "Confiance"
+  },
+  "observabilityConsole": {
+    "trace": "Trace",
+    "metrics": ["Qualité", "Coût / requête", "Latence"],
+    "logs": "Logs en direct"
+  },
+  "omnichannel": {
+    "agent": "Agent IA",
+    "live": "En conversation",
+    "languages": "Toutes les langues"
+  },
+  "operatorInbox": {
+    "conversations": "Conversations",
+    "original": "Original",
+    "translation": "Traduction",
+    "customerMessage": "Bonjour ! Peut-on décaler la livraison à vendredi ?",
+    "summary": "Résumé IA",
+    "summaryItems": ["Livraison vendredi", "Commande n° 4821, payée", "Écrit en espagnol"],
+    "reply": "Bien sûr, la livraison est décalée à vendredi.",
+    "sendsAs": "Sera envoyé en espagnol",
+    "ai": "IA",
+    "operator": "Opérateur",
+    "customer": "Client"
+  },
+  "systemsMap": {
+    "modules": ["Portail client", "ERP", "CRM", "Messagerie", "Appli mobile"],
+    "event": "Nouvelle commande",
+    "spreadsheet": "Tableur"
+  }
+}

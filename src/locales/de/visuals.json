@@ -1,0 +1,104 @@
+{
+  "orchestratorHub": {
+    "core": "Orchestrator",
+    "requests": ["Bestellstatus", "Rechnung senden", "Monatsbericht", "Vertrag übersetzen"],
+    "done": "Erledigt"
+  },
+  "multilingualChat": {
+    "resolved": "Ohne Operator gelöst",
+    "reply": "Antwort in"
+  },
+  "processFlow": {
+    "before": "Manuell",
+    "after": "Automatisiert",
+    "columns": ["Antrag", "Freigabe", "Erledigt"],
+    "tasks": ["Bestellung", "Urlaubsantrag", "Vertragsprüfung", "Rechnung 208"],
+    "kpi": "Bearbeitungszeit",
+    "owner": "Zuständig"
+  },
+  "internalSystems": {
+    "nav": ["Übersicht", "Anfragen", "Fuhrpark", "Lager", "Berichte"],
+    "kpis": ["Anfragen heute", "Ø Bearbeitung", "Auslastung"],
+    "chart": "Anfragen pro Woche",
+    "request": "Anfrage",
+    "status": "Status",
+    "inProgress": "In Arbeit",
+    "approved": "Freigegeben"
+  },
+  "messagingPlatform": {
+    "all": "Alle",
+    "search": "Suche",
+    "previews": [
+      "Adresse noch ändern?",
+      "Danke, ist angekommen!",
+      "Wann wird versendet?",
+      "Bitte Rechnung senden",
+      "Ist die Bestellung fertig?"
+    ],
+    "messages": [
+      "Hallo! Kann ich die Lieferadresse ändern?",
+      "Natürlich. Welche Adresse soll es sein?",
+      "Parkstraße 12, Büro 4"
+    ],
+    "aiSuggestion": "KI-Vorschlag",
+    "draft": "Erledigt! Der Kurier liefert morgen vor 12 Uhr in die Parkstraße 12.",
+    "online": "online"
+  },
+  "clientPortal": {
+    "greeting": "Guten Tag, {{name}}",
+    "name": "Anna",
+    "order": "Bestellung",
+    "stages": ["Angenommen", "Verpackt", "Unterwegs", "Zugestellt"],
+    "documents": "Dokumente",
+    "docs": ["Vertrag", "Rechnung", "Lieferschein"],
+    "toast": "Rechnung bezahlt",
+    "balance": "Guthaben",
+    "support": "Chat starten"
+  },
+  "webApps": {
+    "cta": "Loslegen",
+    "sync": "Synchron",
+    "nav": ["Produkt", "Preise", "Kontakt"]
+  },
+  "orchestratorPipeline": {
+    "stages": ["Anfrage", "Absicht", "Route", "Aktion"],
+    "requests": [
+      "Wo ist meine Bestellung 4821?",
+      "Doppelt abgebucht, bitte erstatten",
+      "Liefervertrag für Acme entwerfen"
+    ],
+    "intents": ["Bestellstatus", "Zahlung", "Recht"],
+    "branches": ["Schnelles Modell", "Starkes Modell", "Operator"],
+    "guardrails": ["PII maskiert", "Thema erlaubt", "Geprüft"],
+    "results": ["Status gesendet", "Erstattet", "Entwurf fertig"],
+    "confidence": "Konfidenz"
+  },
+  "observabilityConsole": {
+    "trace": "Trace",
+    "metrics": ["Qualität", "Kosten / Anfrage", "Latenz"],
+    "logs": "Live-Logs"
+  },
+  "omnichannel": {
+    "agent": "KI-Agent",
+    "live": "Gerade im Gespräch",
+    "languages": "Jede Sprache"
+  },
+  "operatorInbox": {
+    "conversations": "Gespräche",
+    "original": "Original",
+    "translation": "Übersetzung",
+    "customerMessage": "Hallo! Kann die Lieferung auf Freitag verschoben werden?",
+    "summary": "KI-Zusammenfassung",
+    "summaryItems": ["Lieferung am Freitag", "Bestellung 4821, bezahlt", "Schreibt Spanisch"],
+    "reply": "Gern, wir haben die Lieferung auf Freitag verschoben.",
+    "sendsAs": "Wird auf Spanisch gesendet",
+    "ai": "KI",
+    "operator": "Operator",
+    "customer": "Kunde"
+  },
+  "systemsMap": {
+    "modules": ["Kundenportal", "ERP", "CRM", "Messenger", "Mobile App"],
+    "event": "Neue Bestellung",
+    "spreadsheet": "Tabelle"
+  }
+}

@@ -9,8 +9,9 @@ import { FooterWordmark } from './FooterWordmark';
 import { CONTACTS, FOOTER_COMPANY_LINKS, SOCIALS } from '@/content/nav';
 import { SOLUTIONS } from '@/content/solutions';
 
+/** Ссылки футера — с запасом по высоте (≥ 24px), чтобы в них легко попасть пальцем. */
 const linkClass =
-  'link-underline text-small text-text-secondary transition-colors hover:text-text-primary';
+  'link-underline inline-flex min-h-6 items-center text-small text-text-secondary transition-colors hover:text-text-primary';
 
 function FooterColumn({
   title,
@@ -24,7 +25,7 @@ function FooterColumn({
   return (
     <Reveal delay={0.1 + index * 0.08}>
       <h2 className="caps-label text-text-muted">{title}</h2>
-      <ul className="mt-4 space-y-3">{children}</ul>
+      <ul className="mt-4 space-y-2">{children}</ul>
     </Reveal>
   );
 }

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { motion, type Variants } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -7,6 +8,7 @@ import { ButtonArrow } from '@/components/ui/ButtonArrow';
 import { Icon } from '@/components/ui/Icon';
 import { iconMotionClass } from '@/components/ui/iconMotion';
 import { ImageSlot } from '@/components/ui/ImageSlot';
+import { VisualControlContext } from '@/components/visuals/context';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import { SOLUTIONS, type SolutionKey } from '@/content/solutions';
 import { useContent } from '@/i18n/useContent';
@@ -40,6 +42,8 @@ const cardVariants: Variants = {
 export function Solutions() {
   const { t } = useTranslation();
   const content = useContent('home', 'solutions');
+  // Наведённая карточка «в фокусе»: визуалы соседних ставятся на паузу
+  const [focused, setFocused] = useState<SolutionKey | null>(null);
 
   return (
     <Section id="solutions" labelledBy="solutions-title">
@@ -59,7 +63,13 @@ export function Solutions() {
             const card = content.cards[solution.key];
             const accent = ACCENT[solution.key];
             return (
-              <motion.div key={solution.key} variants={cardVariants} className="focus-item h-full">
+              <motion.div
+                key={solution.key}
+                variants={cardVariants}
+                className="focus-item h-full"
+                onPointerEnter={() => setFocused(solution.key)}
+                onPointerLeave={() => setFocused(null)}
+              >
                 <Tilt className="h-full rounded-2xl">
                   <article
                     data-spotlight
@@ -73,11 +83,19 @@ export function Solutions() {
                       className="overflow-hidden p-3 pb-0"
                       style={{ viewTransitionName: `solution-visual-${solution.key}` }}
                     >
-                      <ImageSlot
-                        image={solution.cardImage}
-                        glow="none"
-                        className="transition-transform duration-500 group-hover:scale-[1.04]"
-                      />
+                      <VisualControlContext.Provider
+                        value={{
+                          paused: focused !== null && focused !== solution.key,
+                          // Визуалы трёх карточек стартуют по очереди, а не синхронно
+                          startDelay: index * 0.4,
+                        }}
+                      >
+                        <ImageSlot
+                          image={solution.cardImage}
+                          glow="none"
+                          className="transition-transform duration-500 group-hover:scale-[1.04]"
+                        />
+                      </VisualControlContext.Provider>
                     </div>
 
                     <div className="flex flex-1 flex-col gap-4 p-6">

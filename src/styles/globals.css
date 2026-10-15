@@ -135,16 +135,41 @@
     word-break: auto-phrase;
   }
 
-  /* Длинные немецкие и французские слова — с переносами. */
+  /* Длинные немецкие, французские и русские слова — с переносами. */
   :lang(de) h1,
   :lang(de) h2,
   :lang(de) h3,
+  :lang(de) h4,
   :lang(de) p,
   :lang(fr) h1,
   :lang(fr) h2,
-  :lang(fr) h3 {
+  :lang(fr) h3,
+  :lang(fr) h4,
+  :lang(ru) h2,
+  :lang(ru) h3,
+  :lang(ru) h4 {
     hyphens: auto;
     -webkit-hyphens: auto;
+  }
+  /* Слово длиннее строки переносится, а не вылезает за карточку. */
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  li {
+    overflow-wrap: break-word;
+  }
+
+  /* Маска слова в SplitText: запас под глифы, выходящие за строку (компенсируется отрицательным полем). */
+  .split-mask {
+    padding-block: 0.1em 0.16em;
+    margin-block: -0.1em -0.16em;
+  }
+  /* Тайские надстрочные гласные и тоны поднимаются заметно выше — запас больше. */
+  :lang(th) .split-mask {
+    padding-block: 0.26em 0.24em;
+    margin-block: -0.26em -0.24em;
   }
 
   /* Hero H1 на немецком ощутимо длиннее — чуть меньший кегль. */
@@ -540,6 +565,83 @@ html.locale-fade #main {
     animation-play-state: paused;
   }
 
+  /* ---------- «Живые» визуалы (src/components/visuals) ---------- */
+  .hex {
+    clip-path: polygon(25% 3%, 75% 3%, 100% 50%, 75% 97%, 25% 97%, 0% 50%);
+  }
+  /* Пакет данных едет по offset-path провода */
+  @keyframes travel {
+    0% {
+      offset-distance: 0%;
+      opacity: 0;
+    }
+    12%,
+    88% {
+      opacity: 1;
+    }
+    100% {
+      offset-distance: 100%;
+      opacity: 0;
+    }
+  }
+  .animate-travel {
+    animation: travel var(--travel-duration, 0.8s) cubic-bezier(0.65, 0, 0.35, 1)
+      var(--travel-delay, 0s) 1 both;
+  }
+  .animate-travel-loop {
+    animation: travel var(--travel-duration, 2.4s) cubic-bezier(0.65, 0, 0.35, 1)
+      var(--travel-delay, 0s) infinite both;
+  }
+  /* Беспорядочное «дрожание» — ручная работа до автоматизации */
+  @keyframes jitter {
+    0%,
+    100% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+      transform: translate(1.5px, -2px) rotate(-2deg);
+    }
+    50% {
+      transform: translate(-1px, 1.5px) rotate(1.5deg);
+    }
+    75% {
+      transform: translate(2px, 1px) rotate(-1deg);
+    }
+  }
+  .animate-jitter {
+    animation: jitter 1.4s ease-in-out infinite;
+  }
+  /* Медленная прокрутка страницы внутри экрана устройства */
+  @keyframes device-scroll {
+    0%,
+    15% {
+      transform: translateY(0);
+    }
+    50%,
+    65% {
+      transform: translateY(var(--scroll-distance, -40%));
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  .animate-device-scroll {
+    animation: device-scroll 9s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  }
+  @keyframes caret-blink {
+    0%,
+    49% {
+      opacity: 1;
+    }
+    50%,
+    100% {
+      opacity: 0;
+    }
+  }
+  .animate-caret {
+    animation: caret-blink 1s steps(1) infinite;
+  }
+
   .no-scrollbar {
     scrollbar-width: none;
   }
@@ -567,7 +669,11 @@ html.locale-fade #main {
     .animate-flow-x,
     .animate-flow-y,
     .animate-float,
-    .animate-typing-dot {
+    .animate-typing-dot,
+    .animate-travel-loop,
+    .animate-jitter,
+    .animate-device-scroll,
+    .animate-caret {
       animation: none;
     }
   }

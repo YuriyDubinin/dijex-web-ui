@@ -36,10 +36,17 @@ const USAGE = {
 
 const rows = [];
 
-// Изображения с размерами: key: { src: '/images/x.webp', width: 1200, height: 900 }
-const imagePattern = /(\w+):\s*\{\s*src:\s*'([^']+)',\s*width:\s*(\d+),\s*height:\s*(\d+)/g;
-for (const [, key, src, width, height] of manifest.matchAll(imagePattern)) {
-  rows.push({ src, size: `${width}×${height}`, usage: USAGE[key] ?? key });
+// Изображения с размерами: key: { src: '/images/x.webp', width: 1200, height: 900, visual?: '…', fileProvided?: true }
+const imagePattern =
+  /(\w+):\s*\{\s*src:\s*'([^']+)',\s*width:\s*(\d+),\s*height:\s*(\d+)(?:,\s*visual:\s*'(\w+)')?(?:,\s*fileProvided:\s*(true|false))?/g;
+for (const [, key, src, width, height, visual, fileProvided] of manifest.matchAll(imagePattern)) {
+  rows.push({
+    src,
+    size: `${width}×${height}`,
+    usage: USAGE[key] ?? key,
+    // Место с «живым» визуалом на коде: файл не нужен, пока не выставлен fileProvided
+    visual: visual && fileProvided !== 'true' ? visual : null,
+  });
 }
 
 // Логотипы каналов: telegram: '/images/channel-telegram.svg'
@@ -63,14 +70,22 @@ for (const [, src] of extraBlock.matchAll(/'([^']+)'/g)) {
 }
 
 const withStatus = rows.map((row) => ({ ...row, exists: existsSync(join(publicDir, row.src)) }));
-const missing = withStatus.filter((row) => !row.exists);
+const missing = withStatus.filter((row) => !row.exists && !row.visual);
+const ready = withStatus.length - missing.length;
+
+const status = (row) => {
+  if (row.visual && row.exists)
+    return '🎞️ визуал (файл есть — выставьте `fileProvided: true`, чтобы показать его)';
+  if (row.visual) return `🎞️ живой визуал \`${row.visual}\` (файл необязателен)`;
+  return row.exists ? '✅' : '⬜️';
+};
 
 const table = [
   '| Статус | Файл | Размер | Где используется |',
   '|---|---|---|---|',
   ...withStatus.map(
     (row) =>
-      `| ${row.exists ? '✅' : '⬜️'} | \`${row.src.replace('/images/', '')}\` | ${row.size} | ${row.usage} |`,
+      `| ${status(row)} | \`${row.src.replace('/images/', '')}\` | ${row.size} | ${row.usage} |`,
   ),
 ].join('\n');
 
@@ -80,10 +95,14 @@ const readme = `# Изображения сайта
 достаточно положить файл с нужным именем, и он появится на сайте. Пока файла нет, на его месте
 показывается аккуратная заглушка (в dev-режиме — с именем файла и размером).
 
+Места с пометкой 🎞️ уже заполнены «живыми» визуалами на коде (\`src/components/visuals/\`) — файл для них
+необязателен. Чтобы показать вместо визуала картинку, положите файл и выставьте у ключа \`fileProvided: true\`.
+Все визуалы разом — на dev-странице \`/dev/visuals\`.
+
 Стиль: тонкая линейная графика (белый / индиго #6366F1 / циан #06B6D4) на прозрачном фоне или #0A0B14.
 Формат — \`.webp\` (конвертация: \`cwebp -q 82 input.png -o output.webp\`).
 
-Готово: ${withStatus.length - missing.length} из ${withStatus.length}.
+Готово: ${ready} из ${withStatus.length}.
 
 ${table}
 
@@ -92,7 +111,7 @@ ${table}
 
 writeFileSync(join(publicDir, 'images/README.md'), readme);
 
-console.log(`Images: ${withStatus.length - missing.length}/${withStatus.length} present.`);
+console.log(`Images: ${ready}/${withStatus.length} covered (files or live visuals).`);
 if (missing.length > 0) {
   console.log('Missing:');
   for (const row of missing) console.log(`  - ${row.src} (${row.size}) — ${row.usage}`);

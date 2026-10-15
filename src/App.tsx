@@ -13,6 +13,14 @@ const PrivacyPage = lazy(() =>
 const ThanksPage = lazy(() =>
   import('@/pages/ThanksPage').then((module) => ({ default: module.ThanksPage })),
 );
+/** Dev-галерея визуалов: в прод-сборке условие ложно и чанк не создаётся. */
+const VisualsGalleryPage = import.meta.env.DEV
+  ? lazy(() =>
+      import('@/pages/VisualsGalleryPage').then((module) => ({
+        default: module.VisualsGalleryPage,
+      })),
+    )
+  : null;
 const NotFoundPage = lazy(() =>
   import('@/pages/NotFoundPage').then((module) => ({ default: module.NotFoundPage })),
 );
@@ -28,6 +36,7 @@ const router = createBrowserRouter(
         { path: '/solutions/:slug', element: <SolutionPage /> },
         { path: '/privacy', element: <PrivacyPage /> },
         { path: '/thanks', element: <ThanksPage /> },
+        ...(VisualsGalleryPage ? [{ path: '/dev/visuals', element: <VisualsGalleryPage /> }] : []),
         { path: '*', element: <NotFoundPage /> },
       ],
     },

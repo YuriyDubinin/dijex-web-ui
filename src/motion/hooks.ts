@@ -107,6 +107,12 @@ export function useLoopDebug(name: string, active: boolean) {
   }, [name, active]);
 }
 
+/**
+ * Sticky-сцены («Экосистема», стопка кейсов) — только когда окно достаточно широкое и высокое:
+ * на низких экранах (1280×720, ноутбук с панелями) карточки не помещаются в высоту — обычный поток.
+ */
+export const STICKY_SCENE_QUERY = '(min-width: 1024px) and (min-height: 760px)';
+
 /** Совпадение media query (с подпиской на изменения). */
 export function useMediaQuery(query: string): boolean {
   const [matches, setMatches] = useState(

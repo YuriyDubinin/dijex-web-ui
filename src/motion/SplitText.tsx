@@ -112,11 +112,8 @@ export function SplitText({
             </motion.span>
           );
           return isMask ? (
-            // Запас снизу — под выносные элементы и тайские диакритики
-            <span
-              key={index}
-              className="-mb-[0.14em] inline-block overflow-hidden pb-[0.14em] align-top"
-            >
+            // Запас сверху и снизу — под выносные элементы, Й/Ё/Ü и тайские диакритики (см. .split-mask)
+            <span key={index} className="split-mask inline-block overflow-hidden align-top">
               {word}
             </span>
           ) : (

@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import { useEffect, type ReactNode } from 'react';
 import { motion, useSpring, type Variants } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Section } from '@/components/layout/Section';
@@ -8,12 +8,13 @@ import { ImageSlot } from '@/components/ui/ImageSlot';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import { Tabs } from '@/components/ui/Tabs';
 import { PROCESS_TABS, type ProcessTabKey } from '@/content/home/processes';
+import { liveVisualFor } from '@/content/images';
+import { preloadVisual } from '@/components/visuals/registry';
 import { useContent } from '@/i18n/useContent';
 import { DrawCheck } from '@/motion/DrawCheck';
 import { usePointerFine } from '@/motion/hooks';
 import { useMotionTier } from '@/motion/tier';
 import { DISTANCE, DURATION, EASE, SPRING_VALUE, STAGGER } from '@/motion/tokens';
-import { ProcessMockup } from './ProcessMockup';
 
 const cascade: Variants = {
   hidden: {},
@@ -56,7 +57,7 @@ function GrowthSpark({ animated }: { animated: boolean }) {
   );
 }
 
-/** Картинка направления с лёгким параллаксом за курсором (только full + мышь). */
+/** Визуал направления с лёгким параллаксом за курсором (только full + мышь). */
 function PointerParallax({ children }: { children: ReactNode }) {
   const tier = useMotionTier();
   const pointerFine = usePointerFine();
@@ -97,6 +98,14 @@ export function ProcessDirection({
   const tab = content.tabs[tabKey];
   const definition = PROCESS_TABS.find((item) => item.key === tabKey);
   const Heading = headingLevel;
+
+  // Визуалы соседних вкладок подгружаются заранее — при переключении сцена не мигает скелетом
+  useEffect(() => {
+    for (const item of PROCESS_TABS) {
+      const visual = liveVisualFor(item.image);
+      if (visual) preloadVisual(visual);
+    }
+  }, []);
   const motionProps = animated
     ? {
         variants: cascade,
@@ -167,7 +176,7 @@ export function ProcessDirection({
 
       {definition ? (
         <PointerParallax>
-          <ImageSlot image={definition.image} fallback={<ProcessMockup kind={tabKey} />} />
+          <ImageSlot image={definition.image} />
         </PointerParallax>
       ) : null}
     </div>

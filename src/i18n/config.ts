@@ -10,7 +10,15 @@ export const LOCALE_STORAGE_KEY = 'dijex.locale';
 /** Ключ localStorage: подсказка об автоматически выбранном языке уже показывалась. */
 export const LOCALE_HINT_STORAGE_KEY = 'dijex.locale-hint-shown';
 
-export const NAMESPACES = ['common', 'home', 'solutions', 'form', 'meta', 'legal'] as const;
+export const NAMESPACES = [
+  'common',
+  'home',
+  'solutions',
+  'form',
+  'meta',
+  'legal',
+  'visuals',
+] as const;
 
 export type Namespace = (typeof NAMESPACES)[number];
 

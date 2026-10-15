@@ -1,0 +1,96 @@
+{
+  "orchestratorHub": {
+    "core": "编排器",
+    "requests": ["订单状态", "开具发票", "月度报告", "翻译合同"],
+    "done": "完成"
+  },
+  "multilingualChat": {
+    "resolved": "AI 自主解决",
+    "reply": "响应用时"
+  },
+  "processFlow": {
+    "before": "手工处理",
+    "after": "自动化",
+    "columns": ["申请", "审批", "完成"],
+    "tasks": ["采购订单", "休假申请", "合同审核", "发票 #208"],
+    "kpi": "处理时长",
+    "owner": "负责人"
+  },
+  "internalSystems": {
+    "nav": ["概览", "申请", "车队", "仓库", "报表"],
+    "kpis": ["今日申请", "平均处理", "车队负载"],
+    "chart": "每周申请量",
+    "request": "申请",
+    "status": "状态",
+    "inProgress": "处理中",
+    "approved": "已批准"
+  },
+  "messagingPlatform": {
+    "all": "全部",
+    "search": "搜索",
+    "previews": [
+      "可以改地址吗？",
+      "谢谢，已收到！",
+      "什么时候发货？",
+      "请发一下发票",
+      "订单好了吗？"
+    ],
+    "messages": ["您好！可以修改收货地址吗？", "当然可以。请提供新地址。", "公园路 12 号，4 室"],
+    "aiSuggestion": "AI 建议",
+    "draft": "已修改！快递员将于明天中午前送到公园路 12 号。",
+    "online": "在线"
+  },
+  "clientPortal": {
+    "greeting": "下午好，{{name}}",
+    "name": "王女士",
+    "order": "订单",
+    "stages": ["已接单", "已打包", "运输中", "已送达"],
+    "documents": "文件",
+    "docs": ["合同", "发票", "送货单"],
+    "toast": "发票已付款",
+    "balance": "余额",
+    "support": "联系我们"
+  },
+  "webApps": {
+    "cta": "立即开始",
+    "sync": "已同步",
+    "nav": ["产品", "价格", "联系"]
+  },
+  "orchestratorPipeline": {
+    "stages": ["请求", "意图", "路由", "执行"],
+    "requests": ["我的订单 #4821 在哪里？", "被重复扣款，请退款", "为 Acme 起草供货合同"],
+    "intents": ["订单状态", "支付", "法务"],
+    "branches": ["快速模型", "高级模型", "人工客服"],
+    "guardrails": ["隐私已脱敏", "话题合规", "已核验"],
+    "results": ["状态已发送", "已退款", "草稿已完成"],
+    "confidence": "置信度"
+  },
+  "observabilityConsole": {
+    "trace": "链路追踪",
+    "metrics": ["质量", "单次成本", "延迟"],
+    "logs": "实时日志"
+  },
+  "omnichannel": {
+    "agent": "AI 智能体",
+    "live": "当前对话数",
+    "languages": "支持任何语言"
+  },
+  "operatorInbox": {
+    "conversations": "会话",
+    "original": "原文",
+    "translation": "译文",
+    "customerMessage": "您好！可以把配送改到周五吗？",
+    "summary": "AI 摘要",
+    "summaryItems": ["希望周五配送", "订单 #4821，已付款", "使用西班牙语"],
+    "reply": "好的，已将配送改到周五。",
+    "sendsAs": "将以西班牙语发送",
+    "ai": "AI",
+    "operator": "人工",
+    "customer": "客户"
+  },
+  "systemsMap": {
+    "modules": ["客户门户", "ERP", "CRM", "即时通讯", "移动应用"],
+    "event": "新订单",
+    "spreadsheet": "电子表格"
+  }
+}

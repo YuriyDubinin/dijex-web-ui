@@ -1,8 +1,9 @@
-import { useRef, useState, type ReactNode } from 'react';
+import { useRef, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ImageIcon } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { IMAGES, type ImageKey } from '@/content/images';
+import { IMAGES, liveVisualFor, type ImageKey } from '@/content/images';
+import { LiveVisual } from '@/components/visuals/LiveVisual';
 import { useMotionTier } from '@/motion/tier';
 import { DURATION, EASE } from '@/motion/tokens';
 import { cn } from '@/lib/cn';
@@ -17,8 +18,6 @@ type Props = {
   padded?: boolean;
   /** Параллакс картинки внутри рамки при скролле (только full). */
   parallax?: boolean;
-  /** Что показать, пока файла нет (вместо стандартной заглушки), — например, «живой» мокап. */
-  fallback?: ReactNode;
   className?: string;
   imgClassName?: string;
 };
@@ -32,7 +31,8 @@ const fileName = (src: string) => src.split('/').pop() ?? src;
  * - пока грузится — шиммер-скелетон;
  * - загрузилась — проявление маской снизу вверх с лёгким зумом и размытием;
  * - параллакс внутри рамки и «дыхание» свечения за ней (full);
- * - файла нет — нейтральная заглушка со сканирующими линиями (в dev — имя файла и размер).
+ * - файла нет — нейтральная заглушка со сканирующими линиями (в dev — имя файла и размер);
+ * - у места есть «живой» визуал (манифест, поле visual) — рисуется он, без запроса файла.
  */
 export function ImageSlot({
   image,
@@ -41,7 +41,6 @@ export function ImageSlot({
   glow = 'indigo',
   padded = true,
   parallax = true,
-  fallback,
   className,
   imgClassName,
 }: Props) {
@@ -57,6 +56,7 @@ export function ImageSlot({
   const { scrollYProgress } = useScroll({ target: frameRef, offset: ['start end', 'end start'] });
   const parallaxY = useTransform(scrollYProgress, [0, 1], [-24, 24]);
   const useParallax = full && parallax;
+  const visual = liveVisualFor(image);
 
   return (
     <div className={cn('relative', className)}>
@@ -77,15 +77,15 @@ export function ImageSlot({
       >
         <div aria-hidden className="absolute inset-0 bg-grid-pattern" />
 
-        {status === 'loading' && animated ? (
+        {visual ? (
+          <LiveVisual visual={visual} label={alt} priority={priority} />
+        ) : status === 'loading' && animated ? (
           <div aria-hidden className="absolute inset-0 overflow-hidden">
             <div className="absolute inset-y-0 w-1/2 animate-shimmer bg-gradient-to-r from-transparent via-white/[0.04] to-transparent" />
           </div>
         ) : null}
 
-        {status === 'error' && fallback ? (
-          fallback
-        ) : status === 'error' ? (
+        {visual ? null : status === 'error' ? (
           <ImagePlaceholder
             src={asset.src}
             width={asset.width}

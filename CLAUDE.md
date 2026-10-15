@@ -527,3 +527,34 @@ VITE_API_BASE_URL=http://localhost:18080
   `view-transition-name: solution-icon-*` / `solution-visual-*`. Смена языка — View Transition с размытием
   и сохранением позиции прокрутки (`useLocale`).
 - **Отладка**: `window.__motionDebug.activeLoops` (dev) — сколько бесконечных циклов сейчас крутится.
+- **«Живые» визуалы вместо картинок** — `src/components/visuals/`. Место под картинку с полем `visual` в манифесте
+  (`src/content/images.ts`) рисует сцену на коде (SVG/CSS/framer-motion), пока у ключа не выставлен `fileProvided: true`.
+  - `LiveVisual` — сцена в фиксированных координатах (480×360 для 4:3, 640×400 для 16:10), масштаб под рамку,
+    ленивый чанк (грузится за 400px до viewport), пауза вне экрана, курсор (full + мышь) через `useVisual().pointerX/Y`.
+  - Сюжет — `useVisualLoop(steps, { poster })`: шаги с длительностями; lite — ×1.5; off — сразу «постер»
+    (осмысленный финальный кадр). Простые ритмы — `useVisualTicker(ms)`.
+  - Общие детали — `visuals/parts/` (Panel, Wire, Packet, StatusPill, RollingValue, Sparkline, TypingDots,
+    StreamedText, WindowChrome). Числа — только `useVisualFormat()` (Intl). Тексты — namespace `visuals`.
+  - Новый визуал: сцена в `visuals/scenes/`, ключ в `VisualKey` и `VISUALS` (registry), `visual: '…'` у места в манифесте,
+    тексты в `visuals.json` всех 7 языков. Бюджет: ≤ 150 DOM-узлов, чанк ≤ 6 КБ gzip, анимировать только
+    transform/opacity/pathLength/offset-distance. Наложения внутри сцены — композиция (сцена `role="img"`, всё внутри скрыто от скринридера).
+  - Секция может управлять визуалами через `VisualControlContext` (`paused`, `startDelay`) — так «Три направления»
+    стартуют по очереди и ставят соседей на паузу при наведении.
+  - Все сцены разом — dev-страница `/dev/visuals` (в прод-сборку не попадает).
+
+---
+
+## 16. Аудит вёрстки
+
+- `npm run audit:layout` — сборка, `vite preview` и Playwright (установленный Chrome, `channel: 'chrome'`) по матрице
+  6 страниц × 7 языков × 8 размеров (360, 390, 768, 1024, 1280, 1280×720, 1440, 1920), с `?motion=off`.
+- Ищет: горизонтальную прокрутку; текст за краем экрана; текст, обрезанный контейнером с `overflow: hidden`
+  без многоточия/line-clamp (прокручиваемые контейнеры не считаются); наложение строк текста (вне сцен визуалов);
+  тач-цели < 24×24 на ширинах < 768.
+- Результаты: таблица в консоли (`npm run audit:summary` — повторно), JSON по каждому сочетанию в
+  `test-results/layout/problems/`, полностраничные скриншоты в `test-results/layout/<страница>/<язык>-<ширина>.png`,
+  HTML-отчёт — `npx playwright show-report`.
+- Сузить прогон: `AUDIT_LOCALES=de,th AUDIT_WIDTHS=360,1024 AUDIT_PAGES=/ AUDIT_SCREENSHOTS=0 npx playwright test`.
+- Намеренный выход за края (бегущая строка) помечается `data-allow-overflow`; маленькая цель, которую нельзя увеличить, —
+  `data-allow-small`. Пользоваться пометками — только осознанно.
+- Playwright закреплён на 1.56 — последней версии с поддержкой Node 18.

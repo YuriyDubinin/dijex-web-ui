@@ -98,7 +98,7 @@ export function StepTimeline({ steps, horizontalFrom = 'lg', className }: Props)
           )}
         </div>
         <ScrollReveal
-          className="relative grid auto-cols-fr grid-flow-col gap-4"
+          className="relative grid auto-cols-[minmax(0,1fr)] grid-flow-col gap-4"
           staggerChildren={0.12}
           delayChildren={0.1}
         >

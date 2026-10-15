@@ -67,7 +67,7 @@ export function Tabs<T extends string>({
     setActiveId(id);
     const node = tabRefs.current.get(id);
     if (focus) node?.focus();
-    node?.scrollIntoView({
+    node?.scrollIntoView?.({
       block: 'nearest',
       inline: 'center',
       behavior: animated ? 'smooth' : 'auto',

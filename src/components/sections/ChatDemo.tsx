@@ -1,12 +1,12 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion, useInView } from 'framer-motion';
 import { UserCheck } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { AgentAvatar } from '@/components/agent/AgentAvatar';
 import { Icon } from '@/components/ui/Icon';
+import { StreamedText } from '@/components/visuals/parts/StreamedText';
 import { CHAT_SCENARIOS, type ChatMessage } from '@/content/home/support';
 import { useContent } from '@/i18n/useContent';
-import { segmentWords } from '@/motion/segment';
 import { useMotionTier } from '@/motion/tier';
 import { DURATION, EASE, SPRING } from '@/motion/tokens';
 import { cn } from '@/lib/cn';
@@ -63,32 +63,6 @@ function TypingIndicator({ label }: { label: string }) {
       </div>
       <span className="text-xs text-text-muted">{label}</span>
     </motion.div>
-  );
-}
-
-/** Ответ агента «стримится» по словам — как ответ языковой модели. */
-function StreamedText({ text, lang, animated }: { text: string; lang: string; animated: boolean }) {
-  const segments = useMemo(() => segmentWords(text, lang), [text, lang]);
-  if (!animated) return <>{text}</>;
-  let wordIndex = 0;
-  return (
-    <>
-      {segments.map((segment, index) => {
-        if (segment.kind === 'space') return segment.text;
-        const order = wordIndex++;
-        return (
-          <motion.span
-            key={index}
-            className="inline-block"
-            initial={{ opacity: 0, filter: 'blur(4px)' }}
-            animate={{ opacity: 1, filter: 'blur(0px)' }}
-            transition={{ duration: DURATION.base, delay: order * 0.035 }}
-          >
-            {segment.text}
-          </motion.span>
-        );
-      })}
-    </>
   );
 }
 
@@ -312,7 +286,7 @@ export function ChatDemo({ className, onActivity }: Props) {
                 onClick={() => selectScenario(scenarioIndex)}
                 aria-label={t('support.chat.scenario', { n: scenarioIndex + 1 })}
                 aria-current={current ? 'true' : undefined}
-                className="flex h-8 items-center justify-center px-1.5"
+                className="flex h-8 min-w-6 items-center justify-center px-1.5"
               >
                 <span
                   aria-hidden

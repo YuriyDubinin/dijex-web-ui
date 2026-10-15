@@ -42,15 +42,16 @@ function TechMarquee({ label }: { label: string }) {
   if (tier === 'off') {
     return (
       <Container>
-        <div className="flex justify-center [&>ul]:flex-wrap [&>ul]:justify-center">
+        <div className="flex justify-center [&>ul]:shrink [&>ul]:flex-wrap [&>ul]:justify-center [&>ul]:pr-0">
           <StaticTechList label={label} />
         </div>
       </Container>
     );
   }
 
+  // Бегущая строка уходит за края намеренно — аудит вёрстки её пропускает
   return (
-    <div className="relative">
+    <div className="relative" data-allow-overflow>
       <div
         aria-hidden
         className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-bg-base to-transparent md:w-40"

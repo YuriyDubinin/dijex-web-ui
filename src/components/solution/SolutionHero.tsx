@@ -39,14 +39,14 @@ export function SolutionHero({ solution, hero }: Props) {
       key="home"
       viewTransition
       to="/"
-      className="link-underline transition-colors hover:text-text-primary"
+      className="link-underline inline-flex min-h-6 items-center transition-colors hover:text-text-primary"
     >
       {t('breadcrumbs.home')}
     </Link>,
     <AnchorLink
       key="solutions"
       href="/#solutions"
-      className="link-underline transition-colors hover:text-text-primary"
+      className="link-underline inline-flex min-h-6 items-center transition-colors hover:text-text-primary"
     >
       {t('breadcrumbs.solutions')}
     </AnchorLink>,

@@ -1,0 +1,104 @@
+{
+  "orchestratorHub": {
+    "core": "Orchestrator",
+    "requests": ["Order status", "Invoice a client", "Monthly report", "Translate contract"],
+    "done": "Done"
+  },
+  "multilingualChat": {
+    "resolved": "Resolved by AI",
+    "reply": "Reply in"
+  },
+  "processFlow": {
+    "before": "Manual work",
+    "after": "Automated",
+    "columns": ["Request", "Approval", "Done"],
+    "tasks": ["Purchase order", "Leave request", "Contract review", "Invoice #208"],
+    "kpi": "Handling time",
+    "owner": "Owner"
+  },
+  "internalSystems": {
+    "nav": ["Overview", "Requests", "Fleet", "Warehouse", "Reports"],
+    "kpis": ["Requests today", "Avg. handling", "Fleet load"],
+    "chart": "Requests per week",
+    "request": "Request",
+    "status": "Status",
+    "inProgress": "In progress",
+    "approved": "Approved"
+  },
+  "messagingPlatform": {
+    "all": "All",
+    "search": "Search",
+    "previews": [
+      "Can I change the address?",
+      "Thanks, received!",
+      "When will it ship?",
+      "Please send the invoice",
+      "Is the order ready?"
+    ],
+    "messages": [
+      "Hi! Can I change the delivery address?",
+      "Of course. Which address should we use?",
+      "12 Park Lane, office 4"
+    ],
+    "aiSuggestion": "AI suggestion",
+    "draft": "Done! The courier will deliver to 12 Park Lane tomorrow before noon.",
+    "online": "online"
+  },
+  "clientPortal": {
+    "greeting": "Good afternoon, {{name}}",
+    "name": "Anna",
+    "order": "Order",
+    "stages": ["Accepted", "Packed", "Shipped", "Delivered"],
+    "documents": "Documents",
+    "docs": ["Contract", "Invoice", "Delivery note"],
+    "toast": "Invoice paid",
+    "balance": "Balance",
+    "support": "Chat with us"
+  },
+  "webApps": {
+    "cta": "Get started",
+    "sync": "Synced",
+    "nav": ["Product", "Pricing", "Contact"]
+  },
+  "orchestratorPipeline": {
+    "stages": ["Request", "Intent", "Route", "Action"],
+    "requests": [
+      "Where is my order #4821?",
+      "I was charged twice, please refund",
+      "Draft a supply contract for Acme"
+    ],
+    "intents": ["Order status", "Billing", "Legal"],
+    "branches": ["Fast model", "Smart model", "Operator"],
+    "guardrails": ["PII masked", "Topic allowed", "Checked"],
+    "results": ["Status sent", "Refund issued", "Draft ready"],
+    "confidence": "Confidence"
+  },
+  "observabilityConsole": {
+    "trace": "Trace",
+    "metrics": ["Quality", "Cost / request", "Latency"],
+    "logs": "Live logs"
+  },
+  "omnichannel": {
+    "agent": "AI agent",
+    "live": "In conversations now",
+    "languages": "Any language"
+  },
+  "operatorInbox": {
+    "conversations": "Conversations",
+    "original": "Original",
+    "translation": "Translation",
+    "customerMessage": "Hi! Can I move the delivery to Friday?",
+    "summary": "AI summary",
+    "summaryItems": ["Wants delivery on Friday", "Order #4821, paid", "Prefers Spanish"],
+    "reply": "Sure, we moved your delivery to Friday.",
+    "sendsAs": "Will be sent in Spanish",
+    "ai": "AI",
+    "operator": "Operator",
+    "customer": "Customer"
+  },
+  "systemsMap": {
+    "modules": ["Client portal", "ERP", "CRM", "Messenger", "Mobile app"],
+    "event": "New order",
+    "spreadsheet": "Spreadsheet"
+  }
+}
