@@ -100,5 +100,63 @@
     "modules": ["Kundenportal", "ERP", "CRM", "Messenger", "Mobile App"],
     "event": "Neue Bestellung",
     "spreadsheet": "Tabelle"
+  },
+  "globe": {
+    "projects": "Laufende Projekte"
+  },
+  "newsFeed": {
+    "sources": "Quellen",
+    "pipeline": "KI-Verarbeitung",
+    "signals": "Signale",
+    "sentiment": "Stimmung",
+    "index": "Marktstimmungsindex",
+    "merged": "zusammengeführt",
+    "unique": "eindeutig",
+    "headlines": [
+      "Chiphersteller hebt Jahresprognose wegen KI-Nachfrage an",
+      "Chiphersteller erhöht Jahresausblick dank KI-Nachfrage",
+      "Zentralbank signalisiert eine Zinspause",
+      "E-Auto-Hersteller meldet Rekordauslieferungen im 3. Quartal",
+      "Ölpreise steigen nach OPEC+-Beschluss"
+    ]
+  },
+  "ragAssistant": {
+    "assistant": "Produktassistent",
+    "knowledgeBase": "Wissensdatenbank",
+    "sources": "Quellen der Antwort",
+    "questions": [
+      "Wie gebe ich online gekaufte Ware zurück?",
+      "Werden meine Daten sicher gespeichert?",
+      "Wie lange gilt die Garantie?"
+    ],
+    "answers": [
+      "Innerhalb von 30 Tagen im Kundenkonto: Bestellung wählen und „Zurückgeben“ tippen. Die Erstattung folgt in 3–5 Tagen.",
+      "Ja: Die Daten werden bei Speicherung und Übertragung verschlüsselt und liegen in einem ISO-27001-Rechenzentrum.",
+      "Die Garantie gilt 24 Monate ab Lieferung; erweiterter Service ist im Kundenkonto buchbar."
+    ],
+    "docs": [
+      "Erstattungsrichtlinie",
+      "Lieferbedingungen",
+      "Garantie",
+      "Preise 2026",
+      "API-Leitfaden",
+      "Onboarding",
+      "Sicherheits-FAQ",
+      "Servicevertrag",
+      "Rückgabeprozess"
+    ]
+  },
+  "enterpriseSuite": {
+    "sso": "Single Sign-on",
+    "roles": ["Admin", "Manager", "Mitarbeiter"],
+    "apps": ["Adminbereich", "Lager", "Analytics", "Personal", "Finanzen", "Kundenportal"],
+    "kpis": ["Umsatz", "Aufträge", "SLA"],
+    "access": "{{count}} von {{total}} Apps verfügbar"
+  },
+  "lostPacket": {
+    "home": "Startseite"
+  },
+  "brokenWire": {
+    "retry": "Verbindung wird wiederhergestellt…"
   }
 }

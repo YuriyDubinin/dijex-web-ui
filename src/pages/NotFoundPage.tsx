@@ -7,6 +7,7 @@ import { ScrollReveal } from '@/components/motion/ScrollReveal';
 import { FeatureCard } from '@/components/ui/FeatureCard';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import { Button } from '@/components/ui/Button';
+import { VisualSlot } from '@/components/ui/VisualSlot';
 import { SOLUTIONS } from '@/content/solutions';
 import { useDocumentMeta } from '@/hooks/useDocumentMeta';
 import { SpotlightGroup } from '@/motion/Spotlight';
@@ -15,34 +16,6 @@ import { useMotionTier } from '@/motion/tier';
 const NeuralField = lazy(() =>
   import('@/components/hero/NeuralField').then((module) => ({ default: module.NeuralField })),
 );
-
-/** «404» с глитчем: два смещённых цветных слоя на мгновение «сбоят» и снова успокаиваются. */
-function Glitch404() {
-  const tier = useMotionTier();
-  const animated = tier !== 'off';
-  const type = 'font-display text-[clamp(6rem,22vw,14rem)] font-bold leading-none tracking-tighter';
-
-  return (
-    <div aria-hidden className="relative mx-auto w-fit select-none">
-      <span className={`${type} text-gradient`}>404</span>
-      {animated ? (
-        <>
-          <span
-            className={`${type} absolute inset-0 animate-glitch-a text-accent-secondary mix-blend-screen`}
-          >
-            404
-          </span>
-          <span
-            className={`${type} absolute inset-0 animate-glitch-b text-accent-glow mix-blend-screen`}
-            style={{ animationDelay: '0.05s' }}
-          >
-            404
-          </span>
-        </>
-      ) : null}
-    </div>
-  );
-}
 
 export function NotFoundPage() {
   useDocumentMeta('notFound');
@@ -60,7 +33,8 @@ export function NotFoundPage() {
         </Suspense>
       ) : null}
       <Container className="relative py-24 md:py-32">
-        <Glitch404 />
+        {/* Сцена «потерянный пакет» — вместо статичной картинки */}
+        <VisualSlot slot="notFound" priority className="mx-auto w-full max-w-md" />
         <SectionHeader
           as="h1"
           className="mt-6"

@@ -7,7 +7,7 @@ import { ScrollReveal } from '@/components/motion/ScrollReveal';
 import { ButtonArrow } from '@/components/ui/ButtonArrow';
 import { Icon } from '@/components/ui/Icon';
 import { iconMotionClass } from '@/components/ui/iconMotion';
-import { ImageSlot } from '@/components/ui/ImageSlot';
+import { VisualSlot } from '@/components/ui/VisualSlot';
 import { VisualControlContext } from '@/components/visuals/context';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import { SOLUTIONS, type SolutionKey } from '@/content/solutions';
@@ -90,8 +90,8 @@ export function Solutions() {
                           startDelay: index * 0.4,
                         }}
                       >
-                        <ImageSlot
-                          image={solution.cardImage}
+                        <VisualSlot
+                          slot={solution.cardVisual}
                           glow="none"
                           className="transition-transform duration-500 group-hover:scale-[1.04]"
                         />

@@ -8,6 +8,7 @@ import {
   Sparkles,
   type LucideIcon,
 } from 'lucide-react';
+import { ChannelMark } from '@/components/ui/ChannelMark';
 import { useTranslation } from 'react-i18next';
 import { useContent } from '@/i18n/useContent';
 import { DURATION, EASE, SPRING } from '@/motion/tokens';
@@ -22,13 +23,35 @@ const CONVERSATIONS: readonly {
   name: string;
   initials: string;
   lang: string;
+  channel: string;
   icon: LucideIcon;
   byOperator: boolean;
 }[] = [
-  { name: 'María G.', initials: 'MG', lang: 'ES', icon: MessageCircle, byOperator: false },
-  { name: 'Jonas W.', initials: 'JW', lang: 'DE', icon: Send, byOperator: false },
-  { name: 'Yuki T.', initials: 'YT', lang: 'JA', icon: MessagesSquare, byOperator: false },
-  { name: 'Léa M.', initials: 'LM', lang: 'FR', icon: Mail, byOperator: true },
+  {
+    name: 'María G.',
+    initials: 'MG',
+    lang: 'ES',
+    channel: 'WhatsApp',
+    icon: MessageCircle,
+    byOperator: false,
+  },
+  {
+    name: 'Jonas W.',
+    initials: 'JW',
+    lang: 'DE',
+    channel: 'Telegram',
+    icon: Send,
+    byOperator: false,
+  },
+  {
+    name: 'Yuki T.',
+    initials: 'YT',
+    lang: 'JA',
+    channel: 'LINE',
+    icon: MessagesSquare,
+    byOperator: false,
+  },
+  { name: 'Léa M.', initials: 'LM', lang: 'FR', channel: 'Email', icon: Mail, byOperator: true },
 ];
 
 /** Реплики клиента и отправляемый перевод — на испанском, это данные. */
@@ -58,7 +81,6 @@ export function OperatorInboxVisual() {
           {text.conversations}
         </span>
         {CONVERSATIONS.map((conversation, index) => {
-          const Icon = conversation.icon;
           const operator = conversation.byOperator || (index === 0 && handedOver);
           return (
             <div
@@ -74,7 +96,7 @@ export function OperatorInboxVisual() {
               <span className="relative flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-accent-primary/40 to-accent-secondary/30 font-mono text-[8.5px] font-semibold text-text-primary">
                 {conversation.initials}
                 <span className="absolute -bottom-0.5 -right-0.5 flex h-3.5 w-3.5 items-center justify-center rounded-full border border-bg-elevated bg-bg-surface text-accent-secondary">
-                  <Icon size={8} />
+                  <ChannelMark name={conversation.channel} fallback={conversation.icon} size={8} />
                 </span>
               </span>
               <span className="min-w-0 flex-1">

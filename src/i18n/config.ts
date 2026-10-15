@@ -22,6 +22,9 @@ export const NAMESPACES = [
 
 export type Namespace = (typeof NAMESPACES)[number];
 
+/** Пространства, которые нужны до первого рендера. visuals подгружается вместе со сценами (по требованию). */
+export const EAGER_NAMESPACES = NAMESPACES.filter((namespace) => namespace !== 'visuals');
+
 /** Флаг для английского. Поменять на 'US', если нужен американский. */
 export const EN_FLAG_COUNTRY = 'GB';
 

@@ -70,7 +70,7 @@
     "home": "Accueil",
     "solutions": "Solutions"
   },
-  "images": {
+  "visuals": {
     "pillarOrchestrator": "Hub d’orchestration IA reliant modèles, agents et systèmes métier",
     "pillarSupportAgent": "Agent de support répondant aux clients dans plusieurs langues",
     "pillarDigitalProcesses": "Tableaux de bord, formulaires et écrans d’application d’un système métier",
@@ -87,9 +87,9 @@
     "solutionOrchestratorConsole": "Console de l’orchestrateur avec journal des décisions, métriques de qualité et de coûts",
     "solutionSupportHero": "Agent de support actif sur plusieurs canaux à la fois",
     "solutionSupportInbox": "Boîte de réception unifiée des opérateurs avec résumé de la conversation",
-    "solutionDigitalHero": "Systèmes métier connectés et cartographie des processus"
-  },
-  "imageSlot": {
-    "placeholder": "Image à venir"
+    "solutionDigitalHero": "Systèmes métier connectés et cartographie des processus",
+    "notFound": "Un paquet de données perdu cherche sa route",
+    "requestSent": "Votre demande part vers l’équipe Dijex",
+    "routeError": "Une connexion rompue entre deux nœuds"
   }
 }

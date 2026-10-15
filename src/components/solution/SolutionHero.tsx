@@ -9,7 +9,7 @@ import { HeroBackdrop } from '@/components/hero/HeroBackdrop';
 import { Button } from '@/components/ui/Button';
 import { ButtonArrow } from '@/components/ui/ButtonArrow';
 import { Icon } from '@/components/ui/Icon';
-import { ImageSlot } from '@/components/ui/ImageSlot';
+import { VisualSlot } from '@/components/ui/VisualSlot';
 import type { ContactRouteState } from '@/content/contact';
 import type { SolutionPageText } from '@/content/solutionPages';
 import type { SolutionDef } from '@/content/solutions';
@@ -85,7 +85,7 @@ export function SolutionHero({ solution, hero }: Props) {
         </nav>
 
         <motion.div
-          className="mt-10 grid items-center gap-12 lg:grid-cols-[1.05fr_1fr] lg:gap-16"
+          className="mt-10 grid items-center gap-12 lg:grid-cols-[1.05fr_1fr] lg:gap-16 xl:grid-cols-[1.2fr_1fr]"
           style={tier === 'full' ? { y: contentY, opacity: contentOpacity } : undefined}
         >
           <div className="flex flex-col gap-6">
@@ -107,7 +107,7 @@ export function SolutionHero({ solution, hero }: Props) {
               mode="mask-up"
               trigger="mount"
               delay={0.1}
-              className="text-balance font-display text-h1 font-bold text-text-primary lg:text-[clamp(2.25rem,3.6vw,3.25rem)] lg:leading-[1.1]"
+              className="text-balance font-display text-h1 font-bold text-text-primary lg:text-[clamp(2rem,3vw,2.75rem)] lg:leading-[1.1]"
             />
             <Reveal immediate variant="blur-up" delay={0.4}>
               <p className="text-body leading-relaxed text-text-secondary md:text-lg">
@@ -127,7 +127,7 @@ export function SolutionHero({ solution, hero }: Props) {
           <Reveal immediate variant="scale-in" delay={0.2}>
             <div style={{ viewTransitionName: `solution-visual-${solution.key}` }}>
               <Tilt max={5} className="rounded-2xl">
-                <ImageSlot image={solution.heroImage} priority />
+                <VisualSlot slot={solution.heroVisual} priority />
               </Tilt>
             </div>
           </Reveal>

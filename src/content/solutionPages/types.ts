@@ -1,5 +1,5 @@
 import type { IconKey } from '@/components/ui/iconMap';
-import type { ImageKey } from '../images';
+import type { SlotKey } from '../visualSlots';
 import type { ProcessTabKey } from '../home/processes';
 import type { SolutionKey } from '../solutions';
 
@@ -10,9 +10,9 @@ export type SolutionSpecial =
       kind: 'deployment';
       /** Модели — названия брендов, не переводятся. */
       models: readonly string[];
-      consoleImage: ImageKey;
+      consoleVisual: SlotKey;
     }
-  | { kind: 'channels'; inboxImage: ImageKey; timeline: readonly string[] }
+  | { kind: 'channels'; inboxVisual: SlotKey; timeline: readonly string[] }
   | {
       kind: 'directions';
       directions: readonly ProcessTabKey[];

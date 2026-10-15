@@ -189,7 +189,7 @@ export function runLayoutChecks({ checkTargets }: CheckOptions): LayoutProblem[]
     }
   }
 
-  // 5. Длина заголовков: H1 первого экрана ≤ 2 строк на ≥ 1280 и ≤ 4 на узких; заголовки секций ≤ 3 строк на мобильных
+  // 5. Длина заголовков: H1 первого экрана ≤ 2 строк (страница решения — ≤ 3) на ≥ 1280 и ≤ 4 на узких; заголовки секций ≤ 3 строк на мобильных
   const lineCount = (element: Element) => {
     const range = document.createRange();
     range.selectNodeContents(element);
@@ -203,7 +203,9 @@ export function runLayoutChecks({ checkTargets }: CheckOptions): LayoutProblem[]
       .length;
   };
   const headingLimits: { selector: string; max: number }[] = [
-    { selector: '#hero-title, #solution-title', max: viewportWidth >= 1280 ? 2 : 4 },
+    // H1 главной — на всю ширину; H1 страницы решения — в половине экрана рядом с визуалом
+    { selector: '#hero-title', max: viewportWidth >= 1280 ? 2 : 4 },
+    { selector: '#solution-title', max: viewportWidth >= 1280 ? 3 : 4 },
     ...(viewportWidth < 768 ? [{ selector: 'main section h2.text-h1', max: 3 }] : []),
   ];
   for (const { selector, max } of headingLimits) {

@@ -70,7 +70,7 @@
     "home": "首页",
     "solutions": "解决方案"
   },
-  "images": {
+  "visuals": {
     "pillarOrchestrator": "连接模型、智能体与业务系统的 AI 编排中枢",
     "pillarSupportAgent": "用多种语言回复客户的客服智能体",
     "pillarDigitalProcesses": "数字化业务系统的仪表盘、表单与 App 界面",
@@ -87,9 +87,9 @@
     "solutionOrchestratorConsole": "编排器控制台：决策日志、质量与成本指标",
     "solutionSupportHero": "同时在多个渠道工作的客服智能体",
     "solutionSupportInbox": "带对话摘要的统一坐席收件箱",
-    "solutionDigitalHero": "互联的业务系统与流程图"
-  },
-  "imageSlot": {
-    "placeholder": "图片即将上线"
+    "solutionDigitalHero": "互联的业务系统与流程图",
+    "notFound": "迷路的数据包正在寻找路径",
+    "requestSent": "您的请求正发送给 Dijex 团队",
+    "routeError": "两个节点之间断开的连接"
   }
 }

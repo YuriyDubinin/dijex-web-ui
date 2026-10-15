@@ -10,6 +10,7 @@ import {
   Sparkles,
   type LucideIcon,
 } from 'lucide-react';
+import { ChannelMark } from '@/components/ui/ChannelMark';
 import { useContent } from '@/i18n/useContent';
 import { DURATION, EASE } from '@/motion/tokens';
 import { cn } from '@/lib/cn';
@@ -109,7 +110,6 @@ export function OmnichannelVisual() {
       {/* Каналы */}
       {CHANNELS.map((channel, index) => {
         const { x, y } = channelPosition(index);
-        const Icon = channel.icon;
         const current = index === source && animated;
         return (
           <div
@@ -125,7 +125,7 @@ export function OmnichannelVisual() {
                   : 'border-border text-text-secondary',
               )}
             >
-              <Icon size={16} />
+              <ChannelMark name={channel.name} fallback={channel.icon} size={16} />
             </span>
             <span className="font-mono text-[9px] text-text-muted">{channel.name}</span>
           </div>

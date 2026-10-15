@@ -100,5 +100,63 @@
     "modules": ["Portail client", "ERP", "CRM", "Messagerie", "Appli mobile"],
     "event": "Nouvelle commande",
     "spreadsheet": "Tableur"
+  },
+  "globe": {
+    "projects": "Projets en cours"
+  },
+  "newsFeed": {
+    "sources": "Sources",
+    "pipeline": "Traitement IA",
+    "signals": "Signaux",
+    "sentiment": "sentiment",
+    "index": "Indice de sentiment du marché",
+    "merged": "fusionné",
+    "unique": "unique",
+    "headlines": [
+      "Un fabricant de puces relève ses prévisions grâce à l’IA",
+      "Un fabricant de puces relève ses perspectives annuelles grâce à l’IA",
+      "La banque centrale évoque une pause des taux",
+      "Un constructeur de VE bat son record de livraisons au T3",
+      "Le pétrole grimpe après la décision de l’OPEP+"
+    ]
+  },
+  "ragAssistant": {
+    "assistant": "Assistant produit",
+    "knowledgeBase": "Base de connaissances",
+    "sources": "Sources de la réponse",
+    "questions": [
+      "Comment retourner un article acheté en ligne ?",
+      "Mes données sont-elles stockées en sécurité ?",
+      "Quelle est la durée de la garantie ?"
+    ],
+    "answers": [
+      "Sous 30 jours depuis votre compte : choisissez la commande et appuyez sur « Retourner ». Remboursement sous 3 à 5 jours.",
+      "Oui : les données sont chiffrées au repos et en transit, dans un data center certifié ISO 27001.",
+      "La garantie est de 24 mois à compter de la livraison ; un service étendu est disponible dans votre compte."
+    ],
+    "docs": [
+      "Politique de remboursement",
+      "Conditions de livraison",
+      "Garantie",
+      "Tarifs 2026",
+      "Guide API",
+      "Onboarding",
+      "FAQ sécurité",
+      "Contrat de service",
+      "Procédure de retour"
+    ]
+  },
+  "enterpriseSuite": {
+    "sso": "Authentification unique",
+    "roles": ["Admin", "Manager", "Employé"],
+    "apps": ["Back-office", "Entrepôt", "Analytique", "RH", "Finance", "Portail client"],
+    "kpis": ["CA", "Commandes", "SLA"],
+    "access": "{{count}} applis sur {{total}} disponibles"
+  },
+  "lostPacket": {
+    "home": "Accueil"
+  },
+  "brokenWire": {
+    "retry": "Reconnexion…"
   }
 }

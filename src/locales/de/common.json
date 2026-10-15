@@ -70,7 +70,7 @@
     "home": "Start",
     "solutions": "Lösungen"
   },
-  "images": {
+  "visuals": {
     "pillarOrchestrator": "KI-Orchestrator als Knotenpunkt zwischen Modellen, Agenten und Geschäftssystemen",
     "pillarSupportAgent": "Support-Agent beantwortet Kundenanfragen in mehreren Sprachen",
     "pillarDigitalProcesses": "Dashboards, Formulare und App-Screens eines digitalen Geschäftssystems",
@@ -87,9 +87,9 @@
     "solutionOrchestratorConsole": "Orchestrator-Konsole mit Entscheidungsprotokoll, Qualitäts- und Kostenmetriken",
     "solutionSupportHero": "Support-Agent arbeitet gleichzeitig in mehreren Kanälen",
     "solutionSupportInbox": "Zentrale Operator-Inbox mit Gesprächszusammenfassung",
-    "solutionDigitalHero": "Vernetzte Geschäftssysteme und Prozesslandkarte"
-  },
-  "imageSlot": {
-    "placeholder": "Bild folgt in Kürze"
+    "solutionDigitalHero": "Vernetzte Geschäftssysteme und Prozesslandkarte",
+    "notFound": "Ein verlorenes Datenpaket sucht seinen Weg",
+    "requestSent": "Ihre Anfrage ist auf dem Weg zum Dijex-Team",
+    "routeError": "Eine unterbrochene Verbindung zwischen zwei Knoten"
   }
 }

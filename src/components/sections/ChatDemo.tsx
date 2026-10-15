@@ -3,7 +3,8 @@ import { AnimatePresence, motion, useInView } from 'framer-motion';
 import { UserCheck } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { AgentAvatar } from '@/components/agent/AgentAvatar';
-import { Icon } from '@/components/ui/Icon';
+import { ChannelMark } from '@/components/ui/ChannelMark';
+import { ICONS } from '@/components/ui/iconMap';
 import { StreamedText } from '@/components/visuals/parts/StreamedText';
 import { CHAT_SCENARIOS, type ChatMessage } from '@/content/home/support';
 import { useContent } from '@/i18n/useContent';
@@ -174,7 +175,13 @@ export function ChatDemo({ className, onActivity }: Props) {
                 transition={{ duration: DURATION.fast }}
                 className="inline-flex items-center gap-1.5 rounded-full border border-border bg-bg-surface px-2.5 py-1 text-xs text-text-secondary"
               >
-                <Icon name={scenario.channelIcon} size={12} className="text-accent-secondary" />
+                <ChannelMark
+                  name={scenario.channel}
+                  fallback={ICONS[scenario.channelIcon]}
+                  size={12}
+                  tint="always"
+                  className="text-accent-secondary"
+                />
                 {scenario.channel}
               </motion.span>
             </AnimatePresence>

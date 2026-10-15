@@ -100,5 +100,63 @@
     "modules": ["Client portal", "ERP", "CRM", "Messenger", "Mobile app"],
     "event": "New order",
     "spreadsheet": "Spreadsheet"
+  },
+  "globe": {
+    "projects": "Projects in progress"
+  },
+  "newsFeed": {
+    "sources": "Sources",
+    "pipeline": "AI processing",
+    "signals": "Signals",
+    "sentiment": "sentiment",
+    "index": "Market sentiment index",
+    "merged": "merged",
+    "unique": "unique",
+    "headlines": [
+      "Chipmaker raises full-year guidance on AI demand",
+      "Chipmaker lifts annual outlook on AI demand",
+      "Central bank signals a rate pause",
+      "EV maker posts record Q3 deliveries",
+      "Oil prices rise after OPEC+ decision"
+    ]
+  },
+  "ragAssistant": {
+    "assistant": "Product assistant",
+    "knowledgeBase": "Knowledge base",
+    "sources": "Answer sources",
+    "questions": [
+      "How do I return an item I bought online?",
+      "Is my data stored securely?",
+      "How long is the warranty?"
+    ],
+    "answers": [
+      "Within 30 days, right in your account: choose the order and tap “Return”. The refund arrives in 3–5 days.",
+      "Yes: data is encrypted at rest and in transit and stored in an ISO 27001 data centre.",
+      "The warranty is 24 months from delivery; extended service is available in your account."
+    ],
+    "docs": [
+      "Refund policy",
+      "Delivery terms",
+      "Warranty",
+      "Pricing 2026",
+      "API guide",
+      "Onboarding",
+      "Security FAQ",
+      "Service contract",
+      "Returns process"
+    ]
+  },
+  "enterpriseSuite": {
+    "sso": "Single sign-on",
+    "roles": ["Admin", "Manager", "Employee"],
+    "apps": ["Admin panel", "Warehouse", "Analytics", "HR", "Finance", "Client portal"],
+    "kpis": ["Revenue", "Orders", "SLA"],
+    "access": "{{count}} of {{total}} apps available"
+  },
+  "lostPacket": {
+    "home": "Home"
+  },
+  "brokenWire": {
+    "retry": "Reconnecting…"
   }
 }

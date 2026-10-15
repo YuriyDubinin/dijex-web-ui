@@ -11,7 +11,7 @@ import {
   type RefObject,
 } from 'react';
 import { useMotionValue, useSpring } from 'framer-motion';
-import type { VisualKey } from '@/content/images';
+import type { VisualKey } from '@/content/visualSlots';
 import { useActiveInViewport, useLoopDebug, usePointerFine } from '@/motion/hooks';
 import { useMotionTier } from '@/motion/tier';
 import { SPRING_VALUE } from '@/motion/tokens';

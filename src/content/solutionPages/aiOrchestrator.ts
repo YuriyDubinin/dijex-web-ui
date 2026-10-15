@@ -40,6 +40,6 @@ export const AI_ORCHESTRATOR_PAGE: SolutionPageDef = {
   special: {
     kind: 'deployment',
     models: ['OpenAI', 'Anthropic Claude', 'Qwen', 'Grok', 'Llama', 'Mistral'],
-    consoleImage: 'solutionOrchestratorConsole',
+    consoleVisual: 'solutionOrchestratorConsole',
   },
 };

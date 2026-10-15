@@ -5,9 +5,8 @@ import { ScrollReveal } from '@/components/motion/ScrollReveal';
 import { waveItemVariants } from '@/components/motion/variants';
 import { Icon } from '@/components/ui/Icon';
 import { iconMotionClass } from '@/components/ui/iconMotion';
-import { ImageSlot } from '@/components/ui/ImageSlot';
+import { VisualSlot } from '@/components/ui/VisualSlot';
 import { SectionHeader } from '@/components/ui/SectionHeader';
-import { GlobeOrbits } from './GlobeOrbits';
 import { MetricCard } from './MetricCard';
 import { ABOUT_METRICS, ABOUT_PRINCIPLES } from '@/content/home/about';
 import { useContent } from '@/i18n/useContent';
@@ -82,10 +81,7 @@ export function About() {
 
         <FadeIn delay={0.15} variant="scale-in">
           <Tilt max={5} className="rounded-2xl">
-            <div className="relative">
-              <ImageSlot image="aboutGlobe" />
-              <GlobeOrbits />
-            </div>
+            <VisualSlot slot="aboutGlobe" />
           </Tilt>
         </FadeIn>
       </div>

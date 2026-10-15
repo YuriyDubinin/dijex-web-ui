@@ -70,7 +70,7 @@
     "home": "ホーム",
     "solutions": "ソリューション"
   },
-  "images": {
+  "visuals": {
     "pillarOrchestrator": "モデル、エージェント、業務システムをつなぐAIオーケストレーターのハブ",
     "pillarSupportAgent": "複数の言語で顧客に対応するサポートエージェント",
     "pillarDigitalProcesses": "デジタル業務システムのダッシュボード、フォーム、アプリ画面",
@@ -87,9 +87,9 @@
     "solutionOrchestratorConsole": "判断ログ、品質・コスト指標を表示するオーケストレーターのコンソール",
     "solutionSupportHero": "複数のチャネルで同時に対応するサポートエージェント",
     "solutionSupportInbox": "会話の要約を表示する統合オペレーター受信箱",
-    "solutionDigitalHero": "連携した業務システムとプロセスマップ"
-  },
-  "imageSlot": {
-    "placeholder": "画像は準備中です"
+    "solutionDigitalHero": "連携した業務システムとプロセスマップ",
+    "notFound": "経路を探す迷子のデータパケット",
+    "requestSent": "お問い合わせがDijexチームへ届きます",
+    "routeError": "2つのノード間の切れた接続"
   }
 }

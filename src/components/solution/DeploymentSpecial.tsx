@@ -1,19 +1,19 @@
 import { Section } from '@/components/layout/Section';
 import { FadeIn } from '@/components/motion/FadeIn';
-import { ImageSlot } from '@/components/ui/ImageSlot';
+import { VisualSlot } from '@/components/ui/VisualSlot';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import { DeploymentOptions } from '@/components/sections/Security';
-import type { ImageKey } from '@/content/images';
+import type { SlotKey } from '@/content/visualSlots';
 import { useContent } from '@/i18n/useContent';
 
 type Props = {
   eyebrow: string;
   models: readonly string[];
-  consoleImage: ImageKey;
+  consoleVisual: SlotKey;
 };
 
 /** Оркестратор: варианты развёртывания, модели и консоль наблюдаемости. */
-export function DeploymentSpecial({ eyebrow, models, consoleImage }: Props) {
+export function DeploymentSpecial({ eyebrow, models, consoleVisual }: Props) {
   const content = useContent('solutions', 'aiOrchestrator').deployment;
 
   return (
@@ -44,7 +44,7 @@ export function DeploymentSpecial({ eyebrow, models, consoleImage }: Props) {
         </FadeIn>
         <FadeIn delay={0.15}>
           <figure>
-            <ImageSlot image={consoleImage} />
+            <VisualSlot slot={consoleVisual} />
             <figcaption className="mt-4 text-center text-small text-text-muted">
               {content.consoleCaption}
             </figcaption>

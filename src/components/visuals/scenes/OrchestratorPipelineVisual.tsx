@@ -10,6 +10,7 @@ import {
   ShieldCheck,
   type LucideIcon,
 } from 'lucide-react';
+import { ChannelMark } from '@/components/ui/ChannelMark';
 import { useTranslation } from 'react-i18next';
 import { useContent } from '@/i18n/useContent';
 import { DURATION, EASE, SPRING } from '@/motion/tokens';
@@ -33,6 +34,7 @@ const railSegment = (from: number) =>
 
 type Scenario = {
   channel: LucideIcon;
+  channelName: string;
   /** Ветка маршрута: 0 — быстрая модель, 1 — умная, 2 — оператор. */
   branch: 0 | 1 | 2;
   latency: number;
@@ -43,6 +45,7 @@ type Scenario = {
 const SCENARIOS: readonly [Scenario, ...Scenario[]] = [
   {
     channel: MessageCircle,
+    channelName: 'WhatsApp',
     branch: 0,
     latency: 0.4,
     cost: 0.002,
@@ -50,6 +53,7 @@ const SCENARIOS: readonly [Scenario, ...Scenario[]] = [
   },
   {
     channel: Send,
+    channelName: 'Telegram',
     branch: 2,
     latency: 1.8,
     cost: 0.006,
@@ -57,6 +61,7 @@ const SCENARIOS: readonly [Scenario, ...Scenario[]] = [
   },
   {
     channel: Mail,
+    channelName: 'Email',
     branch: 1,
     latency: 3.2,
     cost: 0.011,
@@ -80,7 +85,6 @@ export function OrchestratorPipelineVisual() {
   const index = cycle % SCENARIOS.length;
   const scenario = pick(SCENARIOS, index);
   const confidence = CONFIDENCE[index] ?? 0.9;
-  const ChannelIcon = scenario.channel;
   const SystemIcon = scenario.system.icon;
   const spring = animated ? SPRING.soft : { duration: 0 };
   const fade = { duration: animated ? DURATION.base : 0, ease: EASE.outExpo };
@@ -178,7 +182,11 @@ export function OrchestratorPipelineVisual() {
                   >
                     <span className="flex items-center gap-1.5">
                       <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-accent-secondary/15 text-accent-secondary">
-                        <ChannelIcon size={12} />
+                        <ChannelMark
+                          name={scenario.channelName}
+                          fallback={scenario.channel}
+                          size={12}
+                        />
                       </span>
                       <span className="font-mono text-[9px] text-text-muted">
                         {format.clock(cycle * 37)}

@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { Instagram, MessageCircle, Send, MessagesSquare, type LucideIcon } from 'lucide-react';
+import { ChannelMark } from '@/components/ui/ChannelMark';
 import { AgentAvatar } from '@/components/agent/AgentAvatar';
 import { useContent } from '@/i18n/useContent';
 import { DURATION, EASE, SPRING } from '@/motion/tokens';
@@ -97,7 +98,6 @@ export function MultilingualChatVisual() {
         const depth = (windowIndex - front + WINDOWS.length) % WINDOWS.length;
         const placement = DEPTH[depth] ?? DEPTH[0];
         const shown = depth === 0 ? dialog : pick(DIALOGS, cycle + depth);
-        const ChannelIcon = shown.icon;
         return (
           <motion.div
             key={windowIndex}
@@ -109,7 +109,7 @@ export function MultilingualChatVisual() {
           >
             <div className="flex items-center gap-2 border-b border-border px-3 py-2">
               <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-accent-secondary/15 text-accent-secondary">
-                <ChannelIcon size={13} />
+                <ChannelMark name={shown.channel} fallback={shown.icon} size={13} />
               </span>
               <span className="min-w-0 flex-1 truncate text-[11px] font-medium text-text-primary">
                 {shown.channel}

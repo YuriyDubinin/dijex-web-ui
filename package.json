@@ -11,9 +11,9 @@
     "format": "prettier --write .",
     "test": "vitest run",
     "test:watch": "vitest",
-    "images:check": "node scripts/check-images.mjs",
     "audit:layout": "npm run build && rm -rf test-results/layout && (playwright test; node scripts/layout-summary.mjs)",
-    "audit:summary": "node scripts/layout-summary.mjs"
+    "audit:summary": "node scripts/layout-summary.mjs",
+    "og:generate": "node scripts/generate-og.mjs"
   },
   "dependencies": {
     "@fontsource/inter": "^5.1.0",
@@ -33,6 +33,7 @@
     "react-hook-form": "^7.53.0",
     "react-i18next": "^15.1.4",
     "react-router-dom": "^6.27.0",
+    "simple-icons": "^15.22.0",
     "tailwind-merge": "^2.5.4",
     "zod": "^3.23.8"
   },

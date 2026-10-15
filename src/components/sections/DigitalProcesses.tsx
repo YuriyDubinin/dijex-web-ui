@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 import { Section } from '@/components/layout/Section';
 import { Button } from '@/components/ui/Button';
 import { ButtonArrow } from '@/components/ui/ButtonArrow';
-import { ImageSlot } from '@/components/ui/ImageSlot';
+import { VisualSlot } from '@/components/ui/VisualSlot';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import { Tabs } from '@/components/ui/Tabs';
 import { PROCESS_TABS, type ProcessTabKey } from '@/content/home/processes';
-import { liveVisualFor } from '@/content/images';
+import { VISUAL_SLOTS } from '@/content/visualSlots';
 import { preloadVisual } from '@/components/visuals/registry';
 import { useContent } from '@/i18n/useContent';
 import { DrawCheck } from '@/motion/DrawCheck';
@@ -102,8 +102,7 @@ export function ProcessDirection({
   // Визуалы соседних вкладок подгружаются заранее — при переключении сцена не мигает скелетом
   useEffect(() => {
     for (const item of PROCESS_TABS) {
-      const visual = liveVisualFor(item.image);
-      if (visual) preloadVisual(visual);
+      preloadVisual(VISUAL_SLOTS[item.visual]);
     }
   }, []);
   const motionProps = animated
@@ -176,7 +175,7 @@ export function ProcessDirection({
 
       {definition ? (
         <PointerParallax>
-          <ImageSlot image={definition.image} />
+          <VisualSlot slot={definition.visual} />
         </PointerParallax>
       ) : null}
     </div>

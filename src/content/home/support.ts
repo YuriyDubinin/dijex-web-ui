@@ -1,11 +1,11 @@
 import type { IconKey } from '@/components/ui/iconMap';
 import type { Resources } from '@/i18n/resources';
-import type { ChannelLogoKey } from '../images';
+import type { ChannelBrand } from '@/components/ui/channelBrands';
 
 type SupportContent = Resources['home']['support'];
 
 export type ChannelItem =
-  | { kind: 'brand'; name: string; logo: ChannelLogoKey; icon: IconKey }
+  | { kind: 'brand'; name: ChannelBrand }
   | { kind: 'generic'; key: keyof SupportContent['channels']['items']; icon: IconKey };
 
 export const CHANNEL_GROUPS: readonly {
@@ -15,25 +15,20 @@ export const CHANNEL_GROUPS: readonly {
   {
     key: 'messengers',
     items: [
-      { kind: 'brand', name: 'Telegram', logo: 'telegram', icon: 'send' },
-      { kind: 'brand', name: 'WhatsApp', logo: 'whatsapp', icon: 'messageCircle' },
-      { kind: 'brand', name: 'Viber', logo: 'viber', icon: 'messageCircle' },
-      { kind: 'brand', name: 'WeChat', logo: 'wechat', icon: 'messagesSquare' },
-      {
-        kind: 'brand',
-        name: 'Facebook Messenger',
-        logo: 'facebookMessenger',
-        icon: 'messageCircle',
-      },
-      { kind: 'brand', name: 'LINE', logo: 'line', icon: 'messageCircle' },
+      { kind: 'brand', name: 'Telegram' },
+      { kind: 'brand', name: 'WhatsApp' },
+      { kind: 'brand', name: 'Viber' },
+      { kind: 'brand', name: 'WeChat' },
+      { kind: 'brand', name: 'Facebook Messenger' },
+      { kind: 'brand', name: 'LINE' },
     ],
   },
   {
     key: 'social',
     items: [
-      { kind: 'brand', name: 'Instagram', logo: 'instagram', icon: 'globe' },
-      { kind: 'brand', name: 'VK', logo: 'vk', icon: 'globe' },
-      { kind: 'brand', name: 'Facebook', logo: 'facebookMessenger', icon: 'globe' },
+      { kind: 'brand', name: 'Instagram' },
+      { kind: 'brand', name: 'VK' },
+      { kind: 'brand', name: 'Facebook' },
     ],
   },
   {

@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState, type CSSProperties, type PointerEvent } from 'react';
 import { AnimatePresence, motion, useMotionValue, useSpring } from 'framer-motion';
 import { Sparkles } from 'lucide-react';
+import { ChannelMark } from '@/components/ui/ChannelMark';
 import { useTranslation } from 'react-i18next';
-import { Icon } from '@/components/ui/Icon';
-import type { IconKey } from '@/components/ui/iconMap';
+import { ICONS, type IconKey } from '@/components/ui/iconMap';
 import { useActiveInViewport, useLoopDebug, usePointerFine } from '@/motion/hooks';
 import { useMotionTier } from '@/motion/tier';
 import { SPRING_VALUE } from '@/motion/tokens';
@@ -118,7 +118,7 @@ export function AgentCore({ pulseKey, activeChannel, className }: Props) {
     <div
       ref={rootRef}
       role="img"
-      aria-label={t('images.supportAgent')}
+      aria-label={t('visuals.supportAgent')}
       onPointerMove={onPointerMove}
       onPointerLeave={resetTilt}
       className={cn('relative aspect-square w-full [perspective:1000px]', className)}
@@ -194,7 +194,7 @@ export function AgentCore({ pulseKey, activeChannel, className }: Props) {
                     )}
                     style={{ transform: `rotate(${-orbit.tilt}deg)` }}
                   >
-                    <Icon name={node.icon} size={15} />
+                    <ChannelMark name={node.channel} fallback={ICONS[node.icon]} size={15} />
                   </span>
                 </div>
               );

@@ -1,7 +1,6 @@
-import { useState } from 'react';
 import { motion, type Variants } from 'framer-motion';
 import { Icon } from '@/components/ui/Icon';
-import { CHANNEL_LOGOS } from '@/content/images';
+import { ChannelGlyph } from '@/components/ui/ChannelGlyph';
 import { CHANNEL_GROUPS, type ChannelItem } from '@/content/home/support';
 import { useContent } from '@/i18n/useContent';
 import { SpotlightGroup } from '@/motion/Spotlight';
@@ -38,7 +37,7 @@ const pillVariants: Variants = {
   visible: { opacity: 1, scale: 1, transition: { duration: DURATION.base, ease: EASE.outExpo } },
 };
 
-/** Логотип канала из public/images; пока файла нет — иконка lucide. Индикатор «пингует» при появлении. */
+/** Пилюля канала: фирменный значок (или иконка для общих каналов), при наведении — цвет бренда. Индикатор «пингует» при появлении. */
 function ChannelPill({
   item,
   label,
@@ -50,9 +49,6 @@ function ChannelPill({
   onHover?: (channel: string | null) => void;
   animated: boolean;
 }) {
-  const [logoFailed, setLogoFailed] = useState(false);
-  const showLogo = item.kind === 'brand' && !logoFailed;
-
   return (
     <motion.li
       variants={animated ? pillVariants : undefined}
@@ -60,16 +56,8 @@ function ChannelPill({
       onPointerLeave={() => onHover?.(null)}
       className="group relative inline-flex min-h-[40px] items-center gap-2 rounded-xl border border-border bg-bg-base/40 px-3 py-2 text-small text-text-secondary transition-colors hover:border-accent-secondary/50 hover:text-text-primary"
     >
-      {showLogo ? (
-        <img
-          src={CHANNEL_LOGOS[item.logo]}
-          alt=""
-          width={18}
-          height={18}
-          loading="lazy"
-          onError={() => setLogoFailed(true)}
-          className="h-[18px] w-[18px] shrink-0"
-        />
+      {item.kind === 'brand' ? (
+        <ChannelGlyph channel={item.name} className="text-text-secondary" />
       ) : (
         <Icon name={item.icon} size={16} className="shrink-0 text-accent-secondary" />
       )}

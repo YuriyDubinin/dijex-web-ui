@@ -1,11 +1,18 @@
-import { useRef } from 'react';
-import { motion, useScroll, useTransform, type MotionValue } from 'framer-motion';
+import { useRef, useState } from 'react';
+import {
+  motion,
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+  type MotionValue,
+} from 'framer-motion';
 import { Target, TrendingUp, Wrench, type LucideIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Section } from '@/components/layout/Section';
 import { Badge } from '@/components/ui/Badge';
-import { ImageSlot } from '@/components/ui/ImageSlot';
+import { VisualSlot, type SlotGlow } from '@/components/ui/VisualSlot';
+import { VisualControlContext } from '@/components/visuals/context';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import { CASES, type CaseDef } from '@/content/home/cases';
 import { SOLUTIONS } from '@/content/solutions';
@@ -14,6 +21,13 @@ import { STICKY_SCENE_QUERY, useMediaQuery } from '@/motion/hooks';
 import { useMotionTier } from '@/motion/tier';
 import { DISTANCE, DURATION, EASE, STAGGER } from '@/motion/tokens';
 import { cn } from '@/lib/cn';
+
+/** Свечение сцены кейса — по цвету его направления (оркестратор / агент / процессы). */
+const CASE_GLOW: Record<string, SlotGlow> = {
+  aiOrchestrator: 'indigo',
+  supportAgent: 'cyan',
+  digitalProcesses: 'violet',
+};
 
 /** Отступ липких карточек от верха и шаг «лесенки» стопки, px. */
 const STICKY_TOP = 96;
@@ -63,7 +77,10 @@ function CaseContent({ caseDef, index }: { caseDef: CaseDef; index: number }) {
   return (
     <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
       <div className={cn(reverse && 'lg:order-2')}>
-        <ImageSlot image={caseDef.image} glow="cyan" />
+        <VisualSlot
+          slot={caseDef.visual}
+          glow={CASE_GLOW[caseDef.solutions[0] ?? ''] ?? 'indigo'}
+        />
       </div>
 
       <div className={cn('flex flex-col gap-5', reverse && 'lg:order-1')}>
@@ -168,11 +185,14 @@ function StackedCase({
   index,
   total,
   progress,
+  active,
 }: {
   caseDef: CaseDef;
   index: number;
   total: number;
   progress: MotionValue<number>;
+  /** Карточка сверху стопки — её сцена работает, у накрытых — пауза. */
+  active: boolean;
 }) {
   const start = index / total;
   const targetScale = 1 - (total - 1 - index) * 0.04;
@@ -186,7 +206,9 @@ function StackedCase({
         style={{ scale, filter, transformOrigin: 'top center' }}
         className="rounded-3xl border border-border bg-bg-elevated p-8 shadow-[0_-20px_60px_-30px_rgb(0_0_0/0.8)] xl:p-10"
       >
-        <CaseContent caseDef={caseDef} index={index} />
+        <VisualControlContext.Provider value={{ paused: !active }}>
+          <CaseContent caseDef={caseDef} index={index} />
+        </VisualControlContext.Provider>
       </motion.article>
     </div>
   );
@@ -195,6 +217,12 @@ function StackedCase({
 function CasesStack() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end end'] });
+  // Какая карточка сейчас сверху стопки: накрытые не тратят кадры на свои сцены
+  const [activeIndex, setActiveIndex] = useState(0);
+  useMotionValueEvent(scrollYProgress, 'change', (value) => {
+    const next = Math.min(CASES.length - 1, Math.floor(value * CASES.length));
+    setActiveIndex((current) => (current === next ? current : next));
+  });
 
   return (
     <div ref={ref} className="relative mt-16 flex flex-col gap-[30vh] md:mt-20">
@@ -205,6 +233,7 @@ function CasesStack() {
           index={index}
           total={CASES.length}
           progress={scrollYProgress}
+          active={index === activeIndex}
         />
       ))}
     </div>

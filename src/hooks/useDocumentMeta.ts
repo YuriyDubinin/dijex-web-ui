@@ -16,7 +16,7 @@ function setMeta(attribute: 'name' | 'property', key: string, content: string) {
   element.setAttribute('content', content);
 }
 
-/** Title, description и Open Graph страницы на текущем языке. Пересчитывается при смене языка. */
+/** Title, description, Open Graph и превью ссылки на текущем языке. Пересчитывается при смене языка. */
 export function useDocumentMeta(key: MetaKey): void {
   const { t, i18n } = useTranslation('meta');
   const title = t(`${key}.title`);
@@ -29,5 +29,9 @@ export function useDocumentMeta(key: MetaKey): void {
     setMeta('property', 'og:title', title);
     setMeta('property', 'og:description', description);
     setMeta('property', 'og:locale', LOCALE_META[locale].ogLocale);
+    // Превью ссылки на языке страницы — генерируется из кода (npm run og:generate)
+    const image = `${window.location.origin}/og/og-${locale}.jpg`;
+    setMeta('property', 'og:image', image);
+    setMeta('name', 'twitter:image', image);
   }, [title, description, locale]);
 }

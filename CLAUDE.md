@@ -498,12 +498,16 @@ VITE_API_BASE_URL=http://localhost:18080
   `src/content/*` пользовательского текста нет. Поддерево секции читается через `useContent(ns, key)`, строки — через `t()`.
 - **Структура контента** (id, порядок, иконки, картинки, числа) — `src/content/**`. Иконки по ключу — `components/ui/iconMap.ts`.
 - **Новый текст** добавляется во все 7 локалей с одинаковыми ключами — это проверяет `src/locales/locales.test.ts`.
-- **Картинки** — только через `<ImageSlot image="…">` с ключом из `src/content/images.ts`; файлы — в `public/images/`.
-  Чек-лист: `npm run images:check`.
+- **Визуальные места — только сцены на коде.** Статичных изображений на сайте нет: каждое место, где мог бы быть
+  рисунок, — `<VisualSlot slot="…">` с ключом из `src/content/visualSlots.ts` (ключ места → сцена). Тест
+  `visuals.test.tsx` следит, что в коде нет `<img>` и растровых файлов, а в `public/` — только `favicon.svg` и `og/`.
+- **Значки мессенджеров и соцсетей** — `ChannelGlyph` / `ChannelMark` (пути из simple-icons, CC0, ленивый чанк);
+  у общих каналов (почта, веб, API) — иконки lucide.
+- **Превью ссылок (og:image)** — единственные растровые файлы, и они генерируются из кода: dev-страница `/dev/og`
+  снимается командой `npm run og:generate` в `public/og/og-<lang>.jpg`. Перегенерировать после смены текстов hero.
 - **Цвета** — RGB-каналы в CSS-переменных (`--accent-primary: 99 102 241`), поэтому работают `bg-accent-primary/10`.
 - **`cn()`** знает кастомную шкалу шрифтов (`text-small`, `text-body`, …) — не заменять на голый `twMerge`.
 - Шрифты Noto (th/zh/ja) грузятся динамически только для этих языков (`src/i18n/fonts.ts`).
-- Что нужно уточнить у владельца и вычитать носителям — `docs/i18n-todo/`.
 
 ---
 
@@ -527,19 +531,22 @@ VITE_API_BASE_URL=http://localhost:18080
   `view-transition-name: solution-icon-*` / `solution-visual-*`. Смена языка — View Transition с размытием
   и сохранением позиции прокрутки (`useLocale`).
 - **Отладка**: `window.__motionDebug.activeLoops` (dev) — сколько бесконечных циклов сейчас крутится.
-- **«Живые» визуалы вместо картинок** — `src/components/visuals/`. Место под картинку с полем `visual` в манифесте
-  (`src/content/images.ts`) рисует сцену на коде (SVG/CSS/framer-motion), пока у ключа не выставлен `fileProvided: true`.
+- **Сцены (визуалы)** — `src/components/visuals/`. Каждое визуальное место (`src/content/visualSlots.ts`) рисует сцену
+  на коде (SVG / CSS / canvas / framer-motion); пропорции и координаты сцены — в реестре `visuals/registry.ts`
+  (4:3 — 480×360, 16:10 — 640×400, 16:9 — 640×360). Тексты сцен (namespace `visuals`) грузятся лениво вместе со сценами.
   - `LiveVisual` — сцена в фиксированных координатах (480×360 для 4:3, 640×400 для 16:10), масштаб под рамку,
     ленивый чанк (грузится за 400px до viewport), пауза вне экрана, курсор (full + мышь) через `useVisual().pointerX/Y`.
   - Сюжет — `useVisualLoop(steps, { poster })`: шаги с длительностями; lite — ×1.5; off — сразу «постер»
     (осмысленный финальный кадр). Простые ритмы — `useVisualTicker(ms)`.
   - Общие детали — `visuals/parts/` (Panel, Wire, Packet, StatusPill, RollingValue, Sparkline, TypingDots,
     StreamedText, WindowChrome). Числа — только `useVisualFormat()` (Intl). Тексты — namespace `visuals`.
-  - Новый визуал: сцена в `visuals/scenes/`, ключ в `VisualKey` и `VISUALS` (registry), `visual: '…'` у места в манифесте,
-    тексты в `visuals.json` всех 7 языков. Бюджет: ≤ 150 DOM-узлов, чанк ≤ 6 КБ gzip, анимировать только
+  - Новая сцена: файл в `visuals/scenes/`, ключ в `VisualKey` (visualSlots.ts) и `VISUALS` (registry), место в
+    `VISUAL_SLOTS`, alt в `common.json → visuals.<место>`, тексты в `visuals.json` всех 7 языков. Бюджет: ≤ 150 DOM-узлов, чанк ≤ 6 КБ gzip, анимировать только
     transform/opacity/pathLength/offset-distance. Наложения внутри сцены — композиция (сцена `role="img"`, всё внутри скрыто от скринридера).
   - Секция может управлять визуалами через `VisualControlContext` (`paused`, `startDelay`) — так «Три направления»
     стартуют по очереди и ставят соседей на паузу при наведении.
+  - В стопке кейсов работает только верхняя карточка; «Три направления» — осознанное исключение из бюджета
+    (3 лёгкие сцены в одном ряду, замер — без long tasks).
   - Все сцены разом — dev-страница `/dev/visuals` (в прод-сборку не попадает).
 
 ---
@@ -547,7 +554,7 @@ VITE_API_BASE_URL=http://localhost:18080
 ## 16. Аудит вёрстки
 
 - `npm run audit:layout` — сборка, `vite preview` и Playwright (установленный Chrome, `channel: 'chrome'`) по матрице
-  6 страниц × 7 языков × 8 размеров (360, 390, 768, 1024, 1280, 1280×720, 1440, 1920), с `?motion=off`.
+  7 страниц (главная, 3 решения, privacy, thanks, 404) × 7 языков × 8 размеров (360, 390, 768, 1024, 1280, 1280×720, 1440, 1920), с `?motion=off`.
 - Ищет: горизонтальную прокрутку; текст за краем экрана; текст, обрезанный контейнером с `overflow: hidden`
   без многоточия/line-clamp (прокручиваемые контейнеры не считаются); наложение строк текста (вне сцен визуалов);
   тач-цели < 24×24 на ширинах < 768.

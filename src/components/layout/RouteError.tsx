@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { VisualSlot } from '@/components/ui/VisualSlot';
 import { Container } from './Container';
 
 /** Экран ошибки маршрута (errorElement data-роутера) — вместо стандартного «Unexpected Application Error». */
@@ -7,7 +8,8 @@ export function RouteError() {
   const { t } = useTranslation();
   return (
     <main className="flex min-h-screen items-center bg-bg-base text-text-primary">
-      <Container className="flex flex-col items-center gap-6 text-center">
+      <Container className="flex flex-col items-center gap-6 py-16 text-center">
+        <VisualSlot slot="routeError" priority glow="none" className="w-full max-w-sm" />
         <p className="eyebrow text-accent-primary">{t('notFound.eyebrow')}</p>
         <h1 className="font-display text-h1 font-bold">{t('notFound.title')}</h1>
         <Link

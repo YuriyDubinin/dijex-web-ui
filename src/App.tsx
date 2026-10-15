@@ -1,4 +1,4 @@
-import { lazy } from 'react';
+import { lazy, Suspense } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { RootLayout } from '@/components/layout/RootLayout';
 import { RouteError } from '@/components/layout/RouteError';
@@ -21,6 +21,10 @@ const VisualsGalleryPage = import.meta.env.DEV
       })),
     )
   : null;
+/** Dev-превью ссылки (og:image) — снимается скриптом og:generate; в прод-сборку не попадает. */
+const OgCoverPage = import.meta.env.DEV
+  ? lazy(() => import('@/pages/OgCoverPage').then((module) => ({ default: module.OgCoverPage })))
+  : null;
 const NotFoundPage = lazy(() =>
   import('@/pages/NotFoundPage').then((module) => ({ default: module.NotFoundPage })),
 );
@@ -28,6 +32,19 @@ const NotFoundPage = lazy(() =>
 /** Data-роутер: нужен для нативных View Transitions между страницами (Link/navigate с viewTransition). */
 const router = createBrowserRouter(
   [
+    // Превью ссылки — отдельно от общей раскладки: без шапки, футера и интро
+    ...(OgCoverPage
+      ? [
+          {
+            path: '/dev/og',
+            element: (
+              <Suspense fallback={null}>
+                <OgCoverPage />
+              </Suspense>
+            ),
+          },
+        ]
+      : []),
     {
       element: <RootLayout />,
       errorElement: <RouteError />,

@@ -29,14 +29,14 @@ function SpecialBlock({ special, eyebrow }: { special: SolutionSpecial; eyebrow:
         <DeploymentSpecial
           eyebrow={eyebrow}
           models={special.models}
-          consoleImage={special.consoleImage}
+          consoleVisual={special.consoleVisual}
         />
       );
     case 'channels':
       return (
         <ChannelsSpecial
           eyebrow={eyebrow}
-          inboxImage={special.inboxImage}
+          inboxVisual={special.inboxVisual}
           timeline={special.timeline}
         />
       );

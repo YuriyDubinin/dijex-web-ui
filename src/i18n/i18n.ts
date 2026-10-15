@@ -5,7 +5,7 @@ import {
   DEFAULT_LOCALE,
   LOCALE_META,
   LOCALE_STORAGE_KEY,
-  NAMESPACES,
+  EAGER_NAMESPACES,
   SUPPORTED_LOCALES,
   isLocale,
   type Locale,
@@ -19,11 +19,17 @@ import {
 import { enResources } from './resources';
 import { loadLocaleFonts } from './fonts';
 
-/** Ленивые загрузчики всех локалей, кроме английской (она в основном бандле). Каждый JSON — отдельный чанк. */
-const lazyLocaleFiles = import.meta.glob<{ default: Record<string, unknown> }>([
-  '../locales/*/*.json',
-  '!../locales/en/*.json',
-]);
+/**
+ * Ленивые загрузчики локалей. Английская — в основном бандле, кроме текстов сцен (visuals):
+ * они нужны только вместе со сценами и грузятся по требованию на любом языке. Каждый JSON — отдельный чанк.
+ */
+const lazyLocaleFiles = {
+  ...import.meta.glob<{ default: Record<string, unknown> }>([
+    '../locales/*/*.json',
+    '!../locales/en/*.json',
+  ]),
+  ...import.meta.glob<{ default: Record<string, unknown> }>('../locales/en/visuals.json'),
+};
 
 function loadNamespace(locale: string, namespace: string) {
   const loader = lazyLocaleFiles[`../locales/${locale}/${namespace}.json`];
@@ -83,7 +89,7 @@ export async function initI18n(): Promise<I18n> {
       supportedLngs: [...SUPPORTED_LOCALES],
       nonExplicitSupportedLngs: false,
       load: 'languageOnly',
-      ns: [...NAMESPACES],
+      ns: [...EAGER_NAMESPACES],
       defaultNS: 'common',
       returnNull: false,
       returnEmptyString: false,

@@ -1,5 +1,5 @@
 import type { IconKey } from '@/components/ui/iconMap';
-import type { ImageKey } from './images';
+import type { SlotKey } from './visualSlots';
 import type { SubjectKey } from './contact';
 
 export type SolutionKey = 'aiOrchestrator' | 'supportAgent' | 'digitalProcesses';
@@ -13,8 +13,8 @@ export type SolutionDef = {
   icon: IconKey;
   /** Якорь секции на главной. */
   anchor: string;
-  cardImage: ImageKey;
-  heroImage: ImageKey;
+  cardVisual: SlotKey;
+  heroVisual: SlotKey;
   /** Тема заявки, которую предзаполняет CTA страницы. */
   subjectKey: SubjectKey;
 };
@@ -26,8 +26,8 @@ export const SOLUTIONS: readonly SolutionDef[] = [
     path: '/solutions/ai-orchestrator',
     icon: 'network',
     anchor: '#orchestrator',
-    cardImage: 'pillarOrchestrator',
-    heroImage: 'solutionOrchestratorHero',
+    cardVisual: 'pillarOrchestrator',
+    heroVisual: 'solutionOrchestratorHero',
     subjectKey: 'aiOrchestrator',
   },
   {
@@ -36,8 +36,8 @@ export const SOLUTIONS: readonly SolutionDef[] = [
     path: '/solutions/support-agent',
     icon: 'headset',
     anchor: '#support',
-    cardImage: 'pillarSupportAgent',
-    heroImage: 'solutionSupportHero',
+    cardVisual: 'pillarSupportAgent',
+    heroVisual: 'solutionSupportHero',
     subjectKey: 'supportAgent',
   },
   {
@@ -46,8 +46,8 @@ export const SOLUTIONS: readonly SolutionDef[] = [
     path: '/solutions/digital-processes',
     icon: 'layoutDashboard',
     anchor: '#processes',
-    cardImage: 'pillarDigitalProcesses',
-    heroImage: 'solutionDigitalHero',
+    cardVisual: 'pillarDigitalProcesses',
+    heroVisual: 'solutionDigitalHero',
     subjectKey: 'digitalProcesses',
   },
 ];

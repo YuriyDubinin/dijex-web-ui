@@ -52,7 +52,7 @@ export function SolutionCta({ content, subjectKey }: Props) {
               ref={ref}
               onPointerMove={onPointerMove}
               className={cn(
-                'conic-border relative overflow-hidden rounded-3xl bg-bg-elevated/80 px-6 py-14 text-center shadow-glow sm:px-12',
+                'conic-border relative overflow-hidden rounded-3xl bg-bg-elevated/80 px-5 py-14 text-center shadow-glow sm:px-12',
                 (!active || tier === 'off') && 'is-paused',
               )}
             >
@@ -64,7 +64,7 @@ export function SolutionCta({ content, subjectKey }: Props) {
                   as="h2"
                   id="solution-cta-title"
                   text={content.title}
-                  className="text-balance font-display text-h1 font-bold text-text-primary"
+                  className="text-balance font-display text-[1.5rem] font-bold leading-tight text-text-primary sm:text-h1"
                 />
                 <Reveal variant="blur-up" delay={0.3}>
                   <p className="text-body text-text-secondary md:text-lg">{content.lead}</p>

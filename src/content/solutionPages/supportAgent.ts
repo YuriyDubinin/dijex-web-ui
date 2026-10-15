@@ -44,7 +44,7 @@ export const SUPPORT_AGENT_PAGE: SolutionPageDef = {
   faq: ['knowledge', 'unhappy', 'oneChannel', 'brand', 'effect'],
   special: {
     kind: 'channels',
-    inboxImage: 'solutionSupportInbox',
+    inboxVisual: 'solutionSupportInbox',
     // TODO: уточнить — реальные сроки запуска
     timeline: ['week1', 'week2', 'week3', 'next'],
   },

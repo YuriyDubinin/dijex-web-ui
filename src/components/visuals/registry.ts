@@ -1,5 +1,5 @@
 import { lazy, type ComponentType, type LazyExoticComponent } from 'react';
-import type { VisualKey } from '@/content/images';
+import type { VisualKey } from '@/content/visualSlots';
 
 type Loader = () => Promise<{ default: ComponentType }>;
 
@@ -10,9 +10,10 @@ type VisualDef = {
   height: number;
 };
 
-/** Сцены 4:3 (карточки направлений) и 16:10 (вкладки, страницы решений). */
+/** Сцены 4:3 (карточки, «О компании», пустые состояния), 16:10 (вкладки, страницы решений), 16:9 (кейсы). */
 const CARD = { width: 480, height: 360 } as const;
 const WIDE = { width: 640, height: 400 } as const;
+const CINEMA = { width: 640, height: 360 } as const;
 
 const named =
   <M extends Record<string, unknown>>(load: () => Promise<M>, name: keyof M & string): Loader =>
@@ -64,6 +65,34 @@ export const VISUALS: Record<VisualKey, VisualDef> = {
   operatorInbox: {
     ...WIDE,
     load: named(() => import('./scenes/OperatorInboxVisual'), 'OperatorInboxVisual'),
+  },
+  globe: {
+    ...CARD,
+    load: named(() => import('./scenes/GlobeVisual'), 'GlobeVisual'),
+  },
+  newsFeed: {
+    ...CINEMA,
+    load: named(() => import('./scenes/NewsFeedVisual'), 'NewsFeedVisual'),
+  },
+  ragAssistant: {
+    ...CINEMA,
+    load: named(() => import('./scenes/RagAssistantVisual'), 'RagAssistantVisual'),
+  },
+  enterpriseSuite: {
+    ...CINEMA,
+    load: named(() => import('./scenes/EnterpriseSuiteVisual'), 'EnterpriseSuiteVisual'),
+  },
+  lostPacket: {
+    ...CARD,
+    load: named(() => import('./scenes/LostPacketVisual'), 'LostPacketVisual'),
+  },
+  requestSent: {
+    ...CARD,
+    load: named(() => import('./scenes/RequestSentVisual'), 'RequestSentVisual'),
+  },
+  brokenWire: {
+    ...CARD,
+    load: named(() => import('./scenes/BrokenWireVisual'), 'BrokenWireVisual'),
   },
   systemsMap: {
     ...WIDE,

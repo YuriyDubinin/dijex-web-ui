@@ -1,9 +1,11 @@
+import { readdirSync, statSync } from 'node:fs';
+import { join, relative } from 'node:path';
 import { renderHook, screen } from '@testing-library/react';
 import { motionValue } from 'framer-motion';
 import type { ReactNode } from 'react';
 import { describe, expect, it } from 'vitest';
-import { ImageSlot } from '@/components/ui/ImageSlot';
-import { IMAGES, liveVisualFor } from '@/content/images';
+import { VisualSlot } from '@/components/ui/VisualSlot';
+import { SLOT_KEYS, VISUAL_SLOTS } from '@/content/visualSlots';
 import { renderWithProviders } from '@/test/i18n';
 import { VisualContext, type VisualState } from './context';
 import { VISUALS } from './registry';
@@ -30,25 +32,32 @@ function withTier(tier: VisualState['tier']) {
   };
 }
 
+/** Исходники сайта (без тестов) — для проверки, что статичных картинок нет. */
+const SOURCES = import.meta.glob<string>(['/src/**/*.{ts,tsx,css}', '!/src/**/*.test.{ts,tsx}'], {
+  query: '?raw',
+  import: 'default',
+  eager: true,
+});
+
+function listFiles(dir: string): string[] {
+  return readdirSync(dir).flatMap((name) => {
+    const path = join(dir, name);
+    // Системные файлы macOS не входят в сборку сайта
+    if (name === '.DS_Store') return [];
+    return statSync(path).isDirectory() ? listFiles(path) : [path];
+  });
+}
+
 describe('live visuals', () => {
-  it('every manifest visual has a registered scene', () => {
-    for (const asset of Object.values(IMAGES)) {
-      if (asset.visual) expect(VISUALS[asset.visual]).toBeDefined();
-    }
+  it('every slot has a registered scene', () => {
+    for (const slot of SLOT_KEYS) expect(VISUALS[VISUAL_SLOTS[slot]]).toBeDefined();
   });
 
-  it('a slot with a visual renders the scene instead of requesting the file', async () => {
-    await renderWithProviders(<ImageSlot image="pillarOrchestrator" />);
+  it('a slot renders its scene with an accessible name', async () => {
+    await renderWithProviders(<VisualSlot slot="pillarOrchestrator" />);
     const scene = screen.getByRole('img');
     expect(scene).toHaveAccessibleName(/orchestrator/i);
     expect(scene.tagName).not.toBe('IMG');
-    expect(document.querySelector('img')).toBeNull();
-  });
-
-  it('a slot without a visual still waits for the image file', async () => {
-    await renderWithProviders(<ImageSlot image="aboutGlobe" />);
-    expect(liveVisualFor('aboutGlobe')).toBeNull();
-    expect(document.querySelector('img')).not.toBeNull();
   });
 
   it('shows the poster step right away when motion is off', () => {
@@ -66,5 +75,25 @@ describe('live visuals', () => {
   it('starts from the first step and waits while the scene is not running', () => {
     const { result } = renderHook(() => useVisualLoop(STEPS), { wrapper: withTier('full') });
     expect(result.current).toEqual({ step: 0, cycle: 0 });
+  });
+});
+
+describe('no static images', () => {
+  it('source code has no <img> and no raster imports', () => {
+    const offenders = Object.entries(SOURCES)
+      .filter(([, code]) => /<img[\s>]|\.(png|jpe?g|webp|gif|avif)['")]/i.test(code))
+      .map(([path]) => path);
+    expect(offenders).toEqual([]);
+  });
+
+  it('public/ holds only the favicon and generated link previews', () => {
+    const publicDir = join(process.cwd(), 'public');
+    const files = listFiles(publicDir).map((path) =>
+      relative(publicDir, path).split('\\').join('/'),
+    );
+    const unexpected = files.filter(
+      (file) => file !== 'favicon.svg' && !/^og\/og-[a-z]{2}\.jpg$/.test(file),
+    );
+    expect(unexpected).toEqual([]);
   });
 });

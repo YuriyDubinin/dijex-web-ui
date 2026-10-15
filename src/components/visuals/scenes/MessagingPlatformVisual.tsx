@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Mail, MessageCircle, Search, Send, Sparkles, type LucideIcon } from 'lucide-react';
+import { ChannelMark } from '@/components/ui/ChannelMark';
 import { useTranslation } from 'react-i18next';
 import { useContent } from '@/i18n/useContent';
 import { DURATION, EASE, SPRING } from '@/motion/tokens';
@@ -104,7 +105,6 @@ export function MessagingPlatformVisual() {
         <div className="relative w-[212px] shrink-0 border-r border-border">
           {CONTACTS.map((contact, index) => {
             const position = order.indexOf(index);
-            const Icon = CHANNEL_ICON[contact.channel];
             const matches = filter === 'all' || filter === contact.channel;
             const count = index === 0 ? 0 : (unread[index] ?? 0);
             return (
@@ -125,7 +125,11 @@ export function MessagingPlatformVisual() {
                 <span className="relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-accent-primary/40 to-accent-secondary/30 font-mono text-[9.5px] font-semibold text-text-primary">
                   {contact.initials}
                   <span className="absolute -bottom-0.5 -right-0.5 flex h-3.5 w-3.5 items-center justify-center rounded-full border border-bg-elevated bg-bg-surface text-accent-secondary">
-                    <Icon size={8} />
+                    <ChannelMark
+                      name={contact.channel}
+                      fallback={CHANNEL_ICON[contact.channel]}
+                      size={8}
+                    />
                   </span>
                 </span>
                 <span className="min-w-0 flex-1">

@@ -70,7 +70,7 @@
     "home": "Home",
     "solutions": "Solutions"
   },
-  "images": {
+  "visuals": {
     "pillarOrchestrator": "AI orchestrator hub connecting models, agents and business systems",
     "pillarSupportAgent": "Support agent answering customers in several languages",
     "pillarDigitalProcesses": "Dashboards, forms and app screens of a digital business system",
@@ -87,9 +87,9 @@
     "solutionOrchestratorConsole": "Orchestrator console with decision log, quality and cost metrics",
     "solutionSupportHero": "Support agent working across several channels at once",
     "solutionSupportInbox": "Unified operator inbox with conversation summary",
-    "solutionDigitalHero": "Connected business systems and process map"
-  },
-  "imageSlot": {
-    "placeholder": "Image coming soon"
+    "solutionDigitalHero": "Connected business systems and process map",
+    "notFound": "A lost data packet looking for its route",
+    "requestSent": "Your request travels to the Dijex team",
+    "routeError": "A broken connection between two nodes"
   }
 }

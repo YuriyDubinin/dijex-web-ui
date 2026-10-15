@@ -40,6 +40,7 @@ const PAGES = list(process.env.AUDIT_PAGES, [
   '/solutions/support-agent',
   '/solutions/digital-processes',
   '/privacy',
+  '/thanks',
   '/404-check',
 ]);
 const SCREENSHOTS = process.env.AUDIT_SCREENSHOTS !== '0';
@@ -53,10 +54,11 @@ async function settle(page: Page) {
   await page.evaluate(async () => {
     const step = Math.max(400, Math.floor(window.innerHeight * 0.8));
     for (let y = 0; y < document.documentElement.scrollHeight; y += step) {
-      window.scrollTo(0, y);
+      // instant: у html задан scroll-behavior: smooth — иначе проверка застанет страницу на середине прокрутки
+      window.scrollTo({ top: y, behavior: 'instant' });
       await new Promise((resolve) => setTimeout(resolve, 60));
     }
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'instant' });
     await document.fonts.ready;
   });
   await page.waitForLoadState('networkidle');
